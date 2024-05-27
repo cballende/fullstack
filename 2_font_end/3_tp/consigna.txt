@@ -1,0 +1,38 @@
+Crear una página web personal utilizando HTML y CSS que incluya usando flexbox, y 
+que demuestre el uso de herencia, selectores combinados, selectores anidados y la cascada de CSS.
+
+    Estructura HTML:
+
+    Crea un archivo llamado index.html.
+    La página debe contener los siguientes elementos:
+    Un encabezado (<header>) con tu nombre y una breve descripción.
+    Una sección principal (<main>) con:
+
+    Un artículo (<article>) que contenga una breve biografía tuya.
+    Una lista de tus habilidades en programación (<ul> o <ol>).
+
+    Un pie de página (<footer>) con tus enlaces a redes sociales.
+
+    Estilos CSS:
+
+    Crea un archivo llamado styles.css.
+    Enlaza el archivo CSS en el archivo HTML dentro de la etiqueta <head>.
+
+    Flexbox:
+
+    Utiliza flexbox para diseñar la distribución de la página.
+    El encabezado y el pie de página deben ocupar el ancho completo de la página.
+    La sección principal debe estar centrada y tener un ancho máximo de 800px.
+
+    Herencia y Cascada:
+
+    Define estilos base para los elementos de texto (p. ej., body { font-family: Arial, sans-serif; color: #333; }).
+    Utiliza la herencia de CSS para que los elementos hijos hereden los estilos de sus elementos padres.
+    Utiliza la cascada para aplicar estilos específicos a ciertos elementos cuando sea necesario.
+
+    Selectores Combinados y Anidados:
+
+    Utiliza selectores combinados para aplicar estilos a elementos que cumplen múltiples 
+    condiciones (p. ej., header nav a para los enlaces de navegación dentro del encabezado).
+    Utiliza selectores anidados para aplicar estilos a elementos específicos dentro de otros 
+    (p. ej., main article p para los párrafos dentro del artículo en la sección principal).
