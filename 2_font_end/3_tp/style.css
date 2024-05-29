@@ -5,13 +5,15 @@ body{
 }
 footer{
   width: auto;
+  padding: 0% 10%;
+  color: blanchedalmond;
   background-color: black;
-  
 }
 
 div{
-  border: 1px solid black;
+  
   text-align: left ;
+  padding-left: 5%;
 }
 
 .conteiner{
@@ -20,21 +22,25 @@ div{
 .header{
   height: auto;
   width: auto;
-  padding: 5px;
+  padding: 0% 10%;
   flex-flow: row wrap;
   justify-content: space-between ;
-  background-color: grey;
+  background-color: #eba04b;
   background: img/base.jpeg;
   background-image: img/base.jpeg;
 }
 
+.header div{
+  margin-bottom: 5px;
+}
+
 img#profile{
-  width: 50%; 
+  width: 50%;
 }
 
 #title{
  width: 30%;
- margin-right: 50%;
+ margin-right: auto;
 }
 
 .main{
@@ -49,28 +55,8 @@ img#profile{
   margin: auto;
 }
 
-.div_input{
-  height: 20px;
-}
-
-.menu_1{
-  width:40%;
-  margin-left:60% ;  
-  background-color: green;
-}
-
-
-.header div{
-  margin-bottom: 5px;
-}
-.logo{
-  width:20%;
-  margin-left: 5px;
-  background-color: blue;
-}
-.menu_2{
-  width:70%;
-  background-color: red ;
+.nota > p {
+  text-indent: 1em;
 }
 
 .body_{
@@ -80,38 +66,12 @@ img#profile{
   border: 0;
 
 }
-
-.block{
-  height: auto;
-  margin-bottom: 2.5%;
- 
-}
-
-.single{
-  width: calc(90%/3);
- }
-
- .double{
-  width: calc((97.5%/3)*2);
- }
-
-.nav{
-  min-height: 50px ;
-  text-align: center;
-  border: 4px;
-  border-style: solid;
-  border-color: red;
-  background-color: cadetblue;
-}
 .nota{
-  min-height: 200px ;
-  border: 2px;
-  border-style: dotted;
-  border-color: blue;
-}
-.nota{
+  min-height: 100px ;
+  
   padding: 20px;
 }
+
 h1{
   padding-left: 10px;
   font-family: 'Courier New', Courier, monospace;
@@ -124,41 +84,22 @@ h2{
 p {
   font-weight: bolder;
 }
-
 .image{
   text-align: center;
   width: 50%;
   height: 50%;
 }
 .foot{
-  height: 100px;
+  height: auto;
   padding: 5px;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items:center ;
-  background-color: cadetblue;
+  justify-content: space-around;
+  align-items:normal ;
 }
-
-.element{
-  
-  width:40%;
-  margin-right: 5px;
-  background-color: blue;
-
+a{
+  text-decoration: none;
+  color: blanchedalmond;
 }
-
-#left{
-  background-color: grey;  
-}
-#center{
- background-color: cyan; 
-}
-#right{
-  background-color: yellow;
-}
-#left_2{
-  background-color:green; 
-}
-#right_2{
-  background-color: orangered;
+dd{
+  margin-left: 0;
 }
