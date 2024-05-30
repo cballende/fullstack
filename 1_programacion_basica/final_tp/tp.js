@@ -17,23 +17,23 @@
 var rLS = require('readline-sync');
 var listCart = [];
 var exit=true;
-fnInputProducts(sN,iP){  
+function fnInputProducts(sN,iP){  
   dat=[sN,iP];
   fnModel('write',dat);
   return;
 }
-fnShowProducts(vdat){
+function fnShowProducts(vdat){
   for ( x of vdat)
 	      console.log(x[1]+"    "+x[2]);
 }
-fnCalCart(){
+function fnCalCart(){
   let iv=0;
   let v=fnModel("read");
       for ( vx of v)
         iv+=vx[1];
       return iv;
 }
-fnTopRatedProduct(){
+function fnTopRatedProduct(){
   let v=fnModel("read");
   let top=[];
       for ( vx of v)
@@ -43,7 +43,7 @@ fnTopRatedProduct(){
         }
   return top;
 }
-fnShortProduct(){
+function fnShortProduct(){
   let v=fnModel("read");
   let vShorted=[];
   let a:string;
@@ -56,9 +56,9 @@ fnShortProduct(){
         }
   return vShorted;
 }
-fnFileOutput(){}
+function fnFileOutput(){}
 
-fnModel(key,dat){
+function fnModel(key,dat){
   switch (key) {
     case "read":
       return listCart.pop();
@@ -75,7 +75,7 @@ fnModel(key,dat){
   }
 }
 
-fnControler(key){  
+function fnControler(key){  
   switch (key) {
     case "option":
       key=rLS.keyIn('');
@@ -170,7 +170,7 @@ fnControler(key){
       break;
   }
 }
-fnVista(a,vdat){
+function fnVista(a,vdat){
   switch (a){
     case "weelcome":
       console.log("Bienvenidos a su carro de compras");      
