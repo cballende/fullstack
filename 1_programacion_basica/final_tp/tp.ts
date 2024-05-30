@@ -1,3 +1,5 @@
+import { stringify } from "querystring";
+
 /* ################################################################################
 #
 # Simple Cart
@@ -15,8 +17,22 @@
 #
 ############################################################################### */
 let rLS = require('readline-sync');
-let listCart = [];
+let fS = require('fs');
+
+const LGTH_LST:number =7;
+const LGTH_LST_ELE:number =2;
+
+let listCart: string[][]= new Array(LGTH_LST);
+listCart[0]: string[]= new Array(LGTH_LST_ELE);
+listCart[1]: string[]= new Array(LGTH_LST_ELE);
+listCart[2]: string[]= new Array(LGTH_LST_ELE);
+listCart[3]: string[]= new Array(LGTH_LST_ELE);
+listCart[4]: string[]= new Array(LGTH_LST_ELE);
+listCart[5]: string[]= new Array(LGTH_LST_ELE);
+listCart[6]: string[]= new Array(LGTH_LST_ELE);
+
 let exit=true;
+
 function fnInputProducts(sN,iP){  
   dat=[sN,iP];
   fnModel('write',dat);
@@ -66,7 +82,34 @@ function fnSortProduct(){
   } 
   return vShorted;
 }
-function fnFileOutput(){}
+function fnFile(sOp,vData){
+  switch (sOp) {
+    case 'read':
+      
+      break;
+    case 'create':
+      fS.open('sesion.txt','W',function (err, file) {
+        if (err) throw err;
+        console.log('Open!');
+      });      
+      break;
+    case 'update':
+      fs.writeFile('sesion.txt', vData.toString, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      break;
+    case 'delete':
+      console.log('Deleted!');
+      break;
+    case 'rename':
+      console.log('Renamed!');
+      break;  
+  
+    default:
+      console.log('No operation!');
+      break;
+  }
+}
 
 function fnModel(key,dat){
   switch (key) {
