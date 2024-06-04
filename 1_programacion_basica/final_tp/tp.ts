@@ -102,16 +102,24 @@ function fnTopRatedProduct():string[]{
 */
 function fnBotRatedProduct():string[]{
   let vDat:string[][]=fnModel("read");
+  let top:string[]=[vDat[0][0],vDat[0][1]];
   let min:number=Number(vDat[0][1]);
   let i:any;
-  let top:string[]=[];
+  console.log('alerta');
+
+  console.log(min);
 
       for ( i in vDat)
+        console.log(vDat[i][1]);
         if(min>=Number(vDat[i][1])){
           top[0]=vDat[i][0];
           top[1]=vDat[i][1];
           min=Number(vDat[i][1]);
+          console.log('prueba');
+          console.log(i);
+          console.log(top);
         }
+
   return top;
 }
 /**
@@ -213,8 +221,8 @@ function fnModel(sKey:string,vDat:string[]=[]):string[][]{
     case "read":
       if(listCart.length>0)  
         return listCart;
-      return [["FAIL"]]
-      //return [['algo','2'],['algo','1']];
+      return [["FAIL"]];
+      //return [['pro_1','2'],['pro_2','3'],['pro_3','4'],['pro_4','5'],['pro_5','6'],['pro_6','7'],['pro_7','8']];
     break;
 
     case "write":
@@ -228,7 +236,7 @@ function fnModel(sKey:string,vDat:string[]=[]):string[][]{
       return [["none"]];
     break;
   }
-  //return [["none"]];
+  return [["none"]];
 }
 
 /**
