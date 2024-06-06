@@ -8,8 +8,7 @@ body, html {
 }
 
 /* Style tab links */
-.tab{
-}
+
 .tabLink {
   float: left;
   border: none;
@@ -25,6 +24,9 @@ body, html {
   background-color: #777;
 }
 
+.closeTab:hover {
+  color: yellowgreen;
+}
 /* Style the tab content (and add height:100% for full page content) */
 .tabContent {
   color: white;

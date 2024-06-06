@@ -29,6 +29,17 @@ function agregar_NewGeneracion(generacion){
 
 }	
 
+function newTab() {
+  //console.log($(".openTab:last"));
+  let a=$("#defauldOpen").clone();
+  let b=$("#generacion_0").clone();
+  
+  a.attr({'class':'active','id':'5'}).css("display","");
+  console.log($(".openTab:last").before(a));
+
+  //b.appendTo($(".tabContent").last());
+}
+
 
 function openTap(pageName, elmnt, color) {
   // Hide all elements with class="tabcontent" by default */
@@ -45,31 +56,24 @@ function openTap(pageName, elmnt, color) {
   }
 
   // Show the specific tab content
-  $("#"+pageName).css("display" , "block");
-
   // Add the specific color to the button used to open the tab content
-  elmnt.css("backgroundColor" , "color");
-
+  $("#generation_"+pageName).css({"display":"block","backgroundColor" : color});
+  elmnt.css("backgroundColor" , color);
+  
 }
 
-function closeTap(pageName, elmnt) {
+function closeTap(elmnt) {
   // Hide all elements with class="tabcontent" by default */
   let i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
+  elmnt.parent().css("display" , "none");
+
+  tabcontent = $(".tabContent");
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].css("display" , "none");
+    tabcontent[i].style.display = "";
   }
-
-  // Remove the background color of all tablinks/buttons
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-
-  // Show the specific tab content
-    $("#"+pageName).css("display" , "");
-  // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
+  
+  // hide the specific tab
+    elmnt.parent().css("display" , "none");
 }
 
 // Get the element with id="defaultOpen" and click on it

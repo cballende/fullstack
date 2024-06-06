@@ -23,21 +23,44 @@ $(document).ready(function(){
 
 	/* ---------- Submenu  ---------- */
 	
-	$('.openTab').click(function(e){
+	$('.openTab').click(function(){
 
-		//e.preventDefault();
-		console.log('Ingresa');
-		console.log($(this));
+		//e.preventDefault();		
+		console.log('open');
 
-		//$(this).parent().find('ul').slideToggle();
-		openTap($(this).children().first().html(), $(this), $(this).attr("color"));
+		openTap(
+			$(this).children().first().attr("id"), 
+			$(this), 
+			$(this).children().first().attr("color")
+			);
 	
 	});
 
-	$(".closeTab").click(function(e){
-		closeTap($(this).prev().html(), $(this));
-		
+	$(".closeTab").on({
+
+		click:function(){
+
+			closeTap($(this));
+			event.stopImmediatePropagation();
+		},
+
+		mouseenter:function(){
+
+			$(this).children().first().attr("class","fa fa-circle");		
+			
+		},
+		mouseleave:function(){
+
+			$(this).children().first().attr("class","fa fa-times");		
+			
+		}
+
 	});
+
+	$("#newTab").click(function () {
+		newTab();
+	});
+
 
 	$("#defaultOpen").click(); 
 
