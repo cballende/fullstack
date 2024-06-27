@@ -31,13 +31,29 @@ function agregar_NewGeneracion(generacion){
 
 function newTab() {
   //console.log($(".openTab:last"));
-  let a=$("#defauldOpen").clone();
-  let b=$("#generacion_0").clone();
-  
-  a.attr({'class':'active','id':'5'}).css("display","");
-  console.log($(".openTab:last").before(a));
+  let a=$("#defaultOpen").clone();
+  let b=$("#generation_0").clone();
+  let openTabs = $(".openTab");
+  let tabcontents = $(".tabContent");
 
-  //b.appendTo($(".tabContent").last());
+  for (i = 0; i < openTabs.length; i++) {
+    openTabs[i].style.backgroundColor = "";
+  }
+  for (i = 0; i < tabcontents.length; i++) {
+    tabcontents[i].style.display = "none";
+  }
+
+  a.attr({'id':''});
+  a.css({
+    "backgroundColor" : "#"+Math.floor(Math.random() * 10)+Math.floor(Math.random() * 10)*Math.floor(Math.random() * 10),
+    "display":"block",
+  });
+  let n=Number(openTabs.last().children().attr('id'))+1;
+  a.children('a').first().attr('id',n).html('Generation '+n);
+  $("#newTab").before(a);
+
+  b.attr('id','generation_'+n).children().first().html('Generation '+n);
+  $(".tabContent").last().after(b);
 }
 
 
