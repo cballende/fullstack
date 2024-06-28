@@ -1,0 +1,6 @@
+Pagina Web estatica:
+- 5 cards.
+Contenidos cards:
+- Titulo, nombre y apellido persona.
+- Direccion, edad, dni.
+- Boton deshabilitar la card (bloquedo de ingreso).

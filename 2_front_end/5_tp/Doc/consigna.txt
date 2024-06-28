@@ -1,0 +1,7 @@
+Ejercicio entregable obligatorio: 
+	Dada una lista de tareas, permitir que el usuario agregue dinámicamente 
+nuevas tareas y mostrarlas sin necesidad de actualizar la página.
+
+Segundo Ejercicio: 
+	Crear un header, un content con dos divs en posicion de fila,y un footer desde javascript
+Aplicarles propiedades de flexbox con Javascript, colores, fondo, etc (libre). (edited) 
