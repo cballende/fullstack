@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Super Digi</title>
+    <title id="title_pg"></title>
     <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
@@ -9,13 +9,15 @@
     
     <header id="intro" class="header conteiner">
       <div id="profile"><img src="img/profile.jpeg" alt=""></div>
-      <div id="title">
-        <h1>DIGITAL</h1>
-        <h2>SUPERMERCADOS</h2>
+      <div id="" class="shop">
+        <h1 id="shop"></h1>
+        <h2 id="title"></h2>
       </div>
       <!-- breve descripción.-->
       <div id="bref">
-        <p>"Since 1945 against capital, every year more poor" Jea Pepe.</p>
+        <p id="legend">
+          <span class="cite"></span><span class="autor"></span>
+        </p>
       </div>
       <nav>
 
@@ -24,88 +26,74 @@
 
     <main id="main" class="main conteiner">
       <div class="tabLink openTab " id="defaultOpen" >
-        <a class="" id="0"color="red">Ancestors </a>      
-        <a class="closeTab" ><i class="fa fa-times"></i></a>
+        <a class="tabTitle" id="0"color="red"></a>      
       </div>
       <!--
       <button class="tabLink" onclick="openPage('Home', this, 'red')">Home</button>
       -->
       <div class="tabLink openTab">
-        <a class="" id="1"color="blue">Generation 1 </a>
-        <a class="closeTab" ><i class="fa fa-times"></i></a>
+        <a class="tabTitle" id="1"color="blue"></a>
       </div>
       <div class="tabLink openTab">
-        <a class="" id="2"color="orange">Generation 2 </a>
-        <a class="closeTab" ><i class="fa fa-times"></i></a>
+        <a class="tabTitle" id="2"color="orange"></a>
       </div>
-      <div class="tabLink openTab">
-        <a class="" id="3"color="green">Generation 3 </a>
-        <a class="closeTab" ><i class="fa fa-times"></i></a>
-      </div>
-      <div id="newTab" class="tabLink ">
-        <a class="" ><i class="fa fa-plus"></i> </a>
-      </div>
+      
 
       <div id="generation_0" class="tabContent">
-        <h3>Ancestors</h3>
+        <h3 class="tabCntTitle"></h3>
         <p></p>
       </div>
 
       <div id="generation_1" class="tabContent">
-        <h3>Son</h3>
+        <h3 class="tabCntTitle"></h3>
         <p></p>
       </div>
 
       <div id="generation_2" class="tabContent">
-        <h3>Grandson</h3>
+        <h3 class="tabCntTitle"></h3>
         <p></p>
       </div>
-
-      <div id="generation_3" class="tabContent">
-        <h3>Great-grandson</h3>
-        <p></p>
-      </div>      
 
     </main>
 
     <footer>
       <div class="foot conteiner">
         <div class="contact">
-          <h3>Sebastián Allende</h3>
-              Electronic Technology Specialist
+          <h3 id="shop_F" class="shop"></h3>
+          <p id="legend_F"></p>
           <br>
           <h4>Ask Us A Question</h4>
-          <a href="mailto: info@innovar-groupmdq.com.ar " class="_color-titulo"> info@innovar-groupmdq.com.ar </a>                        
+          <a id="emailCont" href="mailto: info@innovar-groupmdq.com.ar " class="_color-titulo"> info@innovar-groupmdq.com.ar </a>                        
           <br>
-          <h4>See More</h4>
-          <a href=" www.innovar-groupmdq.com.ar" class="_color-titulo"> www.innovar-groupmdq.com.ar</a>
         </div>
         <div class="address">
           <h3>Address</h3>
-              Av. P. 3110
-          <br>
-          7150 Ayacucho
-          <br>
-          Teléfono:
-          <a href="tel:+5402236686874" class="_color-titulo">0223 668-6874</a>
+          <p id="add"></p><p>
+            <span id="zip"></span>
+            <span id="city"></span>            
+          </p>
+          Phone:<a id="pho" href="tel:+" class="_color-titulo"></a>
         </div>
         <div class="social">
-          <h3>Follow Me</h3>
+          <h3>Follow Us</h3>
           <dl>
             <dd>
-              <a href="https://www.linkedin.com/in/sebasti%C3%A1n-allende-a7aba292/"><i class="fa fa-linkedin-square"></i> Linkedin</a>
+              <a id="lk" href=""><i class="fa fa-linkedin-square"></i> Linkedin</a>
             </dd>
             <dd>
-              <a href="https://x.com/CbasAll"><i class="fa fa-twitter-square"></i>Twitter</a>
-            </dd>
-            <dd>            
-              <a href="https://github.com/cballende"><i class="fa fa-github-square"></i>Github</a>
-            </dd>
+              <a id="tw" href=""><i class="fa fa-twitter-square"></i> Twitter</a>
+            </dd>            
             <dd>
-              <a href="https://www.instagram.com/sebastianallende80/"><i class="fa fa-instagram "></i>Instagram</a>
+              <a id="ins" href=""><i class="fa fa-instagram "></i> Instagram</a>
             </dd>
           </dl>
 
+        </div>
+        <div class="by"> 
+          <p id="by"></p><p>
+            <span id="img"></span>
+            <span id="link"></span>            
+          </p>
         </div>
       </div>
     </footer>    
