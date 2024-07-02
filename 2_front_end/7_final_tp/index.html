@@ -39,6 +39,7 @@
 
     <main >
       <div id="main" class="main conteiner">
+        <!--HOME -->
         <div id="generation_0" class="tabContent">
           <h3 class="tabCntTitle"></h3>
           <p>The <b>Kwik-E-Mart</b> is a convenience store in <a href="/wiki/Springfield" title="Springfield">Springfield</a>,
@@ -68,15 +69,134 @@
             answer any of Apu's, instead saying, "Thank you, come again."             
           </p>
         </div>
-  
+        <!--SHOP -->
         <div id="generation_1" class="tabContent">
           <h3 class="tabCntTitle"></h3>
+          <div id="inventory" class="table">
+            <table>
+              <thead> 
+                <tr>
+                  <th></th>
+                  <th>Code</th>
+                  <th>Item</th>
+                  <th>Brand</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="{iId}" style="display: none;">									
+                  <td>
+                    <input type="checkbox" name="colores" value="{iId}">
+                  </td>
+                  <td class="center noclick">{sModel}</td>
+                  <td class="center noclick">{sName}</td>
+                  <td class="center noclick">{sMarca}</td>
+                  <td class="center noclick">{sPrice}</td>
+                  <td class="center noclick"><input type="text" name="colores" value="0" placeholder="Quantity"></td>          
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="detail">
+            <table>
+              <thead> 
+                <tr>
+                  <th>Amount Items</th>
+                  <th>Total Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="detail">									                  
+                  <td class="center noclick">{sTQty}</td>
+                  <td class="center noclick">{sTPrice}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <button class="">Clear</button>
+            <button class="">Buy</button>
+          </div>
           <p></p>
         </div>
-  
+        <!--CONTACT -->
         <div id="generation_2" class="tabContent">
           <h3 class="tabCntTitle"></h3>
-          <p></p>
+          <div class="base col-88">
+
+            <div class="col-86 rowfixed" >
+            <div class="col-3 gd">          
+              <div class="logo col-6" align="center">
+                  <a href="index.php"><img src="img/logoL.png" alt=""></a>
+              </div>
+              <div class="logo col-5">
+                  <dl class="footer-contact-list">                        
+                      <dt>
+                        <span id="add" class="add"><i class="fa fa-map-marker"></i></span> -
+                        <span id=""    class="city"></span>
+                      </dt>
+                      <dt>
+                        <span id="pho" class="pho"><i class="fa fa-phone"></i></span>                       
+                      </dt>
+                      <dt>
+                        <span class="see"> Follow us in social medias </span>    
+                      </dt>
+                      <dt>
+                        <span id="facebook" >  <a  href="">
+                        <i class="fa fa-facebook-square " ></i></a></span>
+                      
+                        <span id="instagram" >  <a href="">
+                          <i class="fa fa-instagram " ></i></a>
+                        </span>
+                      </dt>
+                  </dl>
+              </div>
+            </div>
+            <div class="col-3">
+              <h2 class="_color-titulo _no-marg">CONTACTO</h2>
+              <div id="contact-form" >
+                <form action="" method="post" name="pedido" id="formulario">
+                  <fieldset>
+                    <div class="group">
+                      <input id="first_name" name="firstname" type="text" required class="validate input-field required" />
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label for="firstname">Name</label>
+                    </div>
+    
+                    <div class="group " >
+                      <input id="last_name" name="lastname" type="text" required class="validate input-field required" />
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label for="lastname">Surname</label>
+                    </div>
+                    <div class="group ">
+                      <input id="email" name="email" type="mail" required class="validate input-field required mail"/>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label for="email">Email</label>
+                    </div>  
+                    <div class="group ">
+                      <input id="phone" name="phone" type="tel" required class="validate input-field required mail"/>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label for="phone">Phone</label>
+                    </div>
+        
+                    <div class="group ">
+                      <textarea id="message" name="message" required type="textarea" class="textarea input-field"></textarea>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label for="message">Coments</label>
+                    </div>
+                    <input id="submit" type="submit" value="Ask">
+                  </fieldset>
+                  <div class="button"><a class="simpleCart_checkout" href=""><span class="checkout_btn">Ask</span></a></div>
+                  <small>
+                    <p>Your data will be sended. Take in mind that data are important for we can able to make a succefull query</p>
+                    <p>Thanks you for visit and trust us.</p>
+                  </small>
+                </form>
+        
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -85,39 +205,35 @@
       <div class="foot conteiner">
         <div class="contact">
           <h3 id="shop_F" class="shop"></h3>
-          <p id="legend_F"></p>
+          <p id="legend_F" class="legend"></p>
           <br>
           <h4>Ask Us A Question</h4>
-          <a id="emailCont" href="mailto: info@innovar-groupmdq.com.ar " class="_color-titulo"> info@innovar-groupmdq.com.ar </a>                        
+          <a id="emailCont" class="emailCont" href="mailto: info@innovar-groupmdq.com.ar " class="_color-titulo"> info@innovar-groupmdq.com.ar </a>                        
           <br>
         </div>
         <div class="address">
           <h3>Address</h3>
-          <p id="add"></p><p>
+          <p id="add_F" class="add"></p><p>
             <span id="zip"></span>
-            <span id="city"></span>            
+            <span id="city"></span>
           </p>
-          Phone:<a id="pho" href="tel:+" class="_color-titulo"></a>
+          Phone:<a id="pho_F" class="pho" href="tel:+" class="_color-titulo"></a>
         </div>
         <div class="social">
           <h3>Follow Us</h3>
           <dl>
-            <dd>
-              <a id="lk" href=""><i class="fa fa-linkedin-square"></i> Linkedin</a>
-            </dd>
-            <dd>
-              <a id="tw" href=""><i class="fa fa-twitter-square"></i> Twitter</a>
-            </dd>            
-            <dd>
-              <a id="ins" href=""><i class="fa fa-instagram "></i> Instagram</a>
-            </dd>
+            <dt>
+              <a id="ins_F" href=""><i class="fa fa-instagram "></i> Instagram</a>
+            </dt>
+            <dt>
+              <a id="fb_F" href=""><i class="fa fa-facebook-square"></i> Facebook</a>
+            </dt>
           </dl>
-
         </div>
-        <div class="by"> 
+        <div class="by">
           <p id="by"></p><p>
             <span id="img"></span>
-            <span id="link"></span>            
+            <span id="link"></span>
           </p>
         </div>
       </div>

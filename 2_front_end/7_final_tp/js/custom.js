@@ -31,17 +31,26 @@ const legendF="The first Springfield's digital supermarket";
 const add="742 EverGreen Terrace";
 const zip="(01101)";
 const city="Springfield";
-const pho="(413)456-5221";
+const pho="(413) 456-5221";
 const emailCont="info@Kwik-E-Mart.com";
 /* social media */
 const lk="";
 const tw="";
 const ins="";
-
+/* items */ 
+// Json {"name":"","brand":"","code":"","price":"","stock":""}
+const items={"inventory":[
+													{"name":"Hotdog","brand":"Crosty","code":"1","price":"10","stock":"100"},
+													{"name":"Dun","brand":"Dunky","code":"2","price":"12","stock":"10"},
+													{"name":"Ticket","brand":"Loto6","code":"3","price":"5","stock":"12"},
+													{"name":"Icecrem","brand":"Stimpy","code":"4","price":"20","stock":"100"},]};
+//const obj=JSON.parse(items);
+console.log(items.inventory[0]);
 /* Page suit */
 
 $(document).ready(function(){
 
+	/* Main data */
 	$("#title_pg").html(titleTab);
 	$("#title").html(title);
 	$("#shop").html(shop);
@@ -56,11 +65,28 @@ $(document).ready(function(){
 	//$("#title_tab").html(titleTab);
 	$("#shop_F").html(shop);
 	$("#legend_F").html(legendF);
-	$("#add").html(add);
-	$("#zip").html(zip);
-	$("#city").html(city);
-	$("#pho").attr("href","tel:+"+pho).html(pho);
-	$("#emailCont").html(emailCont);
+	$(".add").html(add);
+	$(".zip").html(zip);
+	$(".city").html(city);
+	$(".pho").attr("href","tel:+"+pho).html(pho);
+	$(".emailCont").html(emailCont);
+
+	/* data for table */
+	
+	items.inventory.each(function(index){
+		let rw=$("#inventory tbody").children().clone();
+		let item=this;
+
+		rw.children().eq(0).attr("value",index);
+		rw.children().eq(1).html(this.code);
+		rw.children().eq(2).html(this.name);
+		rw.children().eq(3).html(this.brand);
+		rw.children().eq(4).html(this.price);
+
+		$(this).html(tabs[index]);
+		//alert($(this).attr("name"));
+		$("#inventory tbody").appen(rw);
+	});
 
 });
 
