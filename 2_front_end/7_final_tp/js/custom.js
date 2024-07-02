@@ -53,7 +53,6 @@ $(document).ready(function(){
 		//alert($(this).attr("name"));
 	});
 
-
 	//$("#title_tab").html(titleTab);
 	$("#shop_F").html(shop);
 	$("#legend_F").html(legendF);
