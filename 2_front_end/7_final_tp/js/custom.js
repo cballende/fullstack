@@ -45,7 +45,7 @@ const items={"inventory":[
 													{"name":"Ticket","brand":"Loto6","code":"3","price":"5","stock":"12"},
 													{"name":"Icecrem","brand":"Stimpy","code":"4","price":"20","stock":"100"},]};
 //const obj=JSON.parse(items);
-console.log(items.inventory[0]);
+console.log(items.inventory);
 /* Page suit */
 
 $(document).ready(function(){
@@ -82,10 +82,10 @@ $(document).ready(function(){
 		rw.children().eq(2).html(this.name);
 		rw.children().eq(3).html(this.brand);
 		rw.children().eq(4).html(this.price);
-
+		rw.ccs("diplay","");
 		$(this).html(tabs[index]);
 		//alert($(this).attr("name"));
-		$("#inventory tbody").appen(rw);
+		$("#inventory tbody").append(rw);
 	});
 
 });
