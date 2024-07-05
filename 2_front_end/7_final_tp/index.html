@@ -85,7 +85,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr id="{iId}" style="display: none;">									
+                <tr id="" style="display: none;">									
                   <td>
                     <input type="checkbox" name="colores" value="{iId}">
                   </td>
@@ -93,7 +93,7 @@
                   <td class="center noclick">{sName}</td>
                   <td class="center noclick">{sMarca}</td>
                   <td class="center noclick">{sPrice}</td>
-                  <td class="center noclick"><input type="text" name="colores" value="0" placeholder="Quantity"></td>          
+                  <td class="center noclick"><input type="text" name="colores" value="0" placeholder="Quantity"></td>
                 </tr>
               </tbody>
             </table>
@@ -107,13 +107,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr id="detail">									                  
-                  <td class="center noclick">{sTQty}</td>
-                  <td class="center noclick">{sTPrice}</td>
+                <tr id="detail">				                  
+                  <td id="qt" class="center noclick">0</td>
+                  <td id="pt" class="center noclick">0</td>
                 </tr>
               </tbody>
             </table>
-          </div>
+          </div>          
           <div>
             <button class="">Clear</button>
             <button class="">Buy</button>

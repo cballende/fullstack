@@ -37,15 +37,23 @@ const emailCont="info@Kwik-E-Mart.com";
 const lk="";
 const tw="";
 const ins="";
+
+/* 
+-----------------Global variables---------------------
+*/
 /* items */ 
 // Json {"name":"","brand":"","code":"","price":"","stock":""}
 const items={"inventory":[
-													{"name":"Hotdog","brand":"Crosty","code":"1","price":"10","stock":"100"},
-													{"name":"Dun","brand":"Dunky","code":"2","price":"12","stock":"10"},
-													{"name":"Ticket","brand":"Loto6","code":"3","price":"5","stock":"12"},
-													{"name":"Icecrem","brand":"Stimpy","code":"4","price":"20","stock":"100"},]};
+													{"name":"Hotdog","brand":"Crosty","code":"2","price":"10","stock":"100"},
+													{"name":"Dun","brand":"Dunky","code":"1","price":"12","stock":"10"},
+													{"name":"Ticket","brand":"Loto6","code":"4","price":"5","stock":"12"},
+													{"name":"Icecrem","brand":"Stimpy","code":"3","price":"20","stock":"100"},]};
 //const obj=JSON.parse(items);
 console.log(items.inventory);
+/* BK */
+let totalCart={"cart":[{"id":"","q":""}]};
+console.log(totalCart);
+
 /* Page suit */
 
 $(document).ready(function(){
@@ -73,19 +81,22 @@ $(document).ready(function(){
 
 	/* data for table */
 	
-	items.inventory.each(function(index){
-		let rw=$("#inventory tbody").children().clone();
-		let item=this;
+	items.inventory.forEach(function(value, index, array){
+		let rw=$("#inventory tbody").children().first().clone();
+		let rb=rw.children();
+		rw.attr("id",index);
 
-		rw.children().eq(0).attr("value",index);
-		rw.children().eq(1).html(this.code);
-		rw.children().eq(2).html(this.name);
-		rw.children().eq(3).html(this.brand);
-		rw.children().eq(4).html(this.price);
-		rw.ccs("diplay","");
-		$(this).html(tabs[index]);
-		//alert($(this).attr("name"));
+		rb.eq(0).attr("value",index);
+		rb.eq(0).children(":first").attr("value",index);
+
+		rb.eq(1).html(value.code);
+		rb.eq(2).html(value.name);
+		rb.eq(3).html(value.brand);
+		rb.eq(4).html(value.price);
+		rw.css("display","block");
+		//$(this).html(tabs[index]);
 		$("#inventory tbody").append(rw);
+		//alert($(this).attr("name"));
 	});
 
 });
@@ -102,14 +113,12 @@ $(document).ready(function(){
 	$('.openTab').click(function(){
 
 		//e.preventDefault();		
-		console.log('open');
-
+		//console.log('open');
 		openTap(
 			$(this).children().first().attr("id"), 
 			$(this), 
 			$(this).children().first().attr("color")
 			);
-	
 	});
 
 	$(".closeTab").on({
@@ -132,12 +141,22 @@ $(document).ready(function(){
 		}
 
 	});
+	/* setup */
+	$("#defaultOpen").click(); 
 
-	$("#newTab").click(function () {
-		newTab();
+	/* ---------- Table  ---------- */
+
+	/* check*/
+	//let ck= $("#inventory tr:gt(1) :checkbox");
+	
+	$("#inventory tr:gt(1) :checkbox").change(function(e){
+		let id,q;
+		id=$(this).siblings();
+		console.log($(this).parent().siblings(":last :first-child").val());
+		q= $(this).siblings();
+		ck= this.checked;
+		updateCart(id ,q ,ck );
 	});
 
-
-	$("#defaultOpen").click(); 
 
 });
