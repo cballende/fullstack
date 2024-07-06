@@ -49,10 +49,11 @@ const items={"inventory":[
 													{"name":"Ticket","brand":"Loto6","code":"4","price":"5","stock":"12"},
 													{"name":"Icecrem","brand":"Stimpy","code":"3","price":"20","stock":"100"},]};
 //const obj=JSON.parse(items);
-console.log(items.inventory);
+//console.log(items.inventory);
 /* BK */
-let totalCart={"cart":[{"id":"","q":""}]};
-console.log(totalCart);
+// element : {"id":"i","q":"i"}
+let totalCart={"cart":[]};
+//console.log(totalCart);
 
 /* Page suit */
 
@@ -126,6 +127,7 @@ $(document).ready(function(){
 		click:function(){
 
 			closeTap($(this));
+			/* deprecated, must to reemplace ): */
 			event.stopImmediatePropagation();
 		},
 
@@ -148,15 +150,38 @@ $(document).ready(function(){
 
 	/* check*/
 	//let ck= $("#inventory tr:gt(1) :checkbox");
-	
+
 	$("#inventory tr:gt(1) :checkbox").change(function(e){
-		let id,q;
-		id=$(this).siblings();
-		console.log($(this).parent().siblings(":last :first-child").val());
-		q= $(this).siblings();
+		let id,q,ck;
+		id=$(this).val();
+		q = $(this).parent().siblings(":last").children().val(); 
 		ck= this.checked;
+		//console.log(id ,q ,ck );
 		updateCart(id ,q ,ck );
+		updateDetails();
+
 	});
 
+	$("#inventory tr:gt(1) :text").change(function(e){
+		let id,q,ck;
+		q=$(this).val();
+		id = $(this).parent().parent().attr("id");
+		ck = $(this).parent().siblings(":first").children().is(":checked"); 
+		if (ck) {
+			updateCart(id ,q ,ck);
+			//console.log(id ,q,ck);
+		}
+		updateDetails();
+	});
+
+	$("#buy_cart").click(function(e){
+		checkoutCart();
+	});
+	
+	$("#clr_cart");
+
+	$("#ask").click(function(e){
+		fnFile("update");
+	});
 
 });

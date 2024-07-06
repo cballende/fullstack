@@ -93,12 +93,12 @@
                   <td class="center noclick">{sName}</td>
                   <td class="center noclick">{sMarca}</td>
                   <td class="center noclick">{sPrice}</td>
-                  <td class="center noclick"><input type="text" name="colores" value="0" placeholder="Quantity"></td>
+                  <td class="center noclick"><input type="text" value="0" placeholder="Quantity"></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="detail">
+          <div id="details" class="details">
             <table>
               <thead> 
                 <tr>
@@ -115,8 +115,8 @@
             </table>
           </div>          
           <div>
-            <button class="">Clear</button>
-            <button class="">Buy</button>
+            <button id="clr_cart" class="exit">Clear</button>
+            <button id="buy_cart" class="succefull">Buy</button>
           </div>
           <p></p>
         </div>
@@ -154,7 +154,7 @@
               </div>
             </div>
             <div class="col-3">
-              <h2 class="_color-titulo _no-marg">CONTACTO</h2>
+              <h2 class="_color-titulo _no-marg">CONTACT TO US</h2>
               <div id="contact-form" >
                 <form action="" method="post" name="pedido" id="formulario">
                   <fieldset>
@@ -185,9 +185,8 @@
                       <span class="highlight"></span><span class="bar"></span>
                       <label for="message">Coments</label>
                     </div>
-                    <input id="submit" type="submit" value="Ask">
+                    <input id="ask" type="submit" value="Ask">
                   </fieldset>
-                  <div class="button"><a class="simpleCart_checkout" href=""><span class="checkout_btn">Ask</span></a></div>
                   <small>
                     <p>Your data will be sended. Take in mind that data are important for we can able to make a succefull query</p>
                     <p>Thanks you for visit and trust us.</p>
