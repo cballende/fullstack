@@ -34,9 +34,6 @@ function closeTap(elmnt) {
     elmnt.parent().css("display" , "none");
 }
 
-// Get the element with id="defaultOpen" and click on it
-
-
 function updateCart(id,q,ck) {
   // Hide all elements with class="tabcontent" by default */
   if (totalCart.cart.some(myFunc_1)) {
@@ -115,7 +112,9 @@ function checkoutCart(params) {
   }else if(totalCart.cart.some(myFunc_2)){
     /*Alert not item*/
     window.alert("¡Some products is set whitout amount!");
-  } else {
+  } else if(!totalCart.cart.length){
+    window.alert("¡Please add some product to the cart!");
+  }else {
     window.alert("¡Thanks for you purchase!. You have a invoice of $"+fnInvoice().id);
   }
 
@@ -177,7 +176,6 @@ function fnFile(sOp){
   }
   return;
 }
-
 
 function fnWriteFile(fileName,sJson){
   const link = document.createElement("a");

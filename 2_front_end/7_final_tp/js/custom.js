@@ -1,19 +1,6 @@
 
 /* Selector for set something*/
 
-/*
-$("#editFolder-nav-tabs li:last" ).child("a:first").attr("onclick","'agregar_NewGeneracion('"+(++gen)+ "');'");
-		
-$("#descripcionEdit"+s+" input" ).each(function(index){
-	$(this).attr("name",$(this).attr("name")+s);
-	//alert($(this).attr("name"));
-});
-
-$("#descripcionEdit"+s+" div" ).each(function(index){
-	$(this).attr("id",$(this).attr("id")+s);
-	//alert($(this).attr("name"));
-});
-*/
 
 /*
 	----------Page Const -------------
@@ -144,6 +131,7 @@ $(document).ready(function(){
 
 	});
 	/* setup */
+	// Get the element with id="defaultOpen" and click on it
 	$("#defaultOpen").click(); 
 
 	/* ---------- Table  ---------- */
