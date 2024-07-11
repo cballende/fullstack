@@ -1,4 +1,5 @@
-body{
+/* GENERAL */
+.body_{
   background-color: white;
   font-family: Arial, sans-serif; 
   color: #333;
@@ -16,8 +17,34 @@ div{
   padding-left: 5%;
 }
 
-/* Set height of body and the document to 100% to enable "full page tabs" */
+.flex-container{
+  display: flex;
+}
 
+/* Layout Elements */
+
+.header{
+  height: auto;
+  width: auto;
+  padding: 0% 10%;
+  flex-flow: row wrap;
+  justify-content: space-between ;
+  background-color: #eba04b;
+  background: img/base.jpeg;
+  background-image: img/base.jpeg;
+}
+
+.header div{
+  margin-bottom: 5px;
+}
+
+.nav{
+
+}
+
+.menu{
+
+}
 
 /* Style tab links */
 
@@ -44,8 +71,67 @@ div{
   color: white;
   display: none;
   padding: 100px 20px;
-  min-height: 600px;
+  min-height: 400px;
 }
+
+
+img#profile{
+  width: 50%;
+}
+
+#title{
+ width: 30%;
+ margin-right: auto;
+}
+
+.main{
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center ;
+  align-content:center;
+
+  min-height: 600px;
+  width: 800px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.nota > p {
+  text-indent: 1em;
+}
+
+.body_{
+  height: 500px;
+  flex-flow: row wrap;
+  justify-content: space-between ;
+  border: 0;
+
+}
+.nota{
+  min-height: 100px ;
+  
+  padding: 20px;
+}
+
+h1{
+  padding-left: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: xxx-lare;
+  ;
+}
+h2{
+  padding-left: 20px;
+}
+p {
+  font-weight: bolder;
+}
+.image{
+  text-align: center;
+  width: 50%;
+  height: 50%;
+}
+
+
 
 /* Style tables */
 
