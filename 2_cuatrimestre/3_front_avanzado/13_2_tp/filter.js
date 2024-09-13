@@ -2,7 +2,7 @@
 /* ################################################################################
 #
 # 
-# File name : filter.ts
+# File name : filter.js
 # 
 # Copyright (c)
 #
@@ -15,35 +15,6 @@
 # @license       https://
 #
 ############################################################################### */
-
-
-/*
-
-interface obj {
-  first: string;
-  second: string;
-}
-
-let names: obj[] =[
-  {first:"Jean",second:"Say"},
-  {first:"Carl",second:"Menger"},
-  {first:"Ludwing",second:"Mises"},
-  {first:"Friedrich",second:"Hayek"},
-  {first:"Karl",second:"Menger"},
-  {first:"Jesus",second:"Soto"},
-    {first:" Murray",second:"Rothbard"},
-    {first:" Milton",second:"Friedman"},
-  ];
-
-  function show( {first, second} : {first:string, second:string} ):void{
-    console.log(first+"    "+second);
-    return;
-  }
-*/
-interface obj {
-  first: string;
-  second: string;
-}
 
 let names=[
   {first:"Jean",  second:"Say"},
@@ -58,11 +29,10 @@ let names=[
   {first:"Susan",second:"Nasus"},
 ];
 
-function MyFunction( value: obj ){
+function myFunction( value ){
   return(value.first.localeCompare("Susan")==0);
 }
 
-let res= names.filter( MyFunction);
+let res = names.filter( myFunction);
 
-//console.log(res.first+" "+res.second);
 console.log(res);
