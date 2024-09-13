@@ -21,21 +21,29 @@ export class RegistroAutomotor {
   private setMueble(){
     
   }
+  
+  private putMueble(obj:Mueble){
+    this.muebles.push(obj);
+  }
 
   private updateMueble(){
     
   }
 
   private clearMueble(){
-    
   }
   
   public agregarVehiculo(vehiculo:Vehiculo):void{
     let obj:Mueble;
-    let toTrunc = (Math.random() * 10000000);
-        obj.patente = toTrunc.toFixed(0).toString();
+    let toTrunc:number;
+    let sNu:string;
+        do{
+          toTrunc = Math.random() * 10000000;
+          sNu=toTrunc.toFixed(0).toString();
+        }while(!this.buscarVehiculo(sNu));
+        obj.patente  = sNu;
         obj.vehiculo = vehiculo;
-        this.muebles.push(obj);
+        this.putMueble(obj);
   }
 
   public buscarVehiculo(patente:string):(Vehiculo|undefined){

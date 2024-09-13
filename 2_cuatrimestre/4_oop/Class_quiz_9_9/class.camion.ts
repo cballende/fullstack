@@ -1,7 +1,5 @@
 import { Vehiculo } from "./class.vehiculo";
 
-
-
 export class Camion extends Vehiculo{
 
     private ejes:string;
