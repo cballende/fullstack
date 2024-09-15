@@ -1,4 +1,11 @@
 
+interface VehAtri {
+  marca:string,
+  modelo:string,
+  cilindrada:string,
+  chasis:string
+}
+
 export class Vehiculo{
 
   protected marca:string;
@@ -6,50 +13,50 @@ export class Vehiculo{
   protected cilindrada:string;
   protected chasis:string;
 
-  constructor(o){
+  constructor(o:VehAtri){
     this.marca      = o.marca;
     this.modelo     = o.modelo;
     this.cilindrada = o.cilindrada;
     this.chasis     = o.chasis;
   }
 
-  public getMarca():string{
+  protected getMarca():string{
     return this.marca;
   }
 
-  public getModelo():string{
+  protected getModelo():string{
     return this.modelo;
   }
 
-  public getCilindrada():string{
+  protected getCilindrada():string{
     return this.cilindrada;
   }
-  public getChasis():string{
+  protected getChasis():string{
     return this.chasis;
   }
 
   
-  public setMarca(s:string):boolean{
+  protected setMarca(s:string):boolean{
     this.marca=s;
     return this.marca.localeCompare(s) == 0;
   }
 
-  public setModelo(s:string):boolean{
+  protected setModelo(s:string):boolean{
     this.modelo=s;
     return this.modelo.localeCompare(s) == 0;
   }
 
-  public setCilindrada(s:string):boolean{
+  protected setCilindrada(s:string):boolean{
     this.cilindrada=s;
     return this.cilindrada.localeCompare(s) == 0;
   }
 
-  public setChasis(s:string):boolean{
+  protected setChasis(s:string):boolean{
     this.chasis=s;
     return this.chasis.localeCompare(s) == 0;   
   }
       
-  protected toStringB():string{
+  public toStringB():string{
 
       let str:string="";
       str=  "Marca:"  +this.getMarca();

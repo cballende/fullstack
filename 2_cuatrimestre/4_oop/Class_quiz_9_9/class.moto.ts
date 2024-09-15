@@ -1,12 +1,9 @@
 import { Vehiculo } from "./class.vehiculo";
 
-
-
 export class Moto extends Vehiculo{
 
     private ejes:string;
     private ruedas:string;
-
 
     constructor(v){
 
@@ -22,16 +19,12 @@ export class Moto extends Vehiculo{
     }
 
     private getEjes():string{
-
         return this.ejes;
-
     }
 
     private getRuedas():string{
-
       return this.ruedas;
-
-  }
+    }
     public toString():string{
       return this.toStringB()+",Ejes:"+this.ejes+",Ruedas:"+this.ruedas;
   }
