@@ -17,26 +17,25 @@
 ############################################################################### */
 
 class rectangle{
-  base:number;
-  hight:number;
+  private base:number;
+  private hight:number;
 
   constructor(base:number,hight:number){
     this.base=base;
     this.hight=hight;
   }
-  set_area():number{
+  private _area():number{
     return (this.base*this.hight);
   }
-  set_perimeter(){
+  private _perimeter(){
     return (this.base+this.hight)*2;
   }
 
-  calcular_area(){
-    return this.set_area();
+  public calcular_area():(number){
+    return this._area();
   }
-  calcular_perimetro(){
-    return this.set_perimeter();
-
+  public calcular_perimetro():(number){
+    return this._perimeter();
   }
 
 }
