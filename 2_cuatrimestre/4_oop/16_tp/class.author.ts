@@ -1,43 +1,31 @@
-import { Libro } from "./Libro";
+import { Book } from "./class.book";
 
-export class Autor{
+export class Author{
     //Atributos
     private nombre:string;
-    private libros:Libro[];
-    private fechaNacimiento:Date;
+    private libros:Book[];
 
-    //Contructor
+    //Constructor
     constructor(nombre:string,fechaNacimiento:Date){
         this.nombre = nombre;
-        this.fechaNacimiento=fechaNacimiento;
         this.libros = [];
     }
     
     //Metodos
-    getNombre():string{
+    public getNombre():string{
         return this.nombre;
     }
 
-    getFechaNacimiento():Date{
-        return this.fechaNacimiento;
-    }
-
-    getLibros():Libro[]{
-        let copiaLibros:Libro[] = [];
-
+    public getLibros():Book[]{
+        let cpLibros:Book[] = [];
         this.libros.forEach(libro => {
-            let copiaLibro:Libro = new Libro(libro.getTitulo(),libro.getGenero(),libro.getAutor(),libro.getFechaLanzamiento(),libro.getEditorial(),libro.getPrecio());
-            copiaLibros.push(copiaLibro);
+            let cpLibro:Book = new Book(libro.getTitulo(),libro.getAutor(),libro.getISBM());
+            cpLibros.push(cpLibro);
         });
-
-        return copiaLibros;
+        return cpLibros;
     }
 
-    getLibro(){
-
-    }
-
-    addLibro(libro:Libro){
+    public addLibro(libro:Book){
         this.libros.push(libro);
     }
 
