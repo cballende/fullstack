@@ -65,7 +65,7 @@ export class Motor {
   }
   
   public toString():string{
-    return "Marce:"+this.marca+",Modelo:"+this.modelo+",Cilindrada:"+this.cilindrada+",Encendido:"+this.encendido+",Potencia:"+this.potencia;
+    return "Marca:"+this.marca+",Modelo:"+this.modelo+",Cilindrada:"+this.cilindrada+",Encendido:"+this.encendido+",Potencia:"+this.potencia;
   }
 
 }
