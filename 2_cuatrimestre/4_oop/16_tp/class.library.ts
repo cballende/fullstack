@@ -1,7 +1,6 @@
 import { Author } from "./class.author";
 import { Book } from "./class.book";
 
-
 export class Library{
     //Atributes
     private nameLibrary:string;

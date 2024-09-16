@@ -15,6 +15,8 @@ export class RegistroAutomotor {
     this.muebles=[];
   }
 
+  /*INER METHODs : Private */
+
   private getMuebleLgth():(number){
     return this.muebles.length;
   }
@@ -52,7 +54,6 @@ export class RegistroAutomotor {
     }
     return false;
   }
-
 
   private searchMueble(s:string):(Mueble){
     return this.muebles.filter(miFunc)[0];
@@ -112,7 +113,4 @@ export class RegistroAutomotor {
     }
     return s;
   }
-
-
-
 }
