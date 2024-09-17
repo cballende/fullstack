@@ -32,6 +32,7 @@ public  fnFile(sOp:string,s?:string):string{
       break;
     case 'update':
       fs.writeFile(this.file,s);
+      return "OK";
       break;
     case 'delete':
       console.log('Deleted!');
