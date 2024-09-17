@@ -16,7 +16,7 @@
 #
 ############################################################################### */
 
-class rectangle{
+class Rectangle{
   private base:number;
   private hight:number;
 
@@ -40,7 +40,7 @@ class rectangle{
 
 }
 
-let rec:rectangle= new rectangle(5,10);
+let rec:Rectangle= new Rectangle(5,10);
 
 console.log("El area del rectangulo es: "+rec.calcular_area());
 console.log("El perimetro del rectangulo es: "+rec.calcular_perimetro());

@@ -1,18 +1,25 @@
-import { Autor } from "./Autor";
-import { Libro } from "./Libro";
+import { Author } from "./class.author";
+import { Book } from "./class.book";
+import { Library } from "./class.library";
 
-let autor1 = new Autor("Garcia Marquez",new Date("2018-03-16"));
-let autor2 = new Autor("J.R rowling",new Date("2018-03-16"));
+let libreria_1 = new Library("Papiros","Av Siempe Viva 32",115001010);
 
-let libro1 = new Libro("Cien anios de Soledad","drama",autor1,new Date("2000-03-16"),"santillana");
-let libro2 = new Libro("El amor en tiempos de colera","drama",autor1,new Date("1999-03-16"),"santillana");
-let libro3 = new Libro("Harry Potter y la piedra Filosofal","drama",autor2,new Date("2000-03-16"),"santillana");
-let libro4 = new Libro("Harry Potter y la camara secreta","drama",autor1,new Date("2000-03-16"),"santillana");
+let autor1 = new Author("Jame Jones",new Date("1918-03-16"));
+let autor2 = new Author("J.R.R Tolkien",new Date("1890-04-16"));
 
-autor1.addLibro(libro1);
-autor1.addLibro(libro2);
+let libro1 = new Book("Delgada linea roja",autor1,"2000-03-16");
+let libro2 = new Book("Silbido",autor1,"1999-03-16");
+let libro3 = new Book("Simarillon",autor2,"2000-04-16");
+let libro4 = new Book("Los hijos de Hurin",autor2,"2000-05-16");
 
-autor2.addLibro(libro3);
-autor2.addLibro(libro4);
 
+libreria_1.agregarLibro("Delgada linea roja",autor1,"2000-03-16");
+libreria_1.agregarLibro("Silbido",autor1,"2000-03-17");
+
+libreria_1.agregarLibro("Simarillon",autor2,"2000-03-18");
+libreria_1.agregarLibro("Los hijos de Húrin",autor2,"2000-03-19");
+
+console.log(libreria_1.buscarLibroByAuthor(autor1.getNombre()));
+console.log(libreria_1.buscarLibroByName(libro1.getTitulo()) );
+console.log(libreria_1.mostrarLibros());
 

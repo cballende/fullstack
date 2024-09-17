@@ -19,7 +19,7 @@ export class Book{
         return this.titulo;
     }
 
-    public getAutor():Autor{
+    public getAutor():Author{
         return this.autor;
     }
 

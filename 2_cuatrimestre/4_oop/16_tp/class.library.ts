@@ -34,10 +34,6 @@ export class Library{
         return true;
     }
 
-    private getBook():string{
-        return this.titulo;
-    }
-
     private deleteBook(i:number):boolean{
         this.listBooks =this.listBooks.splice(i,1);
         return true;
@@ -72,13 +68,13 @@ export class Library{
         return "The book already exist";
     }
 
-    public mostrarLibros(){
+    public mostrarLibros():string{
         return this.toSting();
     }
 
     public buscarLibroByAuthor(s:string):Book[]{
         return this.listBooks.filter(libro => {
-            return (libro.getAutor().localeCompare(s)==0);
+            return (libro.getAutor().getNombre().localeCompare(s)==0);
         });
     }
 
@@ -102,7 +98,7 @@ export class Library{
     public toSting():string{
         let s:string="";
         this.listBooks.forEach(libro => {
-            s+= ">Nombre:"+libro.getTitulo()+",Autor:"+libro.getAutor()+",ISBM:"+libro.getISBM()+"/n";
+            s+= ">Nombre:"+libro.getTitulo()+", Autor:"+libro.getAutor()+", ISBM:"+libro.getISBM()+"\n";
         });
         return s;
     }

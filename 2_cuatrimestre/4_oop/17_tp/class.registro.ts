@@ -2,40 +2,47 @@
 //import { Camion }   from "./class.camion";
 //import { Moto }     from "./class.moto";
 import { Vehiculo } from "./class.vehiculo";
+import { Files } from "./class.files";
 
-interface Mueble {
+
+interface IMueble {
   patente:string,
   vehiculo:Vehiculo
 }
 export class RegistroAutomotor {
 
-  private muebles:Mueble[];
+  private muebles:IMueble[];
 
-  constructor(){
+  constructor(m?:IMueble[]){
     this.muebles=[];
+    if(m){
+      m.forEach(element => {
+        this.muebles.push(element);
+      });
+    }
   }
-
+    
   /*INER METHODs : Private */
 
   private getMuebleLgth():(number){
     return this.muebles.length;
   }
     
-  private getMueble(i:number=-1):(Mueble){
+  private getMueble(i:number=-1):(IMueble){
     let o={marca:"",modelo:"",cilindrada:"",chasis:""};
-    let obj:Mueble= { patente: "",vehiculo: new Vehiculo( o )};
+    let obj:IMueble= { patente: "",vehiculo: new Vehiculo( o )};
     if (i>=0 && i<this.getMuebleLgth())
       Object.assign(obj,this.muebles[i]);
     return obj;
       
   }
   
-  private setMueble(i:number=-1,obj:Mueble):(void){
+  private setMueble(i:number=-1,obj:IMueble):(void){
     if (i>=0 && i<this.getMuebleLgth())
       Object.assign(this.muebles[i],obj);
   }
 
-  private putMueble(obj:Mueble){
+  private putMueble(obj:IMueble){
     this.muebles.push(obj);
   }
 
@@ -55,25 +62,33 @@ export class RegistroAutomotor {
     return false;
   }
 
-  private searchMueble(s:string):(Mueble){
+  private searchMueble(s:string):(IMueble){
     return this.muebles.filter(miFunc)[0];
-    function miFunc(value: Mueble): (boolean) {
+    function miFunc(value: IMueble): (boolean) {
       return (value.patente.localeCompare(s) == 0);
     }
   }
 
   private findMueble(s:string):(number){
     return this.muebles.findIndex(miFunc);
-    function miFunc(value: Mueble): (boolean) {
+    function miFunc(value: IMueble): (boolean) {
       return (value.patente.localeCompare(s) == 0);
     }
+  }
+
+  protected dumpMuebles():IMueble[]{
+    let m:IMueble[]=[];
+    this.muebles.forEach(element => {
+      m.push(element);
+    });
+    return m;
   }
 
   /*INTERFACE : public methods */
   public agregarVehiculo(v:Vehiculo):void{
 
     let o={marca:"",modelo:"",cilindrada:"",chasis:""};
-    let obj:Mueble= { patente: "",vehiculo: new Vehiculo( o )};
+    let obj:IMueble= { patente: "",vehiculo: new Vehiculo( o )};
 
     let toTrunc:number;
     let sNu:string;
@@ -86,7 +101,7 @@ export class RegistroAutomotor {
         this.putMueble(obj);
   }
 
-  public buscarVehiculo(patente:string):(Mueble|undefined){
+  public buscarVehiculo(patente:string):(IMueble|undefined){
     return this.searchMueble(patente);
   }
 
@@ -113,4 +128,6 @@ export class RegistroAutomotor {
     }
     return s;
   }
+
+  
 }
