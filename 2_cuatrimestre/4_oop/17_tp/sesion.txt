@@ -1,0 +1,2 @@
+[{"patente":"708148","vehiculo":{"marca":"ford","modelo":"orion","cilindrada":"2l","chasis":"007"}},
+{"patente":"5536620","vehiculo":{"marca":"fiat","modelo":"128","cilindrada":"1,2l","chasis":"010"}}]

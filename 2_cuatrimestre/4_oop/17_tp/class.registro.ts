@@ -2,7 +2,7 @@
 //import { Camion }   from "./class.camion";
 //import { Moto }     from "./class.moto";
 import { Vehiculo } from "./class.vehiculo";
-import { Files } from "./class.files";
+import { Files }    from "./class.files";
 
 
 interface IMueble {
@@ -124,9 +124,14 @@ export class RegistroAutomotor {
     let s: string = "";
 
     for (i = 0; i < this.getMuebleLgth(); i++) {
-      s = s + ">Patente:" + this.getMueble(i).patente + ", " + this.getMueble(i).vehiculo.toStringB() + "\n";
+      //console.log(this.getMueble(i).vehiculo.toStringB());
+      s = s + ">Patente:" + this.getMueble(i).patente + ", " +this.getMueble(i).vehiculo.toStringB()+ "\n";
     }
     return s;
+  }
+
+  public backupVehiculos(): string{
+    return JSON.stringify(this.dumpMuebles());
   }
 
 }
