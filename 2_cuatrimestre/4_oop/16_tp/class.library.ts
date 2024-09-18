@@ -35,7 +35,7 @@ export class Library{
     }
 
     private deleteBook(i:number):boolean{
-        this.listBooks =this.listBooks.splice(i,1);
+        this.listBooks.splice(i,1);
         return true;
     }
 

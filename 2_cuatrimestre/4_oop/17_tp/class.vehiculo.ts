@@ -1,5 +1,5 @@
 
-interface VehAtri {
+interface IVeh {
   marca:string,
   modelo:string,
   cilindrada:string,
@@ -13,7 +13,7 @@ export class Vehiculo{
   protected cilindrada:string;
   protected chasis:string;
 
-  constructor(o:VehAtri){
+  constructor(o:IVeh){
     this.marca      = o.marca;
     this.modelo     = o.modelo;
     this.cilindrada = o.cilindrada;
@@ -59,11 +59,10 @@ export class Vehiculo{
   public toStringB():string{
 
       let str:string="";
-      str=  "Marca:"  +this.getMarca();
-      str+= ",Modelo:"+this.getModelo();
-      str+= ",Clilindrada:"+this.getCilindrada();
-      str+= ",Chasis:"+this.getChasis();
-      return str;      
-
+      str=  " Marca:"  +this.getMarca();
+      str+= ", Modelo:"+this.getModelo();
+      str+= ", Clilindrada:"+this.getCilindrada();
+      str+= ", Chasis:"+this.getChasis();
+      return str;
   }
 }
