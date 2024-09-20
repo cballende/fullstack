@@ -24,18 +24,18 @@ class Rectangle{
     this.base=base;
     this.hight=hight;
   }
-  private _area():number{
+  private calArea():number{
     return (this.base*this.hight);
   }
-  private _perimeter(){
+  private calPerimeter(){
     return (this.base+this.hight)*2;
   }
 
   public calcular_area():(number){
-    return this._area();
+    return this.calArea();
   }
   public calcular_perimetro():(number){
-    return this._perimeter();
+    return this.calPerimeter();
   }
 
 }

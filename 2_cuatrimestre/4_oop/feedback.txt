@@ -1,0 +1,17 @@
+Hola Seba!
+Ejercicio 14 (Clase-Rectangulo-POO):
+	Definiste la clase Rectangulo con sus variables internas(atributos)en private cada una con su tipo de dato. 
+Creaste el constructor que recibe por parametro las dos variables de la clase, accediendo con this haciendo referencia a dicha clase. 
+Estableciste ambos metodos con su logica(acordate que los metodos son acciones corregi _area y _perimeter por calcularArea y calcularPerimetro. 
+Instanciaste correctamente. Compilas typescript y corres Node.js correctamente. 
+Aprobado. 
+Recorda : 
+1- una clase es una plantilla(molde para nuestros objetos instanciados) y el objeto es la instancia de esa clase. 
+2-La funcion constructora permite crear un objeto a partir de los datos que se les pase. Es la funcion que usa el objeto para darle valor inicial a sus atributos. 
+3-La instancia de una clase es la entidad que deriva de la clase, es decir es un objeto creado de otro, crea una copia de la clase .
+4-Los metodos van dentro de la clase fuera del constructor.
+
+Ejercicio 15(Composicion):
+	fijate que para usar composicion le pusiste la clase Motor pero no la tenes creada como tal, 
+porque creaste una clase como interface IMotor. Tenes que crear una clase Motor para usarla como atributo de Auto. 
+Recorda que  composicion es usar una clase mas chica dentro de otra, usandola como atributo.
