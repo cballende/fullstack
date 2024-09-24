@@ -1,4 +1,4 @@
-import { Author } from "./class.author";
+import { Author } from "./class_author";
 
 export class Book{
     //Atributos

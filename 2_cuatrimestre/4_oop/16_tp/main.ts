@@ -1,6 +1,6 @@
-import { Author } from "./class.author";
-import { Book } from "./class.book";
-import { Library } from "./class.library";
+import { Author } from "./class_author";
+import { Book } from "./class_book";
+import { Library } from "./class_library";
 
 let libreria_1 = new Library("Papiros","Av Siempe Viva 32",115001010);
 

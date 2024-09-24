@@ -1,5 +1,6 @@
-import { Animal }  from "./class.animal";
-import { Cat,Dog } from "./class.pets";
+import { Dog } from "./class_dogs";
+import { Cat } from "./class_cats";
+
 
 let mish:Cat = new Cat();
 let picha:Dog = new Dog();

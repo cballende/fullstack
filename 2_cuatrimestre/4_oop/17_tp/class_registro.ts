@@ -1,7 +1,7 @@
 //import { Auto }     from "./class.car";
 //import { Camion }   from "./class.camion";
 //import { Moto }     from "./class.moto";
-import { Vehiculo } from "./class.vehiculo";
+import { Vehiculo } from "./class_vehiculo";
 //import { Files }    from "./class.files";
 
 

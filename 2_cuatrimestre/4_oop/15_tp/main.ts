@@ -1,5 +1,5 @@
-import { Motor } from "./class.motor";
-import { Auto } from "./class.auto";
+import { Motor } from "./class_motor";
+import { Auto } from "./class_auto";
 
 let m={
   marca:"Deuz",

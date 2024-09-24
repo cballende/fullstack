@@ -15,3 +15,12 @@ Ejercicio 15(Composicion):
 	fijate que para usar composicion le pusiste la clase Motor pero no la tenes creada como tal, 
 porque creaste una clase como interface IMotor. Tenes que crear una clase Motor para usarla como atributo de Auto. 
 Recorda que  composicion es usar una clase mas chica dentro de otra, usandola como atributo.
+
+Hola Sebastian!.Ejercicio 18( Interface- clase abstracta-herencia) hay puntos para corregir:
+9:32
+1-No es una buena práctica usar un punto en el nombre de los archivos, aparte del que separa el nombre del archivo de su extensión .ts .
+El uso del punto dentro del nombre del archivo puede generar confusión y problemas con sistemas de archivos o herramientas de compilación.
+Reemplaza el primer punto por un guion bajo.
+2- creaste mas de una clase por archivo, es un archivo .ts por clase, nunca dos clases en un archivo. Corregilo y enviamelo nuevamente
+9:37
+Consultame lo que necesites!

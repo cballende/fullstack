@@ -1,4 +1,4 @@
-import { Vehiculo } from "./class.vehiculo";
+import { Vehiculo } from "./class_vehiculo";
 
 export class Moto extends Vehiculo{
 

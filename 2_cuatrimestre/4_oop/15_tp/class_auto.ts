@@ -1,4 +1,4 @@
-import { Motor }  from "./class.motor";
+import { Motor }  from "./class_motor";
 
 export class Auto {
   //Atributos

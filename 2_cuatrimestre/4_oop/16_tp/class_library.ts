@@ -1,5 +1,5 @@
-import { Author } from "./class.author";
-import { Book } from "./class.book";
+import { Author } from "./class_author";
+import { Book } from "./class_book";
 
 export class Library{
     //Atributes

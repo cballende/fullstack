@@ -1,11 +1,16 @@
-import { Vehiculo }          from "./class.vehiculo";
-import { RegistroAutomotor } from "./class.registro";
-import { Files }             from "./class.files";
+import { Vehiculo }          from "./class_vehiculo";
+import { RegistroAutomotor } from "./class_registro";
+import { Files }             from "./class_files";
 let rLS = require('readline-sync');
 
 let fs = new Files('sesion.txt');
 let registro_1:RegistroAutomotor;
 let s:string = fs.fnFile("access");
+/**
+ * Search backups
+ * case exist: check format, if not then create new:
+ * case no: create a new file;
+ */
 if(s.localeCompare("NOEX")!=0 && s.localeCompare("NOP")!=0){
   s = fs.fnFile("read");
   if(s.length>0){
@@ -22,6 +27,10 @@ if(s.localeCompare("NOEX")!=0 && s.localeCompare("NOP")!=0){
   fs.fnFile("create");
   registro_1 = new RegistroAutomotor();
 }
+
+/**
+ * Objets
+ */
 let vehiculo_1 = new Vehiculo (
 { marca:"ford",
 modelo:"orion",
@@ -40,6 +49,7 @@ modelo:"128",
 cilindrada:"1,2l",
 chasis:"010"
 });
+
 registro_1.agregarVehiculo(vehiculo_1);
 registro_1.agregarVehiculo(vehiculo_2);
 registro_1.agregarVehiculo(vehiculo_3);
