@@ -1,4 +1,4 @@
-import { Persona }  from "./class.persona";
+import { Persona }  from "./class.a_persona";
 
 interface IJugador {
   anotarGol():void,
@@ -16,20 +16,21 @@ export class  Jugador extends Persona implements IJugador {
     super(nombre,edad);
     this.posiciones=pos;
     this.numero=num;
-    this.goles=gol;
+    this.goles=0;
   }
   
   public anotarGol():void{
-    console.log("moviendose");
+    this.goles++;
+    console.log("gol");
   }
 
   public obtenerGoles():number{
-    console.log("moviendose");
-    return 1;
+    return this.goles;
   }
 
   public obtenerDetalles():string{
-    return "algo";
+    let s:string= "Nombre:"+this.nombre+" Edad:"+this.edad+" Posición:"+this.posiciones+" Numero:"+this.numero+" Goles:"+this.goles;
+    return s;
   }
   
 }

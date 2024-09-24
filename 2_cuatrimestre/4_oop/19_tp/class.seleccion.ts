@@ -14,20 +14,41 @@ export class Seleccion {
     this.cuerpoMedico= [];
   }
  
-  public agregarJugador(): (void) {
-    console.log("¡MIAU!");
+  public agregarJugador(ply:Jugador): (void) {
+    this.jugadores.push(ply);
+    console.log("Agregar");
   }
 
-  public quitarJugador(): (void) {
-    console.log("¡MIAU!");
+  public quitarJugador(num:number): (void) {
+    let i:number=this.jugadores.findIndex(myFuction);
+
+    this.jugadores.splice(i, 1);
+
+    function myFuction(value:Jugador){
+      return value.numero==num;
+    }
+    console.log("Quitas");
   }
 
-  public editarJugador(): (void) {
-    console.log("¡MIAU!");
+  public editarJugador(num:number,ply:Jugador): (void) {
+    let i:number=this.jugadores.findIndex(myFuction);
+    
+    this.jugadores[i]=ply;
+
+    function myFuction(value:Jugador){
+      return value.numero==num;
+    }
+    console.log("Editar");
   }
 
-  public listarJugadores(): (void) {
-    console.log("¡MIAU!");
+  public listarJugadores(): (string) {
+    let s:string="";
+    this.jugadores.forEach(myFuction);
+    function myFuction(value:Jugador){
+      s+=value.obtenerDetalles()+"\n";
+    }
+    return s;
+    console.log("Listar");
   }
 
 }

@@ -2,7 +2,7 @@
 //import { Camion }   from "./class.camion";
 //import { Moto }     from "./class.moto";
 import { Vehiculo } from "./class.vehiculo";
-import { Files }    from "./class.files";
+//import { Files }    from "./class.files";
 
 
 interface IMueble {
