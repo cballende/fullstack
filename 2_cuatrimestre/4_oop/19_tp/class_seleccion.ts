@@ -1,7 +1,7 @@
 
-import { Jugador } from "./class.jugador";
-import { DirectorTecnico } from "./class.director_tecnico";
-import { MedicoDeportivo } from "./class.medico_deportivo";
+import { Jugador }         from "./class_jugador";
+import { DirectorTecnico } from "./class_director_tecnico";
+import { MedicoDeportivo } from "./class_medico_deportivo";
 
 export class Seleccion {
   public jugadores:Jugador[];

@@ -25,3 +25,32 @@ El uso del punto dentro del nombre del archivo puede generar confusión y proble
 Reemplaza el primer punto por un guion bajo.
 2- creaste mas de una clase por archivo, es un archivo .ts por clase, nunca dos clases en un archivo. Corregilo y enviamelo nuevamente
 
+>1/10
+
+Hola Seba. 
+ Ejercicio 17-Grupal (Registro Automotor):
+
+-UML: Logrado.
+-Encapsulamiento-modificadores de acceso: Logrado.
+-Herencia:Logrado.
+-Metodo toString en clases hijas:Logrado.
+-CRUD: Logrado.
+-Persistencia de datos: Logrado.
+-La herencia está bien implementada, y los atributos son apropiados.
+-Cada clase hija tiene el método toString()), lo que proporciona una representación clara y específica de los vehículos. Esto mejora la legibilidad y el mantenimiento del código.
+-Cada función del CRUD es clara y cumple con su propósito.
+-Tu proyecto transpila y compila correctamente.
+-Buen uso de persistencia de datos almacenando la información.
+ (Aprobado).
+1-Observaciones: vi que pusiste logica en el archivo.main. te recomiendo como buena practica que main lo uses para instanciar los objetos.
+ Su responsabilidad principal es coordinar el flujo general del programa, incluyendo la creación de objetos y la llamada a métodos. 
+ Mantenerlo limpio y bien estructurado es clave para una aplicación modular y mantenible.
+
+ Ejercicio 19: Seleccion de futbol: Aprobado con observaciones: 
+1-En varios lugares hay imports repetidos de la clase Persona, que podrían eliminarse o unificarse.
+  La forma correcta de manejar importaciones sería asegurarse de que solo se importe una vez por archivo. 
+2-En la clase Jugador, dentro de la interfaz IJugador, definis el método anotarGol() que se supone que incrementa los goles. Pero, 
+  el constructor de Jugador inicializa goles como 0, pero el parámetro gol:number está ahí y no se usa. Para corregirlo,
+  podes inicializar goles con el valor proporcionas o eliminar el parámetro si siempre empieza en 0.
+
+Buen trabajo Seba! las observaciones son para que vayas implementando optimización y conceptos!

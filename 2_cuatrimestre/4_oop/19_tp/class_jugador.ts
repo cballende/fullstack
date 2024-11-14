@@ -1,4 +1,4 @@
-import { Persona }  from "./class.a_persona";
+import { Persona }  from "./class_a_persona";
 
 interface IJugador {
   anotarGol():void,

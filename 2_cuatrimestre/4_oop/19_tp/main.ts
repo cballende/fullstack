@@ -1,7 +1,7 @@
-import { DirectorTecnico }          from "./class.director_tecnico";
-import { MedicoDeportivo } from "./class.medico_deportivo";
-import { Jugador }             from "./class.jugador";
-import { Seleccion }             from "./class.seleccion";
+import { DirectorTecnico }     from "./class_director_tecnico";
+import { MedicoDeportivo }     from "./class_medico_deportivo";
+import { Jugador }             from "./class_jugador";
+import { Seleccion }           from "./class_seleccion";
 
 //let rLS = require('readline-sync');
 
