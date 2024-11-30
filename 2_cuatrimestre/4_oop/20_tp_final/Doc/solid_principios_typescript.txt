@@ -1,0 +1,107 @@
+
+Implementación de Clases y Principios SOLID en TypeScript
+----------------------------------------------------------
+
+### Código de TypeScript
+
+1. Clase Abstracta `Juego`
+
+```typescript
+abstract class Juego {
+  abstract getReglas(): string;
+}
+```
+
+2. Clases Específicas de Juegos
+
+```typescript
+class Blackjack extends Juego {
+  getReglas(): string {
+    return "Reglas del Blackjack: ...";
+  }
+}
+
+class Sicbo extends Juego {
+  getReglas(): string {
+    return "Reglas del Sicbo: ...";
+  }
+}
+
+class Poker extends Juego {
+  getReglas(): string {
+    return "Reglas del Poker: ...";
+  }
+}
+
+class Ruleta extends Juego {
+  getReglas(): string {
+    return "Reglas de la Ruleta: ...";
+  }
+}
+```
+
+3. Clase `GestorDeJuegos` con Array de Juegos
+
+```typescript
+class GestorDeJuegos {
+  private juegos: Juego[] = [];
+
+  constructor() {
+    // Inicializamos el array con instancias de las clases de los juegos.
+    this.juegos.push(new Blackjack());
+    this.juegos.push(new Sicbo());
+    this.juegos.push(new Poker());
+    this.juegos.push(new Ruleta());
+  }
+
+  // Método para obtener un juego por su nombre.
+  getJuego(nombre: string): Juego | undefined {
+    return this.juegos.find(juego => juego.constructor.name.toLowerCase() === nombre.toLowerCase());
+  }
+}
+```
+
+4. Ejemplo de Uso
+
+```typescript
+const gestorDeJuegos = new GestorDeJuegos();
+
+// Obtener un juego por nombre y mostrar sus reglas.
+const blackjack = gestorDeJuegos.getJuego('blackjack');
+if (blackjack) {
+  console.log(blackjack.getReglas()); // Imprime: "Reglas del Blackjack: ..."
+}
+
+const poker = gestorDeJuegos.getJuego('poker');
+if (poker) {
+  console.log(poker.getReglas()); // Imprime: "Reglas del Poker: ..."
+}
+```
+
+### Explicación de los Principios SOLID
+
+1. **Principio de Responsabilidad Única (SRP)**:
+   - Cada clase tiene una responsabilidad única. La clase `Juego` define la estructura de un juego, las clases `Blackjack`, `Sicbo`, etc., implementan las reglas, y `GestorDeJuegos` gestiona el conjunto de juegos.
+
+2. **Principio Abierto/Cerrado (OCP)**:
+   - El sistema está abierto a la extensión (nuevas clases de juegos) pero cerrado a la modificación (no es necesario modificar `Juego` o `GestorDeJuegos`).
+
+3. **Principio de Sustitución de Liskov (LSP)**:
+   - Las subclases pueden reemplazar la clase base sin afectar la funcionalidad. Las subclases implementan `getReglas` y pueden ser usadas en cualquier contexto que espere un `Juego`.
+
+4. **Principio de Segregación de Interfaces (ISP)**:
+   - La clase `Juego` no obliga a las subclases a implementar métodos innecesarios. Si en el futuro se agregan más métodos, se podrían dividir en interfaces más específicas.
+
+5. **Principio de Inversión de Dependencias (DIP)**:
+   - `GestorDeJuegos` depende de la abstracción `Juego`, no de implementaciones concretas, permitiendo mayor flexibilidad y desacoplamiento.
+
+### Evaluación General:
+- **Flexibilidad**: La estructura es flexible y fácil de extender.
+- **Mantenibilidad**: Las clases están desacopladas y claras.
+- **Modularidad**: Cada parte del sistema tiene una función específica, facilitando el testeo y la comprensión.
+
+### Posibles Mejoras:
+- Considerar el uso de un patrón de fábrica para instanciar los juegos.
+- Dividir la clase `Juego` en interfaces más específicas si se agregan más métodos.
+
+En conclusión, el diseño cumple con los principios SOLID y es una buena práctica en programación orientada a objetos.

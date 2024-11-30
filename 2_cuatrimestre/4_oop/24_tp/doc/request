@@ -1,0 +1,7 @@
+EJERCICIO 1
+	Crea una clase Logger que registre mensajes en la consola.
+Esta clase debe seguir el patrón Singleton para que solo exista una
+única instancia de Logger en toda la aplicación. 
+Cada vez que se registre un mensaje, se debe agregar un número 
+incremental que indique el orden de los mensajes registrados.
+

@@ -1,0 +1,7 @@
+consigna para que resuelvan con patron builder (aprovechando que el viernes no tienen clase, para que practiquen un poco)
+
+Ejercicio 2: Construcción de Menús de Restaurante
+Consigna:
+	Diseña una clase Menu que incluya atributos opcionales: 
+	entrada, plato principal, postre, y bebida. 
+Implementa el patrón Builder para construir un menú personalizado.
