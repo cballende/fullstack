@@ -25,7 +25,6 @@ export class AnimalFactory{
       default:
         return new Perro("guau","perruno");
       break;
-
     }
   }
 }

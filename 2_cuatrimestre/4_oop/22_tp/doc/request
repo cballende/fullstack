@@ -8,4 +8,5 @@ Consigna:
 	    Tarjeta gráfica
 	    Sistema operativo
 	
-Implementa un patrón Builder que permita a los usuarios construir una computadora personalizada paso a paso.
+Implementa un patrón Builder que permita a los usuarios construir una computadora 
+personalizada paso a paso.

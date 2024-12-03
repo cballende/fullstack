@@ -1,0 +1,3 @@
+v0.dev, Cursor, Windsurf, and Bolt.new
+
+maze(laberinto) para testear
