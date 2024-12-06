@@ -1,0 +1,49 @@
+.hide{
+    display:none;
+}
+
+.colorVerde{ 
+    color:green; 
+}
+
+.colorRojo{ 
+    color:red; 
+}
+
+.colorAmarillo{
+    color:yellowgreen; 
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+.nuevoHeader{ 
+    color:white; 
+    background-color: red; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 2px solid yellow;
+
+}
+
+.nuevoFooter{ 
+    color:white; 
+    background-color: black; 
+    padding: 10px; 
+    margin:  10px 0; 
+    border: 2px solid grey;
+
+}
+ 
+.nuevoDiv{ 
+    color:white; 
+    background-color: blue; 
+    padding: 10px; 
+    margin:  25px 0;
+    border: 2px solid red;
+    border-radius: 2%;
+
+}
