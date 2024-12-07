@@ -4,3 +4,5 @@ Contenidos cards:
 - Titulo, nombre y apellido persona.
 - Direccion, edad, dni.
 - Boton deshabilitar la card (bloquedo de ingreso).
+
+https://www.youtube.com/watch?v=73yvVOnFMbE&list=PLDSINBygqFcg-VDjA4pwqMBbIKQ66-3Oh&index=2
