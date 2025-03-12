@@ -1,0 +1,8 @@
+Les adjunto el ejercicio con fecha de entrega 12/3 23:59
+Se debe entregar
+1- un único archivo .sql que contenga:
+
+ La creación de la base de datos.
+ La definición de las tablas junto con sus respectivas relaciones y restricciones de integridad.
+
+2. Una captura de pantalla del esquema generado a partir de la ejecución del archivo .sql. (edited) 

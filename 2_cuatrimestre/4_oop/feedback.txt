@@ -54,3 +54,28 @@ Hola Seba.
   podes inicializar goles con el valor proporcionas o eliminar el parámetro si siempre empieza en 0.
 
 Buen trabajo Seba! las observaciones son para que vayas implementando optimización y conceptos!
+
+12/12
+
+Hola Seba! 
+ Ejercicio 21(Construccion de Computadoras-Patron de diseño-Builder): 
+	 tu ejercicio está bastante bien estructurado, y utiliza correctamente el patrón de diseño Buider 
+	 para crear una computadora con diferentes configuraciones. 
+	  -Observaciones de optimizacion: 
+		1-Mejorar la claridad de las enumeraciones, usando nombres más descriptivos. 
+		2-Validar las configuraciones antes de construir el objeto. Aprobado.
+
+ Ejercicio 22(Fabrica de animales-Patron de diseño-Factory):
+ 	implementas correctam el patron Factory para crear diferentes tipos de animales.
+	- Observaciones: 
+		1- Error tipografico: BIRT por BIRD. 
+		2- Eliminar los break innecesarios después de un return.Aprobado.
+
+ Ejercicio 23(Sistema de Musica-Patron de diseño-Adapter):
+	 el patron esta bien implementado y cumple con el objetivo de adaptar la interface de Vinilo a la interface que espera el ReproductorMusica.
+	 Observaciones: 
+		Considera manejar posibles errores o situaciones inesperadas. Aprobado.
+
+ Ejercicio 24(Logger-Patron de diseño-Singleton) :
+	 tu implementación del patrón Singleton con la clase Logger es correcta y  garantiza que solo haya una instancia de la clase. 
+	 Aprobado. Buen trabajo. Estas al dia con los ejercicios.
