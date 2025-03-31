@@ -1,0 +1,8 @@
+Hola Seba! Ejercicio 1:
+ SQL-base de datos-Esquema: El diagrama es correcto, representando la estructura lógica de la base de datos de manera visual.
+ Es una herramienta esencial en el diseño de bases de datos porque ayuda a comprender cómo se organizan los datos y cómo se 
+ relacionan entre sí antes de implementarlos en el sistema de gestión de bases de datos. Creaste correctamente la base de datos.
+ Observacion: - Los nombres de los campos tienen etiquetas PK  y FK, lo cual no es válido en SQL, te tira error, eliminalas de
+ los nombres de los campos quedando asi: nro_customer INT NOT NULL PRIMARY KEY. -Ponele AUTO_INCREMENT en las claves primarias
+ numéricas para evitar ingresar manualmente los valores. Ej: nro_customer INT NOT NULL AUTO_INCREMENT PRIMARY KEY.-.
+ Aprobado con observaciones.
