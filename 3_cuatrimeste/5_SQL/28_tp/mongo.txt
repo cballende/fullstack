@@ -1,0 +1,59 @@
+//---- Sección 1: Consultas Básicas ----
+
+// 1- Obtener todos los productos ordenados por precio de mayor a menor.
+  db.productos.find().sort({ precio:-1 });
+
+// 2- Buscar productos que tengan un stock entre 50 y 150 unidades
+  db.productos.find({stock:{$gt :50,$lt :150 }});
+
+// 2- Mostrar solo el nombre y la marca de los productos cuyo precio sea mayor a 100.
+  db.productos.find({precio:{$gt :100}}).select('nombre,marca');
+
+// 2- Encontrar productos de la marca "HP" o "Logitech".
+  db.productos.find({$or:[{marca:{$eq:'HP'}},{marca:{$eq:'Logitech'}} ]});
+
+
+//---- Sección 2: Filtros Avanzados ----
+// 2- Buscar productos cuyo nombre contenga la palabra "Laptop".
+  db.productos.find({nombre:{$regex: /Laptop/i}});
+
+// 2- Obtener productos que no tengan stock menor a 100.
+  db.productos.find({stock:{$gte:100 }});
+
+// 2- Mostrar productos que tengan marca "Razer" y precio mayor a $50.
+  db.productos.find({$and:[{precio:{$gt:50 }},{marca:{$regex: /Razer/i}}]});
+
+// 2- Buscar productos cuyo precio no sea ni $25 ni $100.
+  db.productos.find({$and:[{precio:{$ne:25}},{precio:{$ne:100}}]});
+
+// 2- Encontrar productos con un tipo de dato "int" en el campo "precio".
+  db.productos.find({precio:{$type: "int"}});
+
+
+//---- Sección 3: Modificaciones y Actualizaciones ----
+
+// 2- Aumentar el precio de los productos en un 10%.
+  db.productos.updateMany({},{$mul:{precio:1.1}} );
+
+// 2- Disminuir el stock en 5 unidades de todos los productos.
+  db.productos.updateMany({},{$inc:{stock:-5}} );
+
+// 2- Agregar un campo "enOferta: true" a los productos que cuesten más de $100.
+  db.productos.updateMany({precio:{$gt:100}},{$set:{enOferta:true}} );
+
+// 2- Eliminar el campo "marca" de todos los productos.
+  db.productos.updateMany({},{$unset:{marca:""}} );
+
+// 2- Duplicar el stock de los productos cuyo nombre empiece con "T".
+  db.productos.updateMany({nombre:{$regex: /^T/}},{$mul:{stock:2}} );
+  
+
+//----  Sección 4: Eliminaciones ----
+// 2- Eliminar productos que cuesten más de $1000.
+  db.productos.deleteMany({precio:{$gt:1000}});
+
+// 2- Borrar productos que tengan stock igual a 0.
+  db.productos.deleteMany({stock:{$eq:0}});
+
+// 2- Eliminar todos los productos excepto los de la marca "Razer".
+db.productos.deleteMany({marca:{$ne:'Razer'}});

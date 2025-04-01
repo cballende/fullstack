@@ -1,0 +1,59 @@
+Ejercicios Prácticos
+:small_blue_diamond: :pushpin: Sección 1: Consultas Básicas
+ :one: Obtener todos los productos ordenados por precio de mayor a menor.
+ :two: Buscar productos que tengan un stock entre 50 y 150 unidades.
+
+ :three: Mostrar solo el nombre y la marca de los productos cuyo precio sea mayor a 100.
+ :four: Encontrar productos de la marca "HP" o "Logitech".
+:small_blue_diamond: :pushpin: Sección 2: Filtros Avanzados
+ :five: Buscar productos cuyo nombre contenga la palabra "Laptop".
+ :six: Obtener productos que no tengan stock menor a 100.
+ :seven: Mostrar productos que tengan marca "Razer" y precio mayor a $50.
+ :eight: Buscar productos cuyo precio no sea ni $25 ni $100.
+ :nine: Encontrar productos con un tipo de dato "int" en el campo "precio".
+:small_blue_diamond: :pushpin: Sección 3: Modificaciones y Actualizaciones
+ :keycap_ten: Aumentar el precio de los productos en un 10%.
+ :one::one: Disminuir el stock en 5 unidades de todos los productos.
+ :one::two: Agregar un campo "enOferta: true" a los productos que cuesten más de $100.
+ :one::three: Eliminar el campo "marca" de todos los productos.
+ :one::four: Duplicar el stock de los productos cuyo nombre empiece con "T".
+:small_blue_diamond: :pushpin: Sección 4: Eliminaciones
+ :one::five: Eliminar productos que cuesten más de $1000.
+ :one::six: Borrar productos que tengan stock igual a 0.
+ :one::seven: Eliminar todos los productos excepto los de la marca "Razer".
+
+show dbs;
+use tiendaDB;
+show collections;
+db.clientes.insertOne({nombre: "Braian", apellido: "Aued", edad: 36});
+db.clientes.insertMany([{nombre: "Cristian", apellido: "Fernandez", direccion: "avenida rivadavia 777"},
+	{nombre: "Lucila", apellido: "Perez", edad: 19, fechaNacimiento:"05/05/98"},
+	{nombre: "Diego", apellido: "Gomez", genero: "Masculino"}]);
+
+db.productos.insertMany([
+  { nombre: "Laptop", marca: "HP", precio: 1500, stock: 20 },
+  { nombre: "Mouse", marca: "Logitech", precio: 25, stock: 200 },
+  { nombre: "Teclado", marca: "Razer", precio: 100, stock: 50 }
+]);
+
+//db.clientes.find({nombre:{ $eq:"Diego" }}) igual a
+//db.clientes.find({nombre:{ $ne:"Diego" }}); distinto de
+//db.clientes.find({edad: { $gt:30 }}); mayor a
+//db.clientes.find({edad: { $lt:40 }}); menor que
+//db.clientes.find({$or:[{edad:{$gt:30}},{nombre:"Juan"}]}); // operador O
+//db.clientes.find({$and:[{edad:{$eq:30}},{nombre:"Juan"},{genero:"Masculino"}]}); // operador Y
+//db.clientes.find({edad:{$gt:30,$lt:40}}); //operador between
+//db.clientes.find({nombre:{$in:["Juan","Ana","Cristian"]}}); operador en IN
+//db.clientes.find().sort({edad:-1}); //ordenar de mayor a menor
+//db.clientes.find().sort({edad:1}); // ordenar de menor a mayor
+//db.clientes.find().sort({edad:-1,nombre:1}); // ordenar por multiples campos
+//db.clientes.find({edad:{$exists:false}}); //evaluador de claves
+//db.clientes.find({fechaNacimiento:{$type:"string"}});
+//db.clientes.updateOne({nombre:"Juan"},{$set:{edad:31}}); actualizar uno
+//db.clientes.updateMany({nombre:"Juan"},{$set:{edad:32}}); actualizar todos
+//db.clientes.updateMany({nombre:"Juan"},{$set:{grupo:"Verde"}}); 
+//agrego clave a documentos//db.clientes.deleteOne({nombre:"Juan"}); //eliminar un documento
+//db.clientes.deleteMany({nombre:"Juan"}); // eliminar todos los que cumplan la condicion
+//db.clientes.deleteMany({$and:[{edad:{$gt:30}},{nombre:{$in:["Cristian","Diego","Braian"]}}]});
+//db.clientes.deleteMany({}); elimina todos los documentos
+db.clientes.find();
