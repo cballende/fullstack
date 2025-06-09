@@ -6,3 +6,15 @@ Hola Seba! Ejercicio 1:
  los nombres de los campos quedando asi: nro_customer INT NOT NULL PRIMARY KEY. -Ponele AUTO_INCREMENT en las claves primarias
  numéricas para evitar ingresar manualmente los valores. Ej: nro_customer INT NOT NULL AUTO_INCREMENT PRIMARY KEY.-.
  Aprobado con observaciones.
+
+SQL-DML: Tus consultas estan bien realizadas, solo tengo observaciones en los siguientes: 
+Ejercicio 10: aca hay un error, pq la condición AND tipo='F' se aplica a todo el filtro, lo que no cumple exactamente con la 
+	consigna que pide un OR en el tipo.Correccion: SELECT * FROM E01_TELEFONO WHERE (codigo_area<>844 AND nro_telefono>4369984) OR tipo='F';.
+Ejercicio 12: aca hay un error, pq tu query solo va a funcionar si la columna fecha es un VARCHAR, pero si es DATE,
+	el formato esperado es YYYY-MM-DD. Aprobado.
+
+ Ejercicio 3-MongoDB-NoSQL: Tus consultas estan bien realizadas, con observaciones en los siguientes:
+ Ejercicio 2: tu query excluye 50 y 150, debería ser: {stock: {$gte: 50, $lte: 150}}.
+ Ejercicio 8: la query esta bien y funciona, podrias ponerla asi para optimizar: {precio: {$nin: [25, 100]}}.
+ 
+Buen trabajo!. Aprobado. Tambien me gusto como tenes organizado tu github! (edited) 

@@ -1,0 +1,20 @@
+Buenos dias, les dejo la tarea, tienen como fecha de entrega el 9/5.
+
+1-    Clonar y levantar Proyecto subido en el siguiente repositorio
+
+       Link: https://github.com/ldini/nest-urls.git
+       npm install :
+2-    Service
+       Agregar un bloque try / catch en cada método que sea necesario.
+       En cada catch, implementá manejo adecuado de errores usando: 
+       HttpException o subclases como NotFoundException, BadRequestException, ConflictException, etc.
+3.   Controlador
+        En cada endpoint, agregar el decorador @HttpCode(...) con un status explícito: 
+	Método	Código HTTP esperado
+         GET /api/tracks	        200 OK
+         GET /api/tracks/:id	        202 Accepted
+         POST /api/tracks	        201 Created
+         PUT /api/tracks/:id	        204 No Content
+         DELETE /api/tracks/:id	200 OK o 204 No Content
+
+Saludos y que tengan un excelente fin de semana!

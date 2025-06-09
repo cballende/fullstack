@@ -1,0 +1,5 @@
+tarea obligatoria. 
+Implementar todos los metodos vistos en la clase de ayer para el ejercicio de las canciones (tracks).
+(get, get by id, put, edit, delete).
+Entregar a Rafa en repositorio de Github (no es necesario adecuar el archivo javascript en front end,
+si se puede acceder con postman esta ok).
