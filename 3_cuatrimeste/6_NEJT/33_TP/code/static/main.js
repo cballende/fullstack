@@ -9,7 +9,12 @@ btnEliminar.addEventListener("click",eliminarCliente);
 let btnCrear = document.getElementById("createBtn");
 btnCrear.addEventListener("click",crearCliente);
 
+let select = document.getElementById("select_update");
+select.addEventListener("click",obtenerClientes);
+select.addEventListener("change",actualizarDataCliente);
 
+let btnActualizar = document.getElementById("updateBtn");
+btnActualizar.addEventListener("click",actualizarCliente);
 
 
 async function obtenerCliente(){
@@ -17,6 +22,24 @@ async function obtenerCliente(){
     const respuesta = await fetch(API_URL + "/" + id);
     const data = await respuesta.json();
     document.getElementById("getResult").textContent = JSON.stringify(data,null,2);
+}
+
+async function obtenerClientes(){
+    const respuesta = await fetch(API_URL);
+    const data = await respuesta.json();
+    let dSel = document.getElementById("select_update");
+    let dOps =dSel.querySelectorAll("option");
+    if (dOps.length)
+        dOps.forEach(element => {
+            element.remove();
+        });
+    let dOpt;
+    data.forEach(element => {
+        dOpt= document.createElement('option');
+        dOpt.value=element.id;
+        dOpt.textContent=JSON.stringify(element,null,2);
+        dSel.appendChild(dOpt);
+    });    
 }
 
 async function eliminarCliente(){
@@ -58,4 +81,56 @@ async function crearCliente(){
         catch(error){
              document.getElementById("createResult").innerHTML = "Cliente NO SE PUDO CREAR!! "+error.message;
         }
+}
+
+async function actualizarCliente(){
+    let id= document.getElementById("id_update").value;
+    if (id!=undefined) {
+        
+        const cliente = {        
+            nombre: document.getElementById("nombre_update").value,
+            apellido:document.getElementById("apellido_update").value,
+            direccion:document.getElementById("direccion_update").value,
+            activo:document.getElementById("activo_update").value
+        }
+    
+        try{
+            const respuesta = await fetch(  API_URL+'/'+id,
+                                            {   method:'PUT',
+                                                headers: {'Content-Type': 'application/json'},
+                                                body:JSON.stringify(cliente)
+                                            }
+                                        );
+            if(!respuesta.ok){
+                throw new Error("no se pudo modificar el cliente");
+            }else{
+                document.getElementById("updateResult").innerHTML = "Cliente Modificado!!";
+            }
+        }catch(error){
+            document.getElementById("updateResult").innerHTML = "Cliente NO SE PUDO MODIFICAR!! "+error.message;
+        }
+    }else
+        document.getElementById("updateResult").innerHTML = "Cliente NO SE PUDO MODIFICAR!! "+error.message;
+
+}
+
+
+function actualizarDataCliente(){
+    let dSel = document.getElementById("select_update");
+    let dOps=dSel.querySelectorAll("option");
+    if(dOps.length)
+        dOps.forEach(searchFun);
+    
+    function searchFun(elem) {
+        let oData= JSON.parse(elem.text);        
+        
+        console.log(oData);
+        if (oData.id == dSel.value){
+            document.getElementById("id_update").value= oData.id ;
+            document.getElementById("nombre_update").value= oData.nombre ;
+            document.getElementById("apellido_update").value= oData.apellido ;
+            document.getElementById("direccion_update").value= oData.direccion ;
+            document.getElementById("activo_update").value= oData.activo;
+        }
+    } 
 }

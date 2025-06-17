@@ -15,11 +15,10 @@
     <ul id="tracks-list"></ul>
 
     <!--GET BY ID-->
-    <h2>Buscar cliente por Id</h2>
+    <h2>BUSCAR cliente por Id</h2>
     <input type="number" id="getIdinput" placeholder="Ingrese ID del cliente">
     <button id="getId">Buscar</button>
     <p id="getResult"></p>
-
     
     <!--DELETE BY ID-->
     <h2>ELIMINAR cliente por Id</h2>
@@ -28,21 +27,26 @@
     <p id="deleteResult"></p>
     
     <!--CREAR CLIENTE-->
-    <h2>Crear Cliente</h2>
+    <h2>CREAR Cliente</h2>
     <input type="text" id="nombre" placeholder="Nombre"><br>
     <input type="text" id="apellido" placeholder="Apellido"><br>
     <input type="text" id="direccion" placeholder="Direccion"><br>
     <input type="text" id="activo" placeholder="Activo"><br>
     <button id="createBtn">Crear</button>
      <p id="createResult"></p>
-    
-    
-    
-    
 
-
-
-
+    <!--UPDATE CLIENTE-->
+    <h2>ACTUALIZAR Cliente</h2>
+    <select name="" id="select_update" class="update_input">        
+    </select>
+    <br>
+    <input type="hidden" id="id_update"   class="update_input" >
+    <input type="text" id="nombre_update"   class="update_input" placeholder="Nombre"><br>
+    <input type="text" id="apellido_update" class="update_input" placeholder="Apellido"><br>
+    <input type="text" id="direccion_update"class="update_input" placeholder="Direccion"><br>
+    <input type="text" id="activo_update"   class="update_input" placeholder="Activo"><br>
+    <button id="updateBtn">Actualizar</button>
+     <p id="updateResult"></p>
 
 
     <script src="index.js"></script>

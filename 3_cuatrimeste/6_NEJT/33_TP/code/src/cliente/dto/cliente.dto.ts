@@ -5,7 +5,7 @@ import { Expose } from "class-transformer";
 export class ClienteDto {
   @IsOptional()
   @IsInt()
-  @Type(()=>Number)
+  @Type(()=>Number)//convert
   id?: number;
       
   @Expose()
