@@ -1,0 +1,4 @@
+Tarea Obligatoria - Fecha entrega Lunes 16 de Junio
+
+Completar crud de factura y de producto.
+Crear funciones de update correspondientes para cada una de esos modulos.
