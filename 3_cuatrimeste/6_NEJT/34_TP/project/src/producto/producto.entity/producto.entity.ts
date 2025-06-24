@@ -3,20 +3,20 @@ import { Column, Entity, ManyToMany, PrimaryColumn, PrimaryGeneratedColumn } fro
 
 @Entity('E01_PRODUCTO')
 export class Producto {
-@PrimaryColumn({ name: 'codigo_producto' })
-idProducto: number;
+  @PrimaryGeneratedColumn({ name: 'codigo_producto' })
+  id: number;
 
-@Column()
-marca:string;
-@Column()
-nombre:string;
-@Column()
-descripcion:string;
-@Column()
-precio:number;
-@Column()
-stock:number;
+  @Column()
+  marca:string;
+  @Column()
+  nombre:string;
+  @Column()
+  descripcion:string;
+  @Column()
+  precio:number;
+  @Column()
+  stock:number;
 
-@ManyToMany(()=> Factura,factura => factura.productos)
-facturas:Factura[];
+  @ManyToMany(()=> Factura,factura => factura.productos)
+  facturas:Factura[];
 }

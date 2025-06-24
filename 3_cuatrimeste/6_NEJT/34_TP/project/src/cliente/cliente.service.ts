@@ -26,7 +26,7 @@ export class ClienteService {
   
   async create(clienteDto: CreateClienteDto) : Promise<ClienteDto> {
     let nuevoCliente = this.clienteRepository.save(clienteDto);
-    return nuevoCliente;   
+    return nuevoCliente;
   }
   
   async update(id: number, clienteDto: UpdateClienteDto) {

@@ -1,15 +1,15 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Factura } from './factura.entity/factura.entity';
 import { InjectDataSource, InjectRepository } from '@nestjs/typeorm';
 import { DataSource, In, Repository } from 'typeorm';
 
+import { Factura } from './factura.entity/factura.entity';
+import { FacturaProducto } from './factura.entity/factura-producto.entity';
 import { Cliente } from 'src/cliente/entities/cliente.entity';
 import { Producto } from 'src/producto/producto.entity/producto.entity';
 
 import { FacturaDto } from './dto/factura.dto/factura.dto';
 import { CreateFacturaDto }from './dto/factura.dto/create-factura.dto';
 import { UpdateFacturaDto }from './dto/factura.dto/update-factura.dto';
-
 
 @Injectable()
 export class FacturaService {
@@ -24,11 +24,11 @@ export class FacturaService {
     
 ){}
 
-   async findAll(): Promise<Factura[]> {
-        return this.facturaRepository.find({relations: ['cliente']});
+async findAll(): Promise<Factura[]> {
+  return this.facturaRepository.find({relations: ['cliente']});
 }
-    async findOne(id: number) {
-    return this.facturaRepository.findOne({ where: { nro_factura: id }, relations: ['cliente'] });
+async findOne(id: number) {
+  return this.facturaRepository.findOne({ where: { id: id }, relations: ['cliente'] });
 }
  
 
@@ -44,13 +44,13 @@ async create(dto: FacturaDto): Promise<Factura> {
   if (!cliente) throw new Error("Cliente no existe");
 
   const existe = await this.facturaRepository.findOne({
-    where: { nro_factura: dto.nro_factura },
+    where: { id: dto.id },
   });
 
   if (existe) throw new Error("Ya existe factura con el mismo número");
 
   const productos = await this.productoRepository.findBy({
-    idProducto: In(dto.productos),
+    id: In(dto.productos),
   });
 
   if (productos.length !== dto.productos.length) {
@@ -59,7 +59,7 @@ async create(dto: FacturaDto): Promise<Factura> {
 
   // Crear factura sin relación con productos
   const factura = this.facturaRepository.create({
-    nro_factura: dto.nro_factura,
+    id: dto.id,
     fecha: dto.fecha,
     total_sin_iva: dto.total_sin_iva,
     iva: dto.iva,
@@ -73,7 +73,7 @@ async create(dto: FacturaDto): Promise<Factura> {
   for (let i = 0; i < dto.productos.length; i++) {
     await this.facturaRepository.query(
       `INSERT INTO E01_DETALLE_FACTURA (nro_factura, codigo_producto, nro_item, cantidad) VALUES (?, ?, ?, ?)`,
-      [facturaGuardada.nro_factura, dto.productos[i], i + 1, dto.cantidad[i]]
+      [facturaGuardada.id, dto.productos[i], i + 1, dto.cantidad[i]]
     );
   }
   return facturaGuardada;
@@ -94,14 +94,14 @@ async update(id: number,dto: UpdateFacturaDto): Promise<Factura> {
   if (!cliente) throw new Error("Cliente no existe");
 
   const existe = await this.facturaRepository.findOne({
-    where: { nro_factura: id },
+    where: { id: id },
   });
 
   if (!existe) throw new Error("No existe factura");
   
   if (dto.productos!==undefined ){
     const productos = await this.productoRepository.findBy({
-      idProducto: In(dto.productos),
+      id: In(dto.productos),
     });
     
     if (productos!==undefined && productos.length !== dto.productos.length) {
@@ -109,39 +109,41 @@ async update(id: number,dto: UpdateFacturaDto): Promise<Factura> {
     }
   }
   
-  let facturaActualizado = this.facturaRepository.merge(existe,dto);
-  return this.clienteRepository.save(facturaActualizado);    
-
-
-  // Crear factura sin relación con productos
-  /*const factura = this.facturaRepository.create({
-    nro_factura: dto.nro_factura,
+   const factura = this.facturaRepository.create({
+    id: id,
     fecha: dto.fecha,
     total_sin_iva: dto.total_sin_iva,
     iva: dto.iva,
     total_con_iva: dto.total_con_iva,
     cliente: cliente,
-  });*/
+  });
 
+  let facturaActualizado = this.facturaRepository.merge(existe,factura);
+  const facturaGuardada = this.facturaRepository.save(facturaActualizado);    
 
-  const facturaGuardada = await this.facturaRepository.save(factura);
+  // modificar manualmente en tabla intermedia
+  if (dto.productos!==undefined && dto.cantidad!==undefined){
+    let resQue;
+    for (let i = 0; i < dto.productos.length; i++) {
+      resQue = await this.facturaRepository
+                         .query(
+                                `INSERT INTO E01_DETALLE_FACTURA (nro_factura,
+                                                                  codigo_producto,
+                                                                  nro_item,
+                                                                  cantidad)
+                                VALUES (?, ?, ?, ?)`,
+                                [id, dto.productos[i], i + 1, dto.cantidad[i]]
+                              );
 
-  // Insertar manualmente en tabla intermedia
-  for (let i = 0; i < dto.productos.length; i++) {
-    await this.facturaRepository.query(
-      `INSERT INTO E01_DETALLE_FACTURA (nro_factura, codigo_producto, nro_item, cantidad) VALUES (?, ?, ?, ?)`,
-      [facturaGuardada.nro_factura, dto.productos[i], i + 1, dto.cantidad[i]]
-    );
+    }
   }
+
   return facturaGuardada;
 }
 
 
-
-
-
 async remove(id:number){
-    const factura = await this.facturaRepository.findOne({where: { nro_factura:id }});
+    const factura = await this.facturaRepository.findOne({where: { id:id }});
     if(!factura){
         throw new Error("no existe la factura");
     }
@@ -153,12 +155,12 @@ async addProductoToFactura(nroFactura:number,idProducto:number,cantidad:number):
       if(cantidad <= 0){
         throw new Error("cantidad tiene que se mayor a cero");
       }
-      const factura = await this.facturaRepository.findOneBy({nro_factura:nroFactura});
+      const factura = await this.facturaRepository.findOneBy({id:nroFactura});
       
       if(!factura){
         throw new Error("factura No existe");
       }
-      const producto = await this.productoRepository.findOneBy({idProducto});
+      const producto = await this.productoRepository.findOneBy({id:idProducto});
       
       if(!producto){
         throw new Error("producto No existe");

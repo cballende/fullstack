@@ -1,8 +1,11 @@
-import { ArrayNotEmpty, ArrayUnique, IsArray, IsDateString, IsNumber } from "class-validator";
+import { Type } from "class-transformer";
+import { ArrayNotEmpty, ArrayUnique, IsArray, IsDateString, IsInt, IsNumber, IsOptional } from "class-validator";
 
 export class FacturaDto {
-    @IsNumber()
-    nro_factura:number;
+    @IsOptional()
+    @IsInt()
+    @Type(()=>Number)//convert
+    id?: number;
 
     @IsDateString()
     fecha:Date;

@@ -40,7 +40,6 @@ export class FacturaController {
         return this.facturaService.findProductoMasVendido();
     }
 
-
     @Post()
     async create(
     @Body(new ValidationPipe({transform:true})) facturaDto:FacturaDto):Promise<Factura>{
@@ -50,14 +49,13 @@ export class FacturaController {
     @Post(':nroFactura/productos/:idProducto/cantidad/:cantidad')
     async addProductoToFactura(@Param('nroFactura') nroFactura:number,@Param('idProducto') idProducto:number,@Param('cantidad') cantidad:number){
         return this.facturaService.addProductoToFactura(nroFactura,idProducto,cantidad);
-
     }
 
     @Put(':id')
-      @HttpCode(HttpStatus.NO_CONTENT)
-      async update(@Param('id',ParseIntPipe) id: number, @Body(new ValidationPipe({transform:true})) facturaDto:UpdateFacturaDto){
-        return this.facturaService.update(id,facturaDto);
-      }
+    @HttpCode(HttpStatus.NO_CONTENT)
+    async update(@Param('id',ParseIntPipe) id: number, @Body(new ValidationPipe({transform:true})) facturaDto:UpdateFacturaDto){
+    return this.facturaService.update(id,facturaDto);
+    }
 
     @Delete(':nroFactura/productos/:idProducto')
     async removeProducto(@Param('nroFactura') nroFactura:number,@Param('idProducto') idProducto:number){
@@ -68,11 +66,5 @@ export class FacturaController {
     async remove(@Param('id', ParseIntPipe) id: number){
         return this.facturaService.remove(id);
     }
-
-   
-
-
-
-
 
 }
