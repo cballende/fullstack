@@ -23,7 +23,7 @@ export class ProductoService {
         return this.productoRepository.findOne({ where: {id:id}});
     }
 
-    async create(dto: ProductoDto): Promise<Producto> {
+    async create(dto: CreateProductoDto): Promise<Producto> {
         const existente = await this.productoRepository.findOne({
             where: { nombre: dto.nombre }
         });
@@ -49,6 +49,7 @@ export class ProductoService {
             ...dto,
             id: idProducto, // 🔁 Mapeo manual
         });
+        console.log(producto);
         return this.productoRepository.save(producto);
     }
 

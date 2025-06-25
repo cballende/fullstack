@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Factura } from 'src/factura/factura.entity/factura.entity';
+import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('E01_CLIENTE')
 export class Cliente {
@@ -17,4 +18,8 @@ export class Cliente {
 
     @Column({type:'smallint'})
     activo: number;
+
+    @OneToMany( ()=>Factura, factura => factura.cliente,{cascade:true})
+    facturas?:Factura[];
+
 }

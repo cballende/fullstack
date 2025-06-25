@@ -8,6 +8,8 @@ import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ClienteModule } from './cliente/cliente.module';
+import { FacturaModule } from './factura/factura.module';
+import { ProductoModule } from './producto/producto.module';
 
 @Module({
   imports: [
@@ -25,6 +27,8 @@ import { ClienteModule } from './cliente/cliente.module';
       synchronize: false       
     }),        
     ClienteModule,
+    FacturaModule,
+    ProductoModule
 
   ],
   controllers: [AppController],

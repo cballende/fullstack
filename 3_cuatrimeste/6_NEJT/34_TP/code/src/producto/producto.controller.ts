@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, ValidationPipe } from '@nestjs/common';
 import { ProductoService } from './producto.service';
 import { Producto } from './producto.entity/producto.entity';
 import { ProductoDto } from './dto/producto.dto/producto.dto';
@@ -20,14 +20,16 @@ export class ProductoController {
     }
     
     @Post()
+    @HttpCode(HttpStatus.CREATED)    
     async create(@Body(new ValidationPipe({transform:true})) dto: CreateProductoDto) {
         return this.productoService.create(dto);
     }
 
     @Put(':id')
+    @HttpCode(HttpStatus.NO_CONTENT)    
     async update( @Param('id', ParseIntPipe) id:number ,
                   @Body(new ValidationPipe({transform:true})) dto: UpdateProductoDto) {
-        return this.productoService.create(dto);
+        return this.productoService.update(id,dto);
     }
     
     @Delete(':id')

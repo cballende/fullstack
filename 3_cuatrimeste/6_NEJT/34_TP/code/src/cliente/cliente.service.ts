@@ -26,15 +26,15 @@ export class ClienteService {
   
   async create(clienteDto: CreateClienteDto) : Promise<ClienteDto> {
     let nuevoCliente = this.clienteRepository.save(clienteDto);
-    return nuevoCliente;   
+    return nuevoCliente;
   }
   
   async update(id: number, clienteDto: UpdateClienteDto) {
-    let nuevoCliente = await this.clienteRepository.findOneBy({id});
-    if(!nuevoCliente){
+    let cliente = await this.clienteRepository.findOneBy({id});
+    if(!cliente){
       throw new NotFoundException("Cliente No existe");
     }
-    let clienteActualizado = this.clienteRepository.merge(nuevoCliente,clienteDto);
+    let clienteActualizado = this.clienteRepository.merge(cliente,clienteDto);
     return this.clienteRepository.save(clienteActualizado);
   }
 

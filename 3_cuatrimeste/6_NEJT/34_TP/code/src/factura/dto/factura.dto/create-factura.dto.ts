@@ -21,17 +21,17 @@ export class CreateFacturaDto {
     total_con_iva:number;
 
     @IsNumber()
-    nro_cliente:number;
+    nro_cliente?:number;
     
     
     @IsArray()
     @ArrayNotEmpty()
     @ArrayUnique()
-    productos:number[];
+    productos?:number[];
     
     @IsArray()
     @ArrayNotEmpty()
-    cantidad:number[];
+    cantidad?:number[];
 
 }
 

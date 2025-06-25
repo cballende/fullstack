@@ -1,9 +1,12 @@
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { Type } from "class-transformer";
+import { IsInt, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class CreateProductoDto {
 
-    @IsNumber()
-    id?:number;
+    @IsOptional()
+    @IsInt()
+    @Type(()=>Number)//convert
+    id?: number;
     
     @IsString()
     @IsNotEmpty()

@@ -37,7 +37,7 @@
 
     <!--UPDATE CLIENTE-->
     <h2>ACTUALIZAR Cliente</h2>
-    <select name="" id="select_update" class="update_input">        
+    <select name="update_cliente" id="select_update" class="update_input">        
     </select>
     <br>
     <input type="hidden" id="id_update"   class="update_input" >
@@ -48,6 +48,37 @@
     <button id="updateBtn">Actualizar</button>
      <p id="updateResult"></p>
 
+    <!--UPDATE FACTURA-->
+    <h2>ACTUALIZAR Factura</h2>
+    <select name="update_factura" id="select_update_factura" class="update_factura_input">        
+    </select>
+    <br>
+    <input type="hidden" id="id_update_factura"       class="update_factura_input" >
+    <input type="hidden" id="nombre_update_factura"   class="update_factura_input" ><br>
+    <input type="hidden" id="apellido_update_factura" class="update_factura_input" ><br>
+    <input type="text" id="fecha_update_factura"class="update_factura_input" placeholder="Fecha"><br>
+    <input type="text" id="iva_update_factura"class="update_factura_input" placeholder="IVA"><br>
+    <input type="text" id="total_update_factura"   class="update_factura_input" placeholder="Total sin IVA"><br>
+    <input type="text" id="total_iva_update_factura"   class="update_factura_input" placeholder="Total con IVA"><br>
+
+    <button id="updateFacturaBtn">Actualizar</button>
+     <p id="updateFacturaResult"></p>
+     
+    <!--UPDATE PRODUCTO-->
+    <h2>ACTUALIZAR Producto</h2>
+    <select name="update_producto" id="select_update_producto" class="update_producto_input">        
+    </select>
+    <br>
+    <input type="hidden" id="id_update_producto"     class="update_producto_input" >
+    
+    <input type="text" id="nombre_update_producto"   class="update_producto_input" placeholder="Nombre"><br>
+    <input type="text" id="marca_update_producto" class="update_producto_input" placeholder="Marca"><br>
+    <input type="text" id="descripcion_update_producto"class="update_producto_input" placeholder="Descripcion"><br>
+    <input type="text" id="precio_update_producto"   class="update_producto_input" placeholder="Precio"><br>
+    <input type="text" id="stock_update_producto"   class="update_producto_input" placeholder="Stock"><br>
+
+    <button id="updateProductoBtn">Actualizar</button>
+     <p id="updateProductoResult"></p> 
 
     <script src="index.js"></script>
     <script src="main.js"></script>
