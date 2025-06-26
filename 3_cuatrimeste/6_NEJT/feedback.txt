@@ -1,0 +1,31 @@
+Hola Seba!
+ Ejercicio 5:
+	 Nest.js-CRUD: implementas bien los controladores, servicios y decoradores para definir las rutas y manejar
+	 las solicitudes HTTP(GET, POST, PUT Y DELETE). La estructura del proyecto está bien organizada .
+	 Observaciones:
+	 utilizas POST en el método update() cuando deberías usar PUT. Tene en cuenta la observacion.
+ Aprobado
+
+Ejercicio 6: 
+	 Nest.js-Manejo de errores: realizas bien las  excepciones junto con los códigos de estado HTTP correspondientes.
+ 	 Encapsulas correctamente los errores con los bloques try/catch, lo que permite la respuesta controlada ante 
+	 fallos esperados y no esperados. También validas el id con ParseInPipe y definis explícitamente los códigos de
+	 respuesta con @HttpCode(), aportando claridad a la API.
+ Aprobado.
+
+Hola Seba! 
+ Ejercicio 7:
+	 Completar el Update de cliente en el front end: La implementación de la función actualizarCliente() es correcta
+	 y cumple con su propósito principal: enviar al backend una solicitud PUT con los datos actualizados del cliente.
+	 Manejas bien tanto la recolección de datos del formulario como el envío de la solicitud con fetch, incluyendo la
+	 definición de los headers y la transformación del objeto cliente a formato JSON. También contemplas posibles errores
+ 	 con el bloque try/catch, informando al usuario a través del DOM sobre el éxito o fallo de la operación.
+
+	 -Como posibles mejoras, te sugiero reforzar la validación del campo id para evitar enviar datos si el valor está
+	 vacío o mal formado.
+         -También podrias verificar si el campo activo debe enviarse como un booleano, ya que se está enviando como string.
+	 -Por último, hay un pequeño error en el manejo del mensaje de error fuera del bloque try/catch, donde intentas acceder a error.message
+	 	sin que exista la variable en ese contexto, lo que podría causar fallos en tiempo de ejecución.
+ Aprobado.
+4:30
+ Buen trabajo! solo te falta el ultimo Ejercicio 8: Crear las funciones de update de factura y producto

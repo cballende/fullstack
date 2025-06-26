@@ -18,3 +18,62 @@ Ejercicio 12: aca hay un error, pq tu query solo va a funcionar si la columna fe
  Ejercicio 8: la query esta bien y funciona, podrias ponerla asi para optimizar: {precio: {$nin: [25, 100]}}.
  
 Buen trabajo!. Aprobado. Tambien me gusto como tenes organizado tu github! (edited) 
+
+Consulta: 
+
+	Hola Seba querés referenciar un campo de una colección con otro de otra colección en MongoDB usando $ref y 
+	validar eso con un validador tipo jsonSchema, es asi verdad? MongoDB no permite validar que un campo referencie 
+	a un documento de otra colección usando $ref dentro de jsonSchema. Deberias guardar la referencia manualmente, como un ObjectId:
+	por ejemplo: {
+	  "cliente_id": ObjectId("6629f2c9adf454bde0fae83a")
+	}       Validar la forma del campo en el validador:  validator: {
+	  $jsonSchema: {
+	    bsonType: "object",
+	    required: ["cliente_id"],
+	    properties: {
+	      cliente_id: {
+	        bsonType: "objectId",
+	        description: "Debe ser un ObjectId válido"
+	      }
+	    }
+	  }
+	}
+	2:39
+	validator: {
+	  $jsonSchema: {
+	    bsonType: "object",
+	    required: ["cliente_id"],
+	    properties: {
+	      cliente_id: {
+	        bsonType: "objectId",
+	        description: "Debe ser un ObjectId válido"
+	      }
+	    }
+	  }
+	}
+	2:40
+MongoDB no implementa validaciones entre colecciones. No hay foreign keys. La consistencia referencial se maneja desde la aplicación,
+ no desde el motor de base de datos.
+
+
+Hola Seba! Ejercicio 4:  Miniproyecto-Sist. de reservas vuelos-MongoDB:
+ 
+	El script está bien dividido por secciones: selección de base de datos, inserción de datos y relaciones.
+	Utilizas los métodos correctos para insertar múltiples o un solo documento (insertMany e insertOne) .
+	La relación entre pasajeros y vuelos a través de los IDs es un buen ejemplo de normalización en MongoDB,
+	usando referencias en lugar de documentos embebidos. Bien implementado new Date() para guardar la fecha actual.
+	Es una buena práctica para trazabilidad de registros.
+	
+	Observaciones:
+	 - podrias evitar redundancia en inserción de reservas, hay dos bloques casi iguales para insertar
+		 la reserva de Ana en el vuelo "VueloSi", podrias eliminar uno de los dos bloques para evitar duplicación innecesaria.
+	 -Tambien, podrías unificar nombres de variables vuelo o vueloId para mantener consistencia.
+	 -En la colección vuelos, usás campos en ingles, en cambio en pasajeros usás campos en español,
+		elegí un único idioma para los nombres de los campos, preferentemente inglés si el proyecto apunta a un entorno más técnico .
+	Aprobado
+
+	Trabajaste solo? pq tengo entendido que era grupal
+
+	La parte 1 con las respuestas teoricas esta muy bien, se nota comprensión real de los conceptos.
+
+
