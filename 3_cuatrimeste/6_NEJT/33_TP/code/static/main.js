@@ -17,6 +17,18 @@ let btnActualizar = document.getElementById("updateBtn");
 btnActualizar.addEventListener("click",actualizarCliente);
 
 
+function checkString(s){
+    if(s!=undefined)
+       return s.length>0;
+    return false;
+}
+
+function checkNum(i){
+    if(s!=undefined)
+       return parseInt(i>0);
+    return false;
+}
+
 async function obtenerCliente(){
     const id = document.getElementById("getIdinput").value;
     const respuesta = await fetch(API_URL + "/" + id);
@@ -83,34 +95,48 @@ async function crearCliente(){
         }
 }
 
+
+
 async function actualizarCliente(){
     let id= document.getElementById("id_update").value;
-    if (id!=undefined) {
-        
-        const cliente = {        
-            nombre: document.getElementById("nombre_update").value,
-            apellido:document.getElementById("apellido_update").value,
-            direccion:document.getElementById("direccion_update").value,
-            activo:document.getElementById("activo_update").value
-        }
-    
-        try{
-            const respuesta = await fetch(  API_URL+'/'+id,
-                                            {   method:'PUT',
-                                                headers: {'Content-Type': 'application/json'},
-                                                body:JSON.stringify(cliente)
-                                            }
-                                        );
-            if(!respuesta.ok){
-                throw new Error("no se pudo modificar el cliente");
-            }else{
-                document.getElementById("updateResult").innerHTML = "Cliente Modificado!!";
-            }
-        }catch(error){
-            document.getElementById("updateResult").innerHTML = "Cliente NO SE PUDO MODIFICAR!! "+error.message;
-        }
-    }else
+    try{
+        if (checkNum(id)){
+            
+            let nombre = document.getElementById("nombre_update").value;
+            let apellido = document.getElementById("apellido_update").value;
+            let direccion = document.getElementById("direccion_update").value;
+            let activo = document.getElementById("activo_update").value;
+
+            let bool= checkString(nombre) && checkString(apellido) && checkString(direccion) && checkNum(activo);
+            if (bool){
+                
+                const cliente = {
+                    nombre:nombre,
+                    apellido:apellido,
+                    direccion:direccion,
+                    activo:activo
+                }
+                
+                const respuesta = await fetch(  API_URL+'/'+id,
+                    {   method:'PUT',
+                        headers: {'Content-Type': 'application/json'},
+                        body:JSON.stringify(cliente)
+                    }
+                );
+                console.log(respuesta);
+                if(!respuesta.ok){
+                    throw new Error("no se pudo modificar el cliente");
+                }else{
+                    document.getElementById("updateResult").innerHTML = "Cliente Modificado!!";
+                }
+            }else
+                throw new Error("Error formato body payload")
+            
+        }else
+            throw new Error("Error formato indice head");
+    }catch(error){
         document.getElementById("updateResult").innerHTML = "Cliente NO SE PUDO MODIFICAR!! "+error.message;
+    }
 
 }
 
@@ -124,7 +150,7 @@ function actualizarDataCliente(){
     function searchFun(elem) {
         let oData= JSON.parse(elem.text);        
         
-        console.log(oData);
+        //console.log(oData);
         if (oData.id == dSel.value){
             document.getElementById("id_update").value= oData.id ;
             document.getElementById("nombre_update").value= oData.nombre ;
