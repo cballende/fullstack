@@ -1,0 +1,35 @@
+node --version
+npm create vite@latest
+cd NOMBRE DEL PROYECTO
+npm install
+npm run dev
+nvm list
+npm install vite@4
+
+You currently have modules installed globally with `npm`. These will no
+=> longer be linked to the active version of Node when you install a new node
+=> with `nvm`; and they may (depending on how you construct your `$PATH`)
+=> override the binaries of modules installed with `nvm`:
+
+/usr/lib
+├── @types/node@20.12.13
+├── corepack@0.25.2
+├── ts-node@10.9.2
+├── tslib@2.6.2
+└── typescript@5.4.5
+=> If you wish to uninstall them at a later point (or re-install them under your
+=> `nvm` node installs), you can remove them from the system Node as follows:
+
+     $ nvm use system
+     $ npm uninstall -g a_module
+
+nvm install --lts (ultima estable longterm)
+nvm install-lastest-npm
+
+npx create-react-app name
+cd name
+npm start
+
+Later to install need to run npm install to obtain not instaled packges
+
+
