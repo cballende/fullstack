@@ -1,0 +1,4 @@
+TEMA DTO y Validaciones.
+
+-Tarea 5 mayo 2025-
+  Completar servicios el Update, finOne , finAll y delete  de Userts  para las excepciones y los mensajes de error.
