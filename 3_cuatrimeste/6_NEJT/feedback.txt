@@ -29,3 +29,12 @@ Hola Seba!
  Aprobado.
 4:30
  Buen trabajo! solo te falta el ultimo Ejercicio 8: Crear las funciones de update de factura y producto
+
+Ejercicio 8: Crear las funciones de update de factura y producto:
+  Las funciones de update para Factura y Producto están correctamente implementadas.
+  Usas bien los DTOs, validación con ValidationPipe, manejo de IDs y status HTTP  (204).
+	Además, la lógica de validación y actualización en el servicio está bien pensada.
+	Sugerencia : 
+		en el update de Factura, sería ideal borrar antes los productos anteriores en
+ 		la tabla intermedia para evitar duplicados. <---Atencion completar funcionalidad.
+		Buen trabajo. Aprobado. Estas al dia con las entregas!
