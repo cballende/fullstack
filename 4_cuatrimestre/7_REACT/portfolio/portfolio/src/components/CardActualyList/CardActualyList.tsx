@@ -1,11 +1,11 @@
 /* 
-  CardList.tsx
+  CardActualyList.tsx
  */
 import { useEffect, useState } from "react";
 import type { CardProps } from "../../interfaces/cardProps";
-function CardPastList() {
+function CardActualyList() {
   const API_URL_IMG = 'products/proyects/';
-  const API_URL_IMG_P = 'past/';
+  const API_URL_IMG_P = 'working/';
   const [projects, setProjects] = useState([]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -16,7 +16,7 @@ function CardPastList() {
       .then(data => {
         console.log(data);
         console.log(data.projects);
-        setProjects(data.projects.past          
+        setProjects(data.projects.actualy        
         );
         console.log(projects);
       })
@@ -44,4 +44,4 @@ function CardPastList() {
   );
 }
 
-export default CardPastList;
+export default CardActualyList;

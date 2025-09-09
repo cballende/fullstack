@@ -1,11 +1,11 @@
 /* 
-  CardList.tsx
+  CardNextList.tsx
  */
 import { useEffect, useState } from "react";
 import type { CardProps } from "../../interfaces/cardProps";
-function CardPastList() {
+function CardNextList() {
   const API_URL_IMG = 'products/proyects/';
-  const API_URL_IMG_P = 'past/';
+  const API_URL_IMG_P = 'next/';
   const [projects, setProjects] = useState([]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -16,8 +16,7 @@ function CardPastList() {
       .then(data => {
         console.log(data);
         console.log(data.projects);
-        setProjects(data.projects.past          
-        );
+        setProjects(data.projects.next);
         console.log(projects);
       })
       .catch(error => {
@@ -44,4 +43,4 @@ function CardPastList() {
   );
 }
 
-export default CardPastList;
+export default CardNextList;

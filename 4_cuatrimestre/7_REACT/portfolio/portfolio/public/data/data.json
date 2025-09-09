@@ -4,7 +4,7 @@
 						 {"title":"CAD","icon":"fa-brands fa-steam-symbol"},
 						 {"title":"Automations","icon":"fa-solid fa-robot"}
 						],
-	"proyects":
+	"projects":
 		{	"past":[
 				 {
 				 		"id": 1,
@@ -44,7 +44,7 @@
 				 {
 				 	"id": 6,
 				 		"type":2,
-				    "title": "Box liquid meter",
+				    "title": "Case liquid meter",
 				    "description": "Box for Itron water meter",
 				    "img":"tapa.jpg"
 				 },
