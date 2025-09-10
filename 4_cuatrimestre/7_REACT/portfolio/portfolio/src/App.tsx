@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+//import './App.css';
 import Nav             from "./components/Nav/Nav";
 import Header          from "./components/Header/Header";
 import CardPastList    from "./components/CardList/CardList";
@@ -18,8 +18,9 @@ function App() {
 
   return (
     <>
+      <Nav/>
+      <div className="overlay opacity" title="close side menu" id="main-overlay"></div>
       <div className="main" id="main">
-        <Nav/>
         <Header/>
         <div className="row p-3" id="past-list">
           <CardPastList/>

@@ -3,7 +3,7 @@
  */
 import { useEffect, useState } from "react";
 import type { HeaderProps } from "../../interfaces/headerProps";
-import "./Header.css";
+//import "./Header.css";
 
 const Header = () => {
   const [subjets, setSubjets] = useState([]);
