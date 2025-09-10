@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';  //
-import viteLogo from '/vite.svg';            //public folder
 import './App.css';
-
+import Nav             from "./components/Nav/Nav";
 import Header          from "./components/Header/Header";
 import CardPastList    from "./components/CardList/CardList";
 import CardActualyList from "./components/CardActualyList/CardActualyList";
@@ -15,16 +13,14 @@ import ContactForm     from "./components/ContactForm/ContactForm";
 import Footer          from "./components/Footer/Footer";
 
 
-
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
       <div className="main" id="main">
-
+        <Nav/>
         <Header/>
-
         <div className="row p-3" id="past-list">
           <CardPastList/>
         </div>
@@ -66,7 +62,7 @@ function App() {
         </div>
 
         <Footer/>
-
+        <div className="bg-dark text-center p-5"> <a href="" title="" target="_blank" className=""></a></div>
       </div>
       
     </>

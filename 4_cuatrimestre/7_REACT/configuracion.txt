@@ -1,7 +1,9 @@
 node --version
 npm create vite@latest
 cd NOMBRE DEL PROYECTO
-npm install
+nvm -v (see version running)
+nvm use/install [num]
+npm install (instalo dependencias ya que no son parte del ignore y no forman parte del repositorio)
 npm run dev
 nvm list
 npm install vite@4
@@ -29,7 +31,26 @@ nvm install-lastest-npm
 npx create-react-app name
 cd name
 npm start
+ó
+npm run dev para correr modo
 
+luego localhost:5173
 Later to install need to run npm install to obtain not instaled packges
 
+Instalar (biblioteca) rutas para el renderizado por Ref 
+npm install react-router-dom 
+Crea un contexto para navegar mediante rutas (establece un puntero entre las rutas definidas). Esto es dentro de los tags <browser><route> en app.tsx
 
+/*
+ DETALLES
+**/		
+La carpeta Dist contiene los argichos estaticos y se encuentran ingnorados para el repo.
+Sirven como asistencia para el desarrollo de los modulos. Es la maqueta que luego se debe separar en modulos.
+Estructura archivo .tsx
+ parte superior logica en TS.
+ Parte inferiror TSX que se devuelve en un return (psuso HTML codigo JSX)
+git ignore para los ides
+
+Package.json dependencias y descriptores ocmo si es privado y la version
+Package.lock.json puedo ajustar las versiones exactas y el link de descarga.
+Reinstalar node dependencias borrando carpeta modules y package.lock en caso de error.

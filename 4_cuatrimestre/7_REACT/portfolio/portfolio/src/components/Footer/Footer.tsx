@@ -2,7 +2,7 @@
   Footer.tsx
  */
 import { useEffect, useState } from "react";
-import type { FooterProps } from "../../interfaces/FooterProps";
+import type { FooterProps } from "../../interfaces/footerProps";
 //import "./Header.css";
 
 const Footer = () => {
