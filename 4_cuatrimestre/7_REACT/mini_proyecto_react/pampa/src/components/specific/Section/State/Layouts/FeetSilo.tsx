@@ -19,9 +19,12 @@ import {Temp}       from "./States/States";
 import type { StatusProps } from "../../types/statusProps";
 
 const FeetSilo = (props) => {
-  const LIST_STATUES= ["filled","histogram","forecast","chartXY","temp"];
-  const API_URL_IMG = 'products/monitors/';
-  const API_URL_FEETSILO = '/';
+  const LIST_STATES= ["filled","forecast","chartXY","histogram"];
+  
+  const API_URL_IMG = 'products/states/';
+  const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
+  const ENTITY_URL="/monitor/"; 
+  const [main,setMain]:[CardZone[],any] = useState([]);
   const SHORT_STATUS = ["filled","forecast","chartXY"];
   const [main, setMain]:[StateProps[],any] = useState([]);
   
@@ -30,6 +33,18 @@ const FeetSilo = (props) => {
   const vSt:string[]=["init","result","results","notFound"];
   const [state,setState]=useState(vSt[0]);
           
+  useEffect(() => {
+    fetch(API_PAMPA_URL+ props.idService +"/zonde/"+props.idZone+ENTITY_URL+props.idMonitor)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setMain(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [props]);
+
   useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
         console.log("FeetSilo: "+props);
@@ -64,6 +79,33 @@ const FeetSilo = (props) => {
       }
       ,[props]);// on mount and change
    
+    const vSt:string[]=["init","result","results","notFound"];
+    const [state,setState]=useState(vSt[0]);
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("state: "+state);
+        if (props.dataRecive instanceof Array){
+          console.log("Array");
+          if(props.dataRecive.length === 0) {
+            /*not found something */ 
+            setState(vSt[3]);
+          }else{
+            /*at least some one */
+            setState(vSt[2]);
+          }
+        }else if (props.dataRecive.hasOwnProperty("id")){//object
+            /*only one*/
+           console.log("Object");
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[]);
+     
+
+
     const displayStatuesType= (status:string) => {
 
       switch (status) {
