@@ -5,6 +5,9 @@
 /* Dependencies  */
 //import ErrorBoundary from "./ErrorBoundary";
 
+/* types */
+// import type { NavProps } from "../../types/navProps";
+
 /* Components */
 
 /* styles */

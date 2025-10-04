@@ -6,18 +6,23 @@
 import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
+/* Types */
+
+import type { ChartXYI, FilledI, ForecastI, HistogramI ,TempI } from "../../../../../../types/cardProps";
+
+
+
 /* Components */
 
 //import Filled   from "./Statues/Statues";
 
 /* styles */
-import type { StatusProps } from "../../types/statusProps";
 
 
-export const Filled = (props) => {
+export const Filled = (props:FilledI) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[number,any] = useState(0);
-  const [state,setState]=useState(vSt[0]);
+  const [main, setMain]:[Filled,any] = useState({});
+  const [state,setState]:[string,any]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
   useEffect(()=>{
@@ -26,7 +31,7 @@ export const Filled = (props) => {
       if (props.hasOwnProperty("Filled")){//object
           /*only one*/
           console.log("Object");
-          setMain(Number(props.filled));
+          setMain(Number(props));
           setState(vSt[1]);
       }else{
           setState(vSt[3]);
@@ -36,16 +41,16 @@ export const Filled = (props) => {
   
   return (
     <> 
-      {'Filled: '+main.porcent+'%' }
+      <span>{'Filled: '+main.value+'%' }</span>
     </>
   );
 }
 // export default Filled;
 
 
-export const ChartXY = (props) => {
+export const ChartXY = (props:ChartXYI) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[number,any] = useState(0);
+  const [main, setMain]:[ChartXYI,any] = useState({});
   const [state,setState]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -56,7 +61,7 @@ export const ChartXY = (props) => {
         if (props.hasOwnProperty("ChartXY")){//object
             /*only one*/
            console.log("Object");
-           setMain((props.chartXY));
+           setMain((props));
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -66,7 +71,7 @@ export const ChartXY = (props) => {
   
     return (
       <> 
-       {'ChartXY: '+main }
+       {'ChartXY: '+main.d.title }
       </>
     );
 }
@@ -74,9 +79,9 @@ export const ChartXY = (props) => {
 // export default ChartXY;
 
 
-export const Forecast = (props) => {
+export const Forecast = (props:ForecastI) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[number,any] = useState(0);
+  const [main, setMain]:[ForecastI,any] = useState({});
   const [state,setState]=useState(vSt[0]);
   //const [ projects, setProjects ] = useContext([]);
 
@@ -86,7 +91,7 @@ export const Forecast = (props) => {
         if (props.hasOwnProperty("Filled")){//object
             /*only one*/
            console.log("Object");
-           setMain((props.forecast));
+           setMain(props);
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -96,7 +101,7 @@ export const Forecast = (props) => {
   
     return (
       <> 
-       {'Forecast: '+main }
+       {'Forecast: '+main.d.title }
       </>
     );
 }
@@ -104,9 +109,9 @@ export const Forecast = (props) => {
 // export default Forecast;
 
 
-export const Histogram = (props) => {
+export const Histogram = (props:HistogramI) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[number,any] = useState(0);
+  const [main, setMain]:[HistogramI,any] = useState({});
   const [state,setState]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -118,7 +123,7 @@ export const Histogram = (props) => {
         if (props.hasOwnProperty("Filled")){//object
             /*only one*/
            console.log("Object");
-           setMain((props.histogram));
+           setMain((props));
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -128,7 +133,7 @@ export const Histogram = (props) => {
   
     return (
       <> 
-       {'Filled: '+main }
+       {'Histogram: '+main.d.title }
       </>
     );
 }
@@ -136,9 +141,9 @@ export const Histogram = (props) => {
 // export default Histogram;
 
 
-export const Temp = (props) => {
+export const Temp = (props:TempI) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[number,any] = useState(0);
+  const [main, setMain]:[TempI,any] = useState({});
   const [state,setState]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -150,7 +155,7 @@ export const Temp = (props) => {
         if (props.hasOwnProperty("Filled")){//object
             /*only one*/
            console.log("Object");
-           setMain((props.temp));
+           setMain((props));
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -160,7 +165,7 @@ export const Temp = (props) => {
   
     return (
       <> 
-       {'Temp: '+main }
+       {'Temp: '+main.s.title }
       </>
     );
 }

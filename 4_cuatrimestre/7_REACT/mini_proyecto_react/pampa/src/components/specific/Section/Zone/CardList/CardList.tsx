@@ -6,6 +6,8 @@
 import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
+/* Types */
+import type {ZonesI} from "../../../../../types/cardProps";
 
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
@@ -18,7 +20,7 @@ const CardList = () => {
   const API_URL_IMG = 'products/zones/';
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
   const ENTITY_URL="/zone/"; 
-  const [main,setMain]:[CardZone[],any] = useState([]);
+  const [main,setMain]:[ZonesI[],any] = useState([]);
   
   
   //const [ projects, setProjects ] = useContext([]);
@@ -37,7 +39,7 @@ const CardList = () => {
   return (
     <>
       {
-        main.map( (item: CardZone) => (
+        main.map( (item: ZonesI) => (
          <div id={"zone-"+item.id} className="card">
               <p><b>{item.title}</b></p>
               <div className="container bg-clear">

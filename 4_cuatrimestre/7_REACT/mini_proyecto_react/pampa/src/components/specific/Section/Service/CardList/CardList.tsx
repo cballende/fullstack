@@ -11,13 +11,13 @@ import { useEffect, useState } from "react";
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
 /* styles */
-import type { CardProps } from "../../types/cardProps";
+import type {ServicesI} from "../../../../../types/cardProps";
 
 const CardList = () => {
   const API_URL_IMG = 'products/services/';
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io";
   const ENTITY_URL="/service/";
-  const [main, setMain]:[CardProps[],any] = useState([]);
+  const [main, setMain]:[ServicesI[],any] = useState([]);
   
   //const [ projects, setProjects ] = useContext([]);
 
@@ -36,7 +36,7 @@ const CardList = () => {
   return (
     <>
       {
-        main.map( (item: CardProps) => (
+        main.map( (item: ServicesI) => (
           <div key={item.id} className="card col-xl-4 col-md-6 col-12 mb-4" id={"service-"+item.id}>
             <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title}  className="img-service"></img>
           </div>

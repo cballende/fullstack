@@ -6,6 +6,7 @@
 import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
+import type { FeedSilo } from "../../../../../types/cardProps";
 
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
@@ -16,17 +17,15 @@ import {Histogram}  from "./States/States";
 import {Temp}       from "./States/States";
 
 /* styles */
-import type { StatusProps } from "../../types/statusProps";
 
-const FeetSilo = (props) => {
+const FeetSilo = (props:{idService:string,idZone:string,idMonitor:string}) => {
   const LIST_STATES= ["filled","forecast","chartXY","histogram"];
   
   const API_URL_IMG = 'products/states/';
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
   const ENTITY_URL="/monitor/"; 
-  const [main,setMain]:[CardZone[],any] = useState([]);
   const SHORT_STATES = ["filled","forecast","chartXY"];
-  const [main, setMain]:[StateProps[],any] = useState([]);
+  const [main, setMain]:[FeedSilo,any] = useState([]);
   
   //const [ projects, setProjects ] = useContext([]);
 
@@ -62,8 +61,6 @@ const FeetSilo = (props) => {
       // }
   }, [props]);
     
-    const vSt:string[]=["init","result","results","notFound"];
-    const [state,setState]=useState(vSt[0]);
 
     const displayStatuesType= (status:string) => {
 
@@ -71,34 +68,34 @@ const FeetSilo = (props) => {
         case "filled":
            return (
             <>
-            <Filled data={main.data.filled}/>
+            <Filled data={main.filled}/>
             </>
            );
           break;
         case "histogram":
            return (
             <>
-            <Histogram data={main.data.histogram}/>
+            <Histogram data={main.histogram}/>
             </>
            );
         case "forecast":
            return (
             <>
-            <Forecast data={main.data.forecast}/>
+            <Forecast data={main.forecast}/>
             </>
            );
           break;
          case "chart":
            return (
             <>
-            <ChartXY data={main.data.chartXY}/>
+            <ChartXY data={main.chartXY}/>
             </>
            );
           break;
          case "temp":
            return (
             <>
-            <Temp data={main.data.temp}/>
+            <Temp data={main.temp}/>
             </>
            );
           break;  
@@ -116,7 +113,9 @@ const FeetSilo = (props) => {
   
     return (
       <>
-        <Display/>
+      { SHORT_STATES.map( (item:string)=>(
+                  displayStatuesType(item)
+                ))}
       </>
     );
 }

@@ -1,13 +1,19 @@
 /* ENTITIES */
 
-export interface Servicios {
+export interface ServicesI {
 	id: number;
 	title: string;
 	description: string; 
 	img: string;
 }
+export interface UnitI 
+{id: number;
+									title: string;
+									description: string;
+									img: string;
+									gis: string[2];}
 
-export interface Zones {
+export interface ZonesI {
 	id: number;
 	title: string;
 	description: string;
@@ -16,30 +22,16 @@ export interface Zones {
 	units: number;
 }
 
-export interface Zone {
+export interface ZoneI {
 	id: number;
 	title: string;
 	description: string;
 	img: string;
 	gis: string[2]; 
-	units: {
-									id: number;
-									title: string;
-									description: string;
-									img: string;
-									gis: string[2];
-								}[];
+	units: UnitI[];
 }
 
-export interface fill {
-	id: number;
-	title: string;
-	description: string;
-	path: string; 
-	img: string;
-}
-
-export interface states {
+export interface StatesI {
 	id: number;
 	title: string;
 	description: string;
@@ -47,18 +39,38 @@ export interface states {
 	data:any;
 }
 
+export interface FeedSiloI {
+	filled    :FilledI;
+	forecast  :ForecastI;
+  chartXY   :ChartXYI;
+	histogram :HistogramI;
+  temp      :TempI;
+}
+
+export interface PivotI {
+	flow    :FlowI;
+	polar   :PolarI;
+  serie   :SerieI;
+}
+
+export interface WeatherI {
+	temp    : TempI;
+	moisture: MoistureI;
+  rain   	:	RainI;
+}
+
 
 /***** Monitors *******/
 
 /* filled */
-export interface filled {
+export interface FilledI {
 	value: string;
 	order_1: string;
 	order_2: string;
 }
 
 
-export interface chartXY {
+export interface ChartXYI {
   d:{ title:string,
 						x:string[],
 						y:string[]
@@ -77,7 +89,7 @@ export interface chartXY {
 				};
 }
 
-export interface forecast {
+export interface ForecastI {
 	 d:{ title:string,
 						x:string[],
 						y:string[],
@@ -108,7 +120,7 @@ export interface forecast {
 				},
 }
 
-export interface histogram {
+export interface HistogramI {
 	d:{ title:string,
 						x:string[],
 						y:string[]
@@ -130,33 +142,33 @@ export interface histogram {
 
 /* pivot */
 
-export interface flow {
+export interface FlowI {
 	value: string;
 	order_1: string;
 	order_2: string;
 }
 
-export interface polar {
+export interface PolarI {
 	title:string;
-	x:string;
-	y:string;
+	x:string[];
+	y:string[];
 }
 
-export interface serie {
+export interface SerieI {
 	title:string;
-	x:string;
-	y:string;
+	x:string[];
+	y:string[];
 }
 
 /* Weather */
 
-export interface wind {
+export interface WindI {
 	value:string;
 	order_1:string;
 	deg:string;
 }
 
-export interface temp {
+export interface TempI {
 	 s:{ title:string,
 						value:string,
 				};
@@ -178,7 +190,7 @@ export interface temp {
 				};
 }
 
-export interface moisture {
+export interface MoistureI {
 		d:{ title:string,
 						x:string[],
 						y:string[]
@@ -197,7 +209,7 @@ export interface moisture {
 				};
 }
 
-export interface rain {
+export interface RainI {
 		d:{ title:string,
 						x:string[],
 						y:string[]

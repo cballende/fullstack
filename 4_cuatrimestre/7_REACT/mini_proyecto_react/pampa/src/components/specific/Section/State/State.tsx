@@ -6,7 +6,7 @@
 //import ErrorBoundary from "./ErrorBoundary";
 
 /* Components */
-import Layouts from "./Layouts/Layouts";
+import Layouts from "./Layouts/Layout";
 
 /* styles */
 //import type {CartProps} from "../types/cardProps";
