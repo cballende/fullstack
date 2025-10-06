@@ -4,12 +4,12 @@
 
 /* Dependencies  */
 import { useEffect, useState } from "react";
+import { Link, useParams }     from "react-router";
 //import ErrorBoundary from "./ErrorBoundary";
 
 /* Types */
 
 import type {StatesI} from "../../../../../types/cardProps";
-
 
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
@@ -22,7 +22,8 @@ import Weather from "./Weather";
 const Layouts = (props) => {
   
   const [main,setMain]:[StatesI[],any] = useState([]);
-    
+  let { serviceId,zoneId,monitorId } = useParams();
+  
   //const [ projects, setProjects ] = useContext([]);
   
     const displayLayoutType= (prop:StatusProp) => {
@@ -55,7 +56,7 @@ const Layouts = (props) => {
     }
 
     const Display=()=>{
-     return displayLayoutType(props);
+     return displayLayoutType();
     }
   
     return (

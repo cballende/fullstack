@@ -60,11 +60,11 @@ export const ChartXY = (props:ChartXYI) => {
         console.log("ChartXY: "+props);
         if (props.hasOwnProperty("ChartXY")){//object
             /*only one*/
-           console.log("Object");
-           setMain((props));
-           setState(vSt[1]);
+          console.log("Object");
+          setMain((props));
+          setState(vSt[1]);
         }else{
-           setState(vSt[3]);
+          setState(vSt[3]);
         }
       }
       ,[props]);// on mount and change

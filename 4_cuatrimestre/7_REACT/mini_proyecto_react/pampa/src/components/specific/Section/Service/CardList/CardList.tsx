@@ -3,15 +3,17 @@
  */
 
 /* Dependencies  */
-import { useEffect, useState } from "react";
+import { useEffect, useState }    from "react";
+import { Link ,useNavigate }  from "react-router";
 //import ErrorBoundary from "./ErrorBoundary";
 
+/* Types */
+import type {ServicesI} from "../../../../../types/cardProps";
 
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
 /* styles */
-import type {ServicesI} from "../../../../../types/cardProps";
 
 const CardList = () => {
   const API_URL_IMG = 'products/services/';
@@ -33,13 +35,19 @@ const CardList = () => {
       });
   }, []);// on render
 
+  const handleClickService=()=>{
+
+  }
+
   return (
     <>
       {
         main.map( (item: ServicesI) => (
-          <div key={item.id} className="card col-xl-4 col-md-6 col-12 mb-4" id={"service-"+item.id}>
-            <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title}  className="img-service"></img>
-          </div>
+          <Link to={"/service/:"+item.id+"/zone"} >
+            <div key={item.id} className="card col-xl-4 col-md-6 col-12 mb-4" id={"service-"+item.id} onClick={handleClickService}>
+              <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title}  className="img-service"></img>
+            </div>
+          </Link>
         ))          
       }
     </>

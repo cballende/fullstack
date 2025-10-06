@@ -4,6 +4,7 @@
 
 /* Dependencies  */
 // import { useEffect, useState } from "react";
+import { OutLet } from "react-router";
 
 //import ErrorBoundary from "./ErrorBoundary";
 
@@ -11,7 +12,7 @@
 //import type {NewsProps} from "../types/newsProps";
 
 /* Components */
-import Service from "./Service/Service";
+//import Service from "./Service/Service";
 /* import Zone from "./Zone/Zone";
 import Monitor from "./Monitor/Monitor";
 import State from "./State/State"; */
@@ -23,10 +24,13 @@ const Section = () => {
   return (
     <>
       <div className="main" id="main">
-          <Service/>
-          {/* <Zone/>
-          <Monitor/>
-          <State/> */}
+        <OutLet/>
+      {/* 
+        <Service/>
+        <Zone/>
+        <Monitor/>
+        <State/> 
+      */}
       </div>
     </>
   );

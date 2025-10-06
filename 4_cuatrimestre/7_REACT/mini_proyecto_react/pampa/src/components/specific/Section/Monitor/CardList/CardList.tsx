@@ -4,9 +4,10 @@
 
 /* Dependencies  */
 import { useEffect, useState } from "react";
+import { Link, useParams }     from "react-router";
 //import ErrorBoundary from "./ErrorBoundary";
 
-/* Tipes */
+/* Types */
 import type {ZoneI,UnitI} from "../../../../../types/cardProps";
 
 /* Components */
@@ -14,17 +15,17 @@ import type {ZoneI,UnitI} from "../../../../../types/cardProps";
 
 /* styles */
 
-
 const CardList = () => {
   const API_URL_IMG = 'products/monitors/';
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
   const ENTITY_URL="/monitor/";
   const [main, setMain]:[ZoneI,any] = useState([]);
   
+  let { serviceId,zoneId } = useParams();
   //const [ projects, setProjects ] = useContext([]);
 
   useEffect(() => {
-    fetch(API_PAMPA_URL+props.idService+"/zone/"+props.idZone+ENTITY_URL)
+    fetch(API_PAMPA_URL+serviceId+"/zone/"+zoneId+ENTITY_URL)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -35,17 +36,20 @@ const CardList = () => {
       });
   }, []);// on render
 
+
   return (
     <>
       {
         main.units.map( (item: UnitI) => (
-         <div id={"zone-"+item.id} className="card">
-              <p><b>{item.title}</b></p>
-              <div className="container bg-clear">
-                <p>{item.description}</p>
-              </div>
-              <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title} className="img-monitor"></img>
-         </div>
+        <Link to={"/service/:"+serviceId+"/zone/:"+zoneId+"/monitor/:"+item.id+"/state"} >
+          <div id={"zone-"+item.id} className="card">
+            <p><b>{item.title}</b></p>
+            <div className="container bg-clear">
+              <p>{item.description}</p>
+            </div>
+            <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title} className="img-monitor"></img>
+          </div>
+         </Link>
         ))          
       }
     </>

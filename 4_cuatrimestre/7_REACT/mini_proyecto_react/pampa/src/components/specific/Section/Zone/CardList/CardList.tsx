@@ -3,8 +3,9 @@
  */
 
 /* Dependencies  */
-import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
+import { useEffect, useState } from "react";
+import { Link, useParams }     from "react-router";
 
 /* Types */
 import type {ZonesI} from "../../../../../types/cardProps";
@@ -13,7 +14,6 @@ import type {ZonesI} from "../../../../../types/cardProps";
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
 /* styles */
-import type { CardProps } from "../../types/cardProps";
 
 const CardList = () => {
   
@@ -22,10 +22,11 @@ const CardList = () => {
   const ENTITY_URL="/zone/"; 
   const [main,setMain]:[ZonesI[],any] = useState([]);
   
+  let { serviceId } = useParams();
   
   //const [ projects, setProjects ] = useContext([]);
   useEffect(() => {
-    fetch(API_PAMPA_URL+ props.id +ENTITY_URL)
+    fetch(API_PAMPA_URL+ serviceId +ENTITY_URL)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -36,17 +37,20 @@ const CardList = () => {
       });
   }, []);// on render
 
+
   return (
     <>
       {
         main.map( (item: ZonesI) => (
-         <div id={"zone-"+item.id} className="card">
+          <Link to={"/service/:"+serviceId+"/zone/:"+item.id+"/monitor"} >
+            <div id={"zone-"+item.id} className="card">
               <p><b>{item.title}</b></p>
               <div className="container bg-clear">
                 <p>{item.description}</p>
               </div>
               <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title} className="img-zone"></img>
-         </div>
+            </div>
+          </Link>  
         ))          
       }
     </>

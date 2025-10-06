@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route,OutLet } from "react-router";
 //import './App.css';
 import Nav       from "./components/layouts/Nav/Nav";
 import Overlay   from "./components/common/Overlay/Overlay";
@@ -21,18 +21,18 @@ function App() {
         <Header/>
         <Nav/>
         <Overlay/>
-        <Section/>
+        <OutLet/>
+        {/* <Section/> */}
         <Aside/>
         <Footer/>
 
         <Routes>
           <Route path="/" element={<App/>}>
-            <Route path="service" element={<Service/>}>
-              <Route path=":serviceId/zone" element={<Zone/>}>
-                <Route path=":zoneId/monitor" element={<Monitor />}>
-                  <Route path=":monitorId/state" element={< State/>} />
-                </Route>
-              </Route>
+            <Route element={<Section/>}>
+              <Route path="service"                                                  element={<Service/>}/>
+              <Route path="service/:serviceId/zone"                                  element={<Zone/>}/>
+              <Route path="service/:serviceId/zone/:zoneId/monitor"                  element={<Monitor/>}/>
+              <Route path="service/:serviceId/zone/:zoneId/monitor/:monitorId/state" element={<State/>}/>
             </Route>
           </Route>
         </Routes>
