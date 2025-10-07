@@ -10,6 +10,9 @@ import { Link, useParams }     from "react-router";
 /* Types */
 import type {ZonesI} from "../../../../../types/cardProps";
 
+/* Var init */
+import { zones_0 } from "../../../../../types/cardProps";
+
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
@@ -20,7 +23,7 @@ const CardList = () => {
   const API_URL_IMG = 'products/zones/';
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
   const ENTITY_URL="/zone/"; 
-  const [main,setMain]:[ZonesI[],any] = useState([]);
+  const [main,setMain]:[ZonesI[],any] = useState([zones_0]);
   
   let { serviceId } = useParams();
   

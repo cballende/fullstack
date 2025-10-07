@@ -7,9 +7,13 @@ import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
 /* Types */
+import type { ChartXYI, FilledI, FlowI, ForecastI, HistogramI ,MoistureI,PolarI,RainI,SerieI,TempI, WindI } from "../../../../../../types/cardProps";
 
-import type { ChartXYI, FilledI, ForecastI, HistogramI ,TempI } from "../../../../../../types/cardProps";
-
+/* Var init */
+import { filled_0, forecast_0,chartXY_0,histogram_0,temp_0,
+         flow_0, polar_0,serie_0,
+         wind_0,moisture_0,rain_0 
+        } from "../../../../../../types/cardProps";
 
 
 /* Components */
@@ -19,19 +23,21 @@ import type { ChartXYI, FilledI, ForecastI, HistogramI ,TempI } from "../../../.
 /* styles */
 
 
-export const Filled = (props:FilledI) => {
+/* filled */
+
+export const Filled = (props:{data:FilledI}) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[Filled,any] = useState({});
+  const [main, setMain]:[FilledI,any] = useState(filled_0);
   const [state,setState]:[string,any]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
   useEffect(()=>{
       //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
       console.log("Filled: "+props);
-      if (props.hasOwnProperty("Filled")){//object
+      if (props.data.hasOwnProperty("value")){//object
           /*only one*/
           console.log("Object");
-          setMain(Number(props));
+          setMain(props.data);
           setState(vSt[1]);
       }else{
           setState(vSt[3]);
@@ -48,9 +54,9 @@ export const Filled = (props:FilledI) => {
 // export default Filled;
 
 
-export const ChartXY = (props:ChartXYI) => {
+export const ChartXY = (props:{data:ChartXYI}) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[ChartXYI,any] = useState({});
+  const [main, setMain]:[ChartXYI,any] = useState(chartXY_0);
   const [state,setState]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -58,10 +64,10 @@ export const ChartXY = (props:ChartXYI) => {
     useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
         console.log("ChartXY: "+props);
-        if (props.hasOwnProperty("ChartXY")){//object
+        if (props.data.hasOwnProperty("d")){//object
             /*only one*/
           console.log("Object");
-          setMain((props));
+          setMain(props.data);
           setState(vSt[1]);
         }else{
           setState(vSt[3]);
@@ -79,19 +85,19 @@ export const ChartXY = (props:ChartXYI) => {
 // export default ChartXY;
 
 
-export const Forecast = (props:ForecastI) => {
+export const Forecast = (props:{data:ForecastI}) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[ForecastI,any] = useState({});
+  const [main, setMain]:[ForecastI,any] = useState(forecast_0);
   const [state,setState]=useState(vSt[0]);
   //const [ projects, setProjects ] = useContext([]);
 
     useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
-        console.log("Filled: "+props);
-        if (props.hasOwnProperty("Filled")){//object
+        console.log("Forecast: "+props);
+        if (props.data.hasOwnProperty("d")){//object
             /*only one*/
            console.log("Object");
-           setMain(props);
+           setMain(props.data);
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -109,9 +115,9 @@ export const Forecast = (props:ForecastI) => {
 // export default Forecast;
 
 
-export const Histogram = (props:HistogramI) => {
+export const Histogram = (props:{data:HistogramI}) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[HistogramI,any] = useState({});
+  const [main, setMain]:[HistogramI,any] = useState(histogram_0);
   const [state,setState]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -119,11 +125,11 @@ export const Histogram = (props:HistogramI) => {
           
     useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
-        console.log("Filled: "+props);
-        if (props.hasOwnProperty("Filled")){//object
+        console.log("Histogram: "+props);
+        if (props.data.hasOwnProperty("d")){//object
             /*only one*/
            console.log("Object");
-           setMain((props));
+           setMain(props.data);
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -141,9 +147,9 @@ export const Histogram = (props:HistogramI) => {
 // export default Histogram;
 
 
-export const Temp = (props:TempI) => {
+export const Temp = (props:{data:TempI}) => {
   const vSt:string[]=["init","result","results","notFound"];
-  const [main, setMain]:[TempI,any] = useState({});
+  const [main, setMain]:[TempI,any] = useState(temp_0);
   const [state,setState]=useState(vSt[0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -151,11 +157,11 @@ export const Temp = (props:TempI) => {
           
     useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
-        console.log("Filled: "+props);
-        if (props.hasOwnProperty("Filled")){//object
+        console.log("Temp: "+props);
+        if (props.data.hasOwnProperty("s")){//object
             /*only one*/
            console.log("Object");
-           setMain((props));
+           setMain(props.data);
            setState(vSt[1]);
         }else{
            setState(vSt[3]);
@@ -166,6 +172,190 @@ export const Temp = (props:TempI) => {
     return (
       <> 
        {'Temp: '+main.s.title }
+      </>
+    );
+}
+
+// export default Temp;
+
+/* pivot */
+
+export const Flow = (props:{data:FlowI}) => {
+  const vSt:string[]=["init","result","results","notFound"];
+  const [main, setMain]:[FlowI,any] = useState(flow_0);
+  const [state,setState]=useState(vSt[0]);
+  
+  //const [ projects, setProjects ] = useContext([]);
+
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("Flow: "+props);
+        if (props.data.hasOwnProperty("value")){//object
+            /*only one*/
+           console.log("Object");
+           setMain(props.data);
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[props]);// on mount and change
+  
+    return (
+      <> 
+       {'Flujo: '+main.value }
+      </>
+    );
+}
+
+// export default Temp;
+export const Polar = (props:{data:PolarI}) => {
+  const vSt:string[]=["init","result","results","notFound"];
+  const [main, setMain]:[PolarI,any] = useState(polar_0);
+  const [state,setState]=useState(vSt[0]);
+  
+  //const [ projects, setProjects ] = useContext([]);
+
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("Polar: "+props);
+        if (props.data.hasOwnProperty("title")){//object
+            /*only one*/
+           console.log("Object");
+           setMain(props.data);
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[props]);// on mount and change
+  
+    return (
+      <> 
+       {'Polar: '+main.title }
+      </>
+    );
+}
+
+// export default Temp;
+export const Serie = (props:{data:SerieI}) => {
+  const vSt:string[]=["init","result","results","notFound"];
+  const [main, setMain]:[SerieI,any] = useState(serie_0);
+  const [state,setState]=useState(vSt[0]);
+  
+  //const [ projects, setProjects ] = useContext([]);
+
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("Serie: "+props);
+        if (props.data.hasOwnProperty("title")){//object
+            /*only one*/
+           console.log("Object");
+           setMain(props.data);
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[props]);// on mount and change
+  
+    return (
+      <> 
+       {'Temp: '+main.title }
+      </>
+    );
+}
+
+
+/* Weather */
+
+// export default Temp;
+export const Moisture = (props:{data:MoistureI}) => {
+  const vSt:string[]=["init","result","results","notFound"];
+  const [main, setMain]:[MoistureI,any] = useState(moisture_0);
+  const [state,setState]=useState(vSt[0]);
+  
+  //const [ projects, setProjects ] = useContext([]);
+
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("Temp: "+props);
+        if (props.data.hasOwnProperty("d")){//object
+            /*only one*/
+           console.log("Object");
+           setMain(props.data);
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[props]);// on mount and change
+  
+    return (
+      <> 
+       {'Humedad: '+main.d.title }
+      </>
+    );
+}
+
+export const Rain = (props:{data:RainI}) => {
+  const vSt:string[]=["init","result","results","notFound"];
+  const [main, setMain]:[RainI,any] = useState(rain_0);
+  const [state,setState]=useState(vSt[0]);
+  
+  //const [ projects, setProjects ] = useContext([]);
+
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("Temp: "+props);
+        if (props.data.hasOwnProperty("d")){//object
+            /*only one*/
+           console.log("Object");
+           setMain(props.data);
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[props]);// on mount and change
+  
+    return (
+      <> 
+       {'Lluvia: '+main.d.title }
+      </>
+    );
+}
+
+export const Wind = (props:{data:WindI}) => {
+  const vSt:string[]=["init","result","results","notFound"];
+  const [main, setMain]:[WindI,any] = useState(wind_0);
+  const [state,setState]=useState(vSt[0]);
+  
+  //const [ projects, setProjects ] = useContext([]);
+
+          
+    useEffect(()=>{
+        //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
+        console.log("Temp: "+props);
+        if (props.data.hasOwnProperty("value")){//object
+            /*only one*/
+           console.log("Object");
+           setMain(props.data);
+           setState(vSt[1]);
+        }else{
+           setState(vSt[3]);
+        }
+      }
+      ,[props]);// on mount and change
+  
+    return (
+      <> 
+       {'Temp: '+main.value }
       </>
     );
 }

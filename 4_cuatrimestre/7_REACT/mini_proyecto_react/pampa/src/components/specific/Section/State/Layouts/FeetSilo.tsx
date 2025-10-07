@@ -6,7 +6,12 @@
 import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
+/* Types */
 import type { FeedSiloI, StateI } from "../../../../../types/cardProps";
+
+/* Var init */
+import { feedSilo_0 } from "../../../../../types/cardProps";
+
 
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
@@ -18,11 +23,11 @@ import {Temp}       from "./States/States";
 
 /* styles */
 
-const FeetSilo = (props:StateI) => {
+const FeetSilo = (props:{data:StateI}) => {
   const LIST_STATES= ["filled","forecast","chartXY","histogram"];
   
   const SHORT_STATES = ["filled","forecast","chartXY"];
-  const [main, setMain]:[FeedSiloI,any] = useState([]);
+  const [main, setMain]:[FeedSiloI,any] = useState(feedSilo_0);
   
   //const [ projects, setProjects ] = useContext([]);
 
@@ -31,9 +36,8 @@ const FeetSilo = (props:StateI) => {
   
     
   useEffect(() => {
-    console.log("FeetSilo: "+props.title);
-    let data:FeedSiloI= props.data;
-    setMain(data);
+    console.log("FeetSilo: "+props.data.title);
+    setMain(props.data);
   }, [props]);
 
   const displayStatuesType= (status:string) => {
@@ -69,7 +73,7 @@ const FeetSilo = (props:StateI) => {
          case "temp":
            return (
             <>
-            <Temp data={main.data.temp}/>
+            <Temp data={main.temp}/>
             </>
            );
           break;  
@@ -87,9 +91,11 @@ const FeetSilo = (props:StateI) => {
   
     return (
       <>
-      { SHORT_STATES.map( (item:string)=>(
-                  displayStatuesType(item)
-                ))}
+        <div className="row p-3" id="feetSilo-state-list">
+          { SHORT_STATES.map( (item:string)=>(
+                      displayStatuesType(item)
+                    ))}
+        </div>
       </>
     );
 }

@@ -10,6 +10,10 @@ import { Link ,useNavigate }  from "react-router";
 /* Types */
 import type {ServicesI} from "../../../../../types/cardProps";
 
+/* Var init */
+import { services_0 } from "../../../../../types/cardProps";
+
+
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
@@ -19,7 +23,7 @@ const CardList = () => {
   const API_URL_IMG = 'products/services/';
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io";
   const ENTITY_URL="/service/";
-  const [main, setMain]:[ServicesI[],any] = useState([]);
+  const [main, setMain]:[ServicesI[],any] = useState([services_0]);
   
   //const [ projects, setProjects ] = useContext([]);
 

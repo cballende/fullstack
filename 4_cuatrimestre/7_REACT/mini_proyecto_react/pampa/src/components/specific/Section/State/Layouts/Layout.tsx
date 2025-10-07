@@ -11,6 +11,9 @@ import { useParams }     from "react-router";
 
 import type {MonitorI, StateI} from "../../../../../types/cardProps";
 
+/* Var init */
+import { monitor_0 } from "../../../../../types/cardProps";
+
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 import FeetSilo from "./FeetSilo";
@@ -24,8 +27,8 @@ const Layouts = () => {
   const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
   const ENTITY_URL="/monitor/"; 
 
-  const [main,setMain]:[MonitorI,any] = useState([]);
-  let   { serviceId,zoneId,monitorId,locationParams } = useParams();
+  const [main,setMain]:[MonitorI,any] = useState(monitor_0);
+  let   { serviceId,zoneId,monitorId } = useParams();
   
             
   useEffect(() => {
