@@ -31,7 +31,16 @@ export interface ZoneI {
 	units: UnitI[];
 }
 
-export interface StatesI {
+export interface MonitorI {
+	id: number;
+	type: {id:string,title:string};
+	title: string;
+	description: string;
+	img: {icon:string,bg:string};
+	states:StateI;
+}
+
+export interface StateI {
 	id: number;
 	title: string;
 	description: string;
@@ -68,7 +77,6 @@ export interface FilledI {
 	order_1: string;
 	order_2: string;
 }
-
 
 export interface ChartXYI {
   d:{ title:string,
