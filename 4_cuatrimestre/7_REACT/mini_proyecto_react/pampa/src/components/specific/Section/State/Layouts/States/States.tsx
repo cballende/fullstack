@@ -33,10 +33,10 @@ export const Filled = (props:{data:FilledI}) => {
   //const [ projects, setProjects ] = useContext([]);
   useEffect(()=>{
       //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
-      console.log("Filled: "+props);
       if (props.data.hasOwnProperty("value")){//object
-          /*only one*/
-          console.log("Object");
+        /*only one*/
+        //console.log("Object");
+          console.log("Filled: "+props.data.value);
           setMain(props.data);
           setState(vSt[1]);
       }else{
@@ -63,10 +63,9 @@ export const ChartXY = (props:{data:ChartXYI}) => {
          
     useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
-        console.log("ChartXY: "+props);
+        console.log("ChartXY: "+props.data.d.title);
         if (props.data.hasOwnProperty("d")){//object
             /*only one*/
-          console.log("Object");
           setMain(props.data);
           setState(vSt[1]);
         }else{
@@ -77,7 +76,7 @@ export const ChartXY = (props:{data:ChartXYI}) => {
   
     return (
       <> 
-       {'ChartXY: '+main.d.title }
+       <span>{'ChartXY: '+main.d.title }</span>
       </>
     );
 }
@@ -93,10 +92,10 @@ export const Forecast = (props:{data:ForecastI}) => {
 
     useEffect(()=>{
         //console.log("Result",props.dataRecive,props.dataRecive.hasOwnProperty("id"));
-        console.log("Forecast: "+props);
+        console.log("Forecast: "+props.data.d.title);
         if (props.data.hasOwnProperty("d")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -107,7 +106,7 @@ export const Forecast = (props:{data:ForecastI}) => {
   
     return (
       <> 
-       {'Forecast: '+main.d.title }
+       <span>{'Forecast: '+main.d.title }</span>
       </>
     );
 }
@@ -128,7 +127,7 @@ export const Histogram = (props:{data:HistogramI}) => {
         console.log("Histogram: "+props);
         if (props.data.hasOwnProperty("d")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -160,7 +159,7 @@ export const Temp = (props:{data:TempI}) => {
         console.log("Temp: "+props);
         if (props.data.hasOwnProperty("s")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -193,7 +192,7 @@ export const Flow = (props:{data:FlowI}) => {
         console.log("Flow: "+props);
         if (props.data.hasOwnProperty("value")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -223,7 +222,7 @@ export const Polar = (props:{data:PolarI}) => {
         console.log("Polar: "+props);
         if (props.data.hasOwnProperty("title")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -253,7 +252,7 @@ export const Serie = (props:{data:SerieI}) => {
         console.log("Serie: "+props);
         if (props.data.hasOwnProperty("title")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -286,7 +285,7 @@ export const Moisture = (props:{data:MoistureI}) => {
         console.log("Temp: "+props);
         if (props.data.hasOwnProperty("d")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -315,7 +314,7 @@ export const Rain = (props:{data:RainI}) => {
         console.log("Temp: "+props);
         if (props.data.hasOwnProperty("d")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{
@@ -344,7 +343,7 @@ export const Wind = (props:{data:WindI}) => {
         console.log("Temp: "+props);
         if (props.data.hasOwnProperty("value")){//object
             /*only one*/
-           console.log("Object");
+          //  console.log("Object");
            setMain(props.data);
            setState(vSt[1]);
         }else{

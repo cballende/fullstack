@@ -3,18 +3,17 @@
 */
 
 /* Dependencies  */
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
 /* types */
-import type {MenuProps} from "../types/menuProps";
-
+import type {MenuProps} from "../../../../types/menuProps";
 
 /* Components */
 
 /* styles */
 
-const Menu = (props:MenuProps[]) => {
+const Menu = (props:{data:MenuProps[]}) => {
   
   return (
     <>
@@ -22,9 +21,9 @@ const Menu = (props:MenuProps[]) => {
       <div className="breadcrumbs">
         <ul className="breadcrumbs-List " id="breadcrumbs-list">
          {
-           props.map((value:MenuProps) =>(
-             <li className="nodeco breadcrumb">
-               <span className=""><a className="nodeco" href={"https://"+post.link} target="_blank">{post.name}</a></span><br></br>
+           props.data.map((value:MenuProps) =>(
+             <li key={value.id} className="nodeco breadcrumb">
+               <span className=""><a className="nodeco" href={"https://"+value.link} target="_blank">{value.name}</a></span><br></br>
                <p>{value.breadcrumbs.description}</p>
              </li>
            ))

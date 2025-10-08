@@ -4,7 +4,7 @@
 
 /* Dependencies  */
 // import { useEffect, useState } from "react";
-import { OutLet } from "react-router";
+import { Outlet } from "react-router";
 
 //import ErrorBoundary from "./ErrorBoundary";
 
@@ -24,7 +24,7 @@ const Section = () => {
   return (
     <>
       <div className="main" id="main">
-        <OutLet/>
+        <Outlet/>
       {/* 
         <Service/>
         <Zone/>

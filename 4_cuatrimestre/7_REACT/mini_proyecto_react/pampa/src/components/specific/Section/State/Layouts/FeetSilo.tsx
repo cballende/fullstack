@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 
 /* Types */
-import type { FeedSiloI, StateI } from "../../../../../types/cardProps";
+import type { FeedSiloI, FilledI, StateI } from "../../../../../types/cardProps";
 
 /* Var init */
 import { feedSilo_0 } from "../../../../../types/cardProps";
@@ -23,7 +23,7 @@ import {Temp}       from "./States/States";
 
 /* styles */
 
-const FeetSilo = (props:{data:StateI}) => {
+const FeetSilo = (props:{data:FeedSiloI}) => {
   const LIST_STATES= ["filled","forecast","chartXY","histogram"];
   
   const SHORT_STATES = ["filled","forecast","chartXY"];
@@ -36,7 +36,7 @@ const FeetSilo = (props:{data:StateI}) => {
   
     
   useEffect(() => {
-    console.log("FeetSilo: "+props.data.title);
+    console.log("FeetSilo: "+props.data.filled.value);
     setMain(props.data);
   }, [props]);
 
@@ -63,7 +63,7 @@ const FeetSilo = (props:{data:StateI}) => {
             </>
            );
           break;
-         case "chart":
+         case "chartXY":
            return (
             <>
             <ChartXY data={main.chartXY}/>

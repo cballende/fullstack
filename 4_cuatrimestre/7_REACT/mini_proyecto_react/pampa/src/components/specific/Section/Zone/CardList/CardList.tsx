@@ -21,12 +21,12 @@ import { zones_0 } from "../../../../../types/cardProps";
 const CardList = () => {
   
   const API_URL_IMG = 'products/zones/';
-  const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
+  const API_PAMPA_URL ="https://2fea5880-3f1d-4baa-8b24-5d8876c8a803.mock.pstmn.io/service/";
   const ENTITY_URL="/zone/"; 
   const [main,setMain]:[ZonesI[],any] = useState([zones_0]);
   
   let { serviceId } = useParams();
-  
+  console.log(serviceId);
   //const [ projects, setProjects ] = useContext([]);
   useEffect(() => {
     fetch(API_PAMPA_URL+ serviceId +ENTITY_URL)
@@ -36,8 +36,11 @@ const CardList = () => {
         setMain(data);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        //console.log(main);
+        //console.log('Error fetching data Header:'+ error);
+        console.log('Error fetching data Zone');
       });
+      
   }, []);// on render
 
 
@@ -45,13 +48,13 @@ const CardList = () => {
     <>
       {
         main.map( (item: ZonesI) => (
-          <Link to={"/service/:"+serviceId+"/zone/:"+item.id+"/monitor"} >
+          <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} >
             <div id={"zone-"+item.id} className="card">
               <p><b>{item.title}</b></p>
               <div className="container bg-clear">
                 <p>{item.description}</p>
               </div>
-              <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title} className="img-zone"></img>
+              <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-zone"></img>
             </div>
           </Link>  
         ))          

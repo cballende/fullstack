@@ -21,7 +21,7 @@ import { zone_0 } from "../../../../../types/cardProps";
 
 const CardList = () => {
   const API_URL_IMG = 'products/monitors/';
-  const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
+  const API_PAMPA_URL ="https://1640c2bd-b2ff-44b1-8846-e4206eccd5d6.mock.pstmn.io//service/";
   const ENTITY_URL="/monitor/";
   const [main, setMain]:[ZoneI,any] = useState(zone_0);
   
@@ -36,7 +36,9 @@ const CardList = () => {
         setMain(data);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        //console.log(main);
+        //console.log('Error fetching data Header:'+ error);
+        console.log('Error fetching data Monitor');
       });
   }, []);// on render
 
@@ -45,13 +47,13 @@ const CardList = () => {
     <>
       {
         main.units.map( (item: UnitI) => (
-        <Link to={"/service/:"+serviceId+"/zone/:"+zoneId+"/monitor/:"+item.id+"/state"} >
+        <Link key={item.id} to={"/service/"+serviceId+"/zone/"+zoneId+"/monitor/"+item.id+"/state"} >
           <div id={"zone-"+item.id} className="card">
             <p><b>{item.title}</b></p>
             <div className="container bg-clear">
               <p>{item.description}</p>
             </div>
-            <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={item.title} className="img-monitor"></img>
+            <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-monitor"></img>
           </div>
          </Link>
         ))          

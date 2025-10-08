@@ -12,7 +12,7 @@ import { useParams }     from "react-router";
 import type {MonitorI, StateI} from "../../../../../types/cardProps";
 
 /* Var init */
-import { monitor_0 } from "../../../../../types/cardProps";
+import { state_0 } from "../../../../../types/cardProps";
 
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
@@ -24,10 +24,10 @@ import Weather from "./Weather";
 
 const Layouts = () => {
   const API_URL_IMG = 'products/states/';
-  const API_PAMPA_URL ="https://7b331a29-6f10-4a25-8efb-df6ff4a297a8.mock.pstmn.io//service/";
+  const API_PAMPA_URL ="https://07d38259-d507-4036-b1f9-00818d40e676.mock.pstmn.io/service/";
   const ENTITY_URL="/monitor/"; 
 
-  const [main,setMain]:[MonitorI,any] = useState(monitor_0);
+  const [main,setMain]:[StateI,any] = useState(state_0);
   let   { serviceId,zoneId,monitorId } = useParams();
   
             
@@ -67,20 +67,20 @@ const Layouts = () => {
         case "feetSilo":
            return (
             <>
-            <FeetSilo data={main.states}/>
+            <FeetSilo data={main.data}/>
             </>
            );
           break;
         case "pivot":
            return (
             <>
-            <Pivot data={main.states}/>
+            <Pivot data={main.data}/>
             </>
            );
         case "weather":
            return (
             <>
-            <Weather data={main.states}/>
+            <Weather data={main.data}/>
             </>
            );
           break;  

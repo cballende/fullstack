@@ -33,6 +33,15 @@ export interface ZoneI {
 	units: UnitI[];
 }
 
+export interface StateI {
+	id: number;
+ type:{title:string,id:number};
+	title: string;
+	description: string;
+	img: {icon:string,bg:string};
+	data:any;      
+}
+
 export interface MonitorI {
 	id: number;
 	type: {id:string,title:string};
@@ -40,14 +49,6 @@ export interface MonitorI {
 	description: string;
 	img: {icon:string,bg:string};
 	states:StateI;
-}
-
-export interface StateI {
-	id: number;
-	title: string;
-	description: string;
-	img: {icon:string,bg:string};
-	data:any;
 }
 
 export interface FeedSiloI {
@@ -72,7 +73,7 @@ export interface WeatherI {
 }
 
 
-/***** Monitors *******/
+/***** Monitors States *******/
 
 /* filled */
 export interface FilledI {
@@ -283,6 +284,7 @@ export const zones_0:ZonesI= {
 
 export const state_0 : StateI= {
 	id: 0,
+ type:{title:"",id:0},
 	title: "",
 	description: "",
 	img: {icon:"",bg:""},
@@ -428,38 +430,38 @@ export const moisture_0:MoistureI= {
 		d:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				},
 		w:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				},
 		m:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				},
 		y:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				}
 }
 
 export const rain_0:RainI= {
 		d:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				},
 		w:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				},
 		m:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				},
 		y:{ title:"",
 						x:[""],
 						y:[""]
-				};
+				}
 }
 
 

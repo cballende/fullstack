@@ -25,7 +25,13 @@ const Nav = () => {
       <nav className="" id="">
         <News/>
       </nav>
-      <Menu/>
+      <Menu data={[{
+        id: 0,
+        breadcrumbs: {name:"", description: ""},
+        name: "",
+        link: "",
+        icon: ""
+      }]}/>
     </>
   );
 }
