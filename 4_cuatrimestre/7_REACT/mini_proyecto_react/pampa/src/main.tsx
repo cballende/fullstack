@@ -21,8 +21,11 @@ createRoot(document.getElementById('root')!).render(
 
     <Routes>
       <Route path="/" element={<App/>}>
+        {/* <Route path="/service" element={<App/>} />
+        <Route path="/service/" element={<App/>} />
+        <Route path="/service/:serviceId" element={<App/>} /> */}
         <Route  element={<Section/>} >
-            <Route index                  element={<Service/>} />
+            <Route index element={<Service/>} />
             <Route path="service/:serviceId/zone"                                  element={<Zone/>}/>
             <Route path="service/:serviceId/zone/:zoneId/monitor"                  element={<Monitor/>}/>
             <Route path="service/:serviceId/zone/:zoneId/monitor/:monitorId/state" element={<State/>}/>

@@ -1,56 +1,72 @@
+/*Header*/
+header=
+{	"id":1,"user": "Cbas","icon": "logo.jpg","title": "Pampa","avatar": {"min":"avatar.png","large":"avatar.png"}}
+
+/*Nav*/
+nav=[
+{}	
+]
+
+/*Aside*/
+
+/*Footer*/
+
+
+/*Section*/
+
 Servicios = [
- {id:1,
- img:"feet_silo.png",
- title:"Feet Silo",
- description:"Silo alimentador ganado en pie"},
- {id:2,
- img:"pivot.png",
- title:"Pivot",
- description:"Pivote de riego"},
- {id:3,
- img:"station.png",
- title:"wheater",
- description:"Estación climatologica"} 
+ {"id":1,
+ "img":"feet_silo.png",
+ "title":"Feet Silo",
+ "description":"Silo alimentador ganado en pie"},
+ {"id":2,
+ "img":"pivot.png",
+ "title":"Pivot",
+ "description":"Pivote de riego"},
+ {"id":3,
+ "img":"station.png",
+ "title":"wheater",
+ "description":"Estación climatologica"}
 ]
 
 zones = [
- {id:1,
- img:"feet_silo.png",
- title:"Zona 1",
- description:"Silos de 10 m3",
- units:6,
- gis:[-37.17591501143559, -58.43085739779249]
+ {"id":1,
+ "img":"feet_silo.png",
+ "title":"Zona 1",
+ "description":"Silos de 10 m3",
+ "units":6,
+ "gis":[-37.17591501143559, -58.43085739779249]
  },
- {id:2,
- img:"feet_silo.png",
- title:"Zona 2",
- description:"Silos de 20 m3",
- units:2,
- gis:[-37.17166795708233, -58.426250066485274]
+ {"id":2,
+ "img":"feet_silo.png",
+ "title":"Zona 2",
+ "description":"Silos de 20 m3",
+ "units":2,
+ "gis":[-37.17166795708233, -58.426250066485274]
  }
 ]
 
 zone = [
  {
-  id:1,
-  img:"feet_silo.png",
-  title:"Zona 1",
-  description:"Silos de 10 m3",
-  gis:[-37.17591501143559, -58.43085739779249],
-  units:[
+  "id":1,
+  "img":"feet_silo.png",
+  "title":"Zona 1",
+  "description":"Silos de 10 m3",
+  "gis":[-37.17591501143559, -58.43085739779249],
+  "units":[
    {
-    id:1,
-    img:"feet_silo_zanello.png",
-    title:"Silo nº1",
-    description:"Pelet maiz 30 alfalfa 60 soja 10",
-    gis:[-37.17591501143559, -58.43085739779249]
+    "id":1,
+    "img":"feet_silo_zanello.png",
+    "title":"Silo nº1",
+    "description":"Pelet maiz 30 alfalfa 60 soja 10",
+    "gis":[-37.17591501143559, -58.43085739779249]
    },
    {
-    id:2,
-    img:"feet_silo_agrometal.png",
-    title:"Silo nº2",
-    description:"Pelet maiz 30 alfalfa 50 girasol 20",
-    gis:[-37.17591501143559, -58.43085739779249]
+    "id":2,
+    "img":"feet_silo_agrometal.png",
+    "title":"Silo nº2",
+    "description":"Pelet maiz 30 alfalfa 50 girasol 20",
+    "gis":[-37.17591501143559, -58.43085739779249]
    }
   ]
  }
@@ -58,236 +74,358 @@ zone = [
 
 estados = [
  {
-  id:1,
-  img:{icon:"feet_silo.png",bg:"feet_silo_gb.png"},
-  title:"Feet Silo",
-  description:"Silo alimentador ganado en pie",
-  data:{
-   filled:{value:"80",
-           order-1:"-5",
-           order-2:"-1"},
-   chartXY:{
-            d:{ title:"Diario",
-                x:[],
-                y:[]
-              },
-            w:{ title:"Semanal",
-                x:[],
-                y:[]
-              },
-            m:{ title:"Mensual",
-                x:[],
-                y:[]
-              },
-            y:{ title:"Anual",
-                x:[],
-                y:[]
-              },
+    "id": 1,
+    "type":{"title":"feetSilo","id":1},
+    "img": {
+        "icon": "feet_silo.png",
+        "bg": "feet_silo_gb.png"
+    },
+    "title": "Feet Silo",
+    "description": "Silo alimentador ganado en pie",
+    "data": {
+        "filled": {
+            "value": "80",
+            "order-1": "-5",
+            "order-2": "-1"
+        },
+        "chartXY": {
+            "d": {
+                "title": "Diario",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
             },
-   forecast:{
-            d:{ title:"Diario",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            w:{ title:"Semanal",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            m:{ title:"Mensual",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            y:{ title:"Anual",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
+            "w": {
+                "title": "Semanal",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
             },
-    histogram:{
-            d:{ title:"Diario",
-                x:[],
-                y:[]
-              },
-            w:{ title:"Semanal",
-                x:[],
-                y:[]
-              },
-            m:{ title:"Mensual",
-                x:[],
-                y:[]
-              },
-            y:{ title:"Anual",
-                x:[],
-                y:[]
-              },
-            },        
-   }
- },
+            "m": {
+                "title": "Mensual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "y": {
+                "title": "Anual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            }
+        },
+        "forecast": {
+            "d": {
+                "title": "Diario",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            },
+            "w": {
+                "title": "Semanal",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            },
+            "m": {
+                "title": "Mensual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            },
+            "y": {
+                "title": "Anual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            }
+        },
+        "histogram": {
+            "d": {
+                "title": "Diario",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "w": {
+                "title": "Semanal",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "m": {
+                "title": "Mensual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "y": {
+                "title": "Anual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            }
+        }
+    }
+},
  {
-  id:2,
-  title:"Pivot",
-  img:{icon:"pivot.png",bg:"pivot_gb.png"},
-  description:"Pivote de riegoe",
-  data:{
-   flow:{  value:"80000",
-           order-1:"20",
-           order-2:"-1"},
-   chartXY:{
-            d:{ title:"Diario",
-                x:[],
-                y:[]
-              },
-            w:{ title:"Semanal",
-                x:[],
-                y:[]
-              },
-            m:{ title:"Mensual",
-                x:[],
-                y:[]
-              },
-            y:{ title:"Anual",
-                x:[],
-                y:[]
-              },
+    "id": 2,
+    "type":{"title":"pivot","id":2},
+    "title": "Pivot",
+    "img": {
+        "icon": "pivot.png",
+        "bg": "pivot_gb.png"
+    },
+    "description": "Pivote de riegoe",
+    "data": {
+        "flow": {
+            "value": "80000",
+            "order-1": "20",
+            "order-2": "-1"
+        },
+        "chartXY": {
+            "d": {
+                "title": "Diario",
+                "x": [],
+                "y": []
             },
-   forecast:{
-            d:{ title:"Diario",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            w:{ title:"Semanal",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            m:{ title:"Mensual",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            y:{ title:"Anual",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
+            "w": {
+                "title": "Semanal",
+                "x": [],
+                "y": []
             },
-    polar:{
-            title:"Rotación",
-             x:[],
-             y:[]
-           },
-    serie:{
-            title:"Velocidad",
-             x:[],
-             y:[]
-           },
-  }
- },
+            "m": {
+                "title": "Mensual",
+                "x": [],
+                "y": []
+            },
+            "y": {
+                "title": "Anual",
+                "x": [],
+                "y": []
+            }
+        },
+        "forecast": {
+            "d": {
+                "title": "Diario",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
+            },
+            "w": {
+                "title": "Semanal",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
+            },
+            "m": {
+                "title": "Mensual",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
+            },
+            "y": {
+                "title": "Anual",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
+            }
+        },
+        "polar": {
+            "title": "Rotación",
+            "x": [],
+            "y": []
+        },
+        "serie": {
+            "title": "Velocidad",
+            "x": [],
+            "y": []
+        }
+    }
+},
  {
-  id:3,
-  title:"Weather",
-  img:{icon:"wheater.png",bg:"wheater_gb.png"},
-  description:"Estación climatologica",
-  data:{
-   wind:{ 
-          value:"20",
-          order-1:"20",
-          deg:"120"
-         },
-   temp:{
-          s:{ title:"Spot",
-              value:30
+    "id": 3,
+    "type":{"title":"weather","id":3},
+    "title": "Weather",
+    "img": {
+        "icon": "wheater.png",
+        "bg": "wheater_gb.png"
+    },
+    "description": "Estación climatologica",
+    "data": {
+        "wind": {
+            "value": "20",
+            "order-1": "20",
+            "deg": "120"
+        },
+        "temp": {
+            "s": {
+                "title": "Spot",
+                "value": 30
             },
-          d:{ title:"Diario",
-              x:[],
-              y:[]
+            "d": {
+                "title": "Diario",
+                "x": [],
+                "y": []
             },
-          w:{ title:"Semanal",
-              x:[],
-              y:[]
+            "w": {
+                "title": "Semanal",
+                "x": [],
+                "y": []
             },
-          m:{ title:"Mensual",
-              x:[],
-              y:[]
+            "m": {
+                "title": "Mensual",
+                "x": [],
+                "y": []
             },
-          y:{ title:"Anual",
-              x:[],
-              y:[]
+            "y": {
+                "title": "Anual",
+                "x": [],
+                "y": []
+            }
+        },
+        "moisture": {
+            "d": {
+                "title": "Diario",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
             },
-         },
-   moisture:{
-            d:{ title:"Diario",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            w:{ title:"Semanal",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            m:{ title:"Mensual",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
-            y:{ title:"Anual",
-                x:[],
-                y:[],
-                x1:[],
-                y1:[],
-                d:[]
-              },
+            "w": {
+                "title": "Semanal",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
             },
-    rain:{
-          s:{ title:"Spot",
-              value:30
+            "m": {
+                "title": "Mensual",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
             },
-          d:{ title:"Diario",
-              x:[],
-              y:[]
+            "y": {
+                "title": "Anual",
+                "x": [],
+                "y": [],
+                "x1": [],
+                "y1": [],
+                "d": []
+            }
+        },
+        "rain": {
+            "s": {
+                "title": "Spot",
+                "value": 30
             },
-          w:{ title:"Semanal",
-              x:[],
-              y:[]
+            "d": {
+                "title": "Diario",
+                "x": [],
+                "y": []
             },
-          m:{ title:"Mensual",
-              x:[],
-              y:[]
+            "w": {
+                "title": "Semanal",
+                "x": [],
+                "y": []
             },
-          y:{ title:"Anual",
-              x:[],
-              y:[]
+            "m": {
+                "title": "Mensual",
+                "x": [],
+                "y": []
             },
-         },
-  }
- }
+            "y": {
+                "title": "Anual",
+                "x": [],
+                "y": []
+            }
+        }
+    }
+}
  
 ]
 

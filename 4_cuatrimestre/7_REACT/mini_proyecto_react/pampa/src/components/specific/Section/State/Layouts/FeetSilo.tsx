@@ -40,62 +40,69 @@ const FeetSilo = (props:{data:FeedSiloI}) => {
     setMain(props.data);
   }, [props]);
 
-  const displayStatuesType= (status:string) => {
-
-    switch (status) {
+  function displayStatuesType(value:string, index:number) {
+    console.log(index);
+    switch (value) {
         case "filled":
            return (
-            <>
-            <Filled data={main.filled}/>
+            <><div key={index}>
+                <Filled data={main.filled}/>
+
+            </div>
             </>
            );
           break;
         case "histogram":
            return (
-            <>
-            <Histogram data={main.histogram}/>
+            <><div key={index}>
+                <Histogram data={main.histogram}/>
+
+            </div>
             </>
            );
         case "forecast":
            return (
-            <>
-            <Forecast data={main.forecast}/>
+            <><div key={index}>
+                <Forecast data={main.forecast}/>
+            </div>
             </>
            );
           break;
          case "chartXY":
            return (
-            <>
-            <ChartXY data={main.chartXY}/>
+            <><div key={index}>
+                <ChartXY data={main.chartXY}/>
+
+            </div>
             </>
            );
           break;
          case "temp":
            return (
-            <>
-            <Temp data={main.temp}/>
+            <><div key={index}>
+                <Temp data={main.temp}/>
+
+            </div>
             </>
            );
           break;  
         default:
-          <></>
+          return<></>
           break;
       }
     }
 
     const Display=()=>{
       return  SHORT_STATES.map((item:string)=>(
-                  displayStatuesType(item)
+                  displayStatuesType
                 ));
     }
   
     return (
       <>
         <div className="row p-3" id="feetSilo-state-list">
-          { SHORT_STATES.map( (item:string)=>(
-                      displayStatuesType(item)
-                    ))}
-        </div>
+          { SHORT_STATES.map( displayStatuesType ) }
+        </div>  
       </>
     );
 }
