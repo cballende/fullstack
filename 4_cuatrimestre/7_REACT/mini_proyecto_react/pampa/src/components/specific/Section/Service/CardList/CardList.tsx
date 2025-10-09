@@ -22,8 +22,11 @@ import { services_0 } from "../../../../../types/cardProps";
 const CardList = () => {
   const API_URL_IMG = 'products/services/';
   
-  const API_PAMPA_URL ="https://63ae2027-cb2a-47aa-94b6-b816f6da13ef.mock.pstmn.io";
-  const ENTITY_URL="/service/";
+  // const API_PAMPA_URL ="https://63ae2027-cb2a-47aa-94b6-b816f6da13ef.mock.pstmn.io";
+  const API_PAMPA_URL ="../public/mock/service/";
+  // const ENTITY_URL="/service/";
+  const ENTITY_URL="service.txt";
+
   const [main, setMain]:[ServicesI[],any] = useState([services_0]);
   
   //const [ projects, setProjects ] = useContext([]);
@@ -51,8 +54,11 @@ const CardList = () => {
       {
         main.map( (item: ServicesI) => (
           <Link key={item.id} to={"/service/"+item.id+"/zone"} >
-            <div /* key={item.id} */ className="card col-xl-4 col-md-6 col-12 mb-4" id={"service-"+item.id} onClick={handleClickService}>
-              <picture><img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title}  className="img-service"></img></picture>
+            <div /* key={item.id} */ className="col s6" id={"service-"+item.id} onClick={handleClickService}>
+              <div className="card-panel">
+                <picture><img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title}  className="img-service"></img></picture>
+              </div>
+
             </div>
           </Link>
         ))          

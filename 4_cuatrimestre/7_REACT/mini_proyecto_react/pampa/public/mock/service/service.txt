@@ -1,0 +1,12 @@
+[{"id":1,
+ "img":"feetSilo.jpg",
+ "title":"Feet Silo",
+ "description":"Silo alimentador ganado en pie"},
+ {"id":2,
+ "img":"pivot.jpg",
+ "title":"Pivot",
+ "description":"Pivote de riego"},
+ {"id":3,
+ "img":"weather.jpg",
+ "title":"wheater",
+ "description":"Estación climatologica"}]

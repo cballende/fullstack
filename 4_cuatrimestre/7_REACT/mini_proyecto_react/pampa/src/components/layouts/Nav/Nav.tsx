@@ -22,9 +22,8 @@ const Nav = () => {
   
   return (
     <>
-      <nav className="" id="">
-        <News/>
-      </nav>
+      <News/>
+      
       <Menu data={[{
         id: 0,
         breadcrumbs: {name:"", description: ""},

@@ -19,11 +19,11 @@ function App() {
     <>
         <Header/>
         <Nav/>
-        <Aside/>
         {/* <Outlet/> */}
         <Section/>
         <Footer/>
         <Overlay/>
+        <Aside/>
    </>
   )
 }

@@ -17,8 +17,9 @@ const Menu = (props:{data:MenuProps[]}) => {
   
   return (
     <>
-    <div className="container">
-      <div className="breadcrumbs">
+    <div className="row">
+
+      <div className="breadcrumbs col s8">
         <ul className="breadcrumbs-List " id="breadcrumbs-list">
          {
            props.data.map((value:MenuProps) =>(
@@ -30,9 +31,10 @@ const Menu = (props:{data:MenuProps[]}) => {
          }
         </ul>
       </div>
-      <div className="alarms">
-        <a className="alarm"><i className="fa fa-bell "></i></a>
+      <div className="alarms col s2 offset-s10">
+        <a className=""><i className="fa fa-bell "></i></a>
       </div>
+
     </div>
     </>
   );

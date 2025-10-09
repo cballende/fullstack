@@ -17,11 +17,11 @@ const News = () => {
   
   return (
     <>
-    <div className="container">
-      <div className="marquee">
+    <div className="row">
+      <div className="marquee col s10 ">
         <a className="d-lg-none hover pointer" id="close-nav" title="close menu"></a>
       </div>
-      <div className="alarms">
+      <div className="alarms col s2">
         <a className="alarm"><i className="fa fa-bell "></i></a>
       </div>
     </div>

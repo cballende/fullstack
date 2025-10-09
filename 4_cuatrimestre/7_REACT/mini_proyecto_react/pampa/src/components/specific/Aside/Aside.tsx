@@ -24,7 +24,7 @@ const Nav = () => {
  */
   return (
     <>
-      <nav className="sidebar collapse" id="menuSidebar"><br></br>
+      <nav className="sidebar collapse hide" id="menuSidebar"><br></br>
         <div className="container mb-3 ">
           <div className="d-flex justify-content-between mb-4">
             <img src={API_URL_IMG+"avatar.png"} className="avatar rounded"></img><br></br><br></br>

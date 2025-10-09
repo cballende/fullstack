@@ -1,0 +1,1 @@
+{	"id":1,"user": "Cbas","icon": "logo.jpg","title": "Pampa","avatar": {"min":"avatar.png","large":"avatar.png"}}
