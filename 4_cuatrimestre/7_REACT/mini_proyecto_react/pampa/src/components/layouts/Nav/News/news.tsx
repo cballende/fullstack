@@ -17,12 +17,13 @@ const News = () => {
   
   return (
     <>
-    <div className="row">
-      <div className="marquee col s10 ">
-        <a className="d-lg-none hover pointer" id="close-nav" title="close menu"></a>
+    <div className="col s12 blue darken-3">
+      <div className="col s1 ">
+        <a className=""><span className=""><i className="material-icons">list</i></span></a>
       </div>
-      <div className="alarms col s2">
-        <a className="alarm"><i className="fa fa-bell "></i></a>
+      <div className="marquee col s10 "></div>
+      <div className="control col s1">
+        <a className=""><span className=""><i className="material-icons">play_arrow</i></span></a>
       </div>
     </div>
     </>

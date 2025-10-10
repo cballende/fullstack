@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: var(--header-bg, #f5f5f5);
+  border-bottom: 1px solid #ddd;
+}
+
+nav  {
+  line-height: 25px;
+}
+.nav-wrapper-second{
+  min-height: 24px!important;;
+  height: 25px !important;
+}
+
+.nav-wrapper-second i.material-icons {
+	font-size: 20px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.nav-wrapper-thirst{
+  min-height: 24px!important;;
+  height: 25px!important;;
+}
+nav .brand-logo img {
+  width:50%;
+}
+

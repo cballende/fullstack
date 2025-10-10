@@ -55,8 +55,10 @@ const CardList = () => {
         main.map( (item: ServicesI) => (
           <Link key={item.id} to={"/service/"+item.id+"/zone"} >
             <div /* key={item.id} */ className="col s6" id={"service-"+item.id} onClick={handleClickService}>
-              <div className="card-panel">
-                <picture><img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title}  className="img-service"></img></picture>
+              <div className="card">
+                <div className="card-image">
+                  <picture><img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title}  className="img-service"></img></picture>
+                </div>
               </div>
 
             </div>

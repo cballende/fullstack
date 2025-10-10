@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route} from "react-router";
 
 //import './index.css'
-import './assets/css/style.css'
+//import './assets/css/style.css'
 import App from './App.tsx'
 
 import Zone      from "./components/specific/Section/Zone/Zone";

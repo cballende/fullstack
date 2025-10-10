@@ -22,15 +22,17 @@ const Nav = () => {
   
   return (
     <>
-      <News/>
       
-      <Menu data={[{
-        id: 0,
-        breadcrumbs: {name:"", description: ""},
-        name: "",
-        link: "",
-        icon: ""
-      }]}/>
+        {/* <News/> */}
+        
+        <Menu data={[{
+          id: 0,
+          breadcrumbs: {name:"", description: ""},
+          name: "",
+          link: "",
+          icon: ""
+        }]}/>
+      
     </>
   );
 }

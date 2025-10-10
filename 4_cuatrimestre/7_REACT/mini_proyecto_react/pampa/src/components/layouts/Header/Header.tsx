@@ -3,7 +3,7 @@
  */
 import { useEffect, useState } from "react";
 import type { HeaderProps } from "../../../types/headerProps";
-//import "./Header.css";
+import "./header.css";
 
 const Header = () => {
   const [main, setMain]:[HeaderProps,any] = useState({	id: 0,
@@ -31,20 +31,60 @@ const API_URL_MOCK ="../public/mock/user/user.txt"
 
   return (
     <>
-        <nav>
-
-          <div className="nav-wrapper">
+        <nav className=" nav-extended blue darken-4">
+          <div className="nav-wrapper main">
             <a href="#" className="brand-logo center"><img src={API_URL_BRAND+"min.png"} alt="Pampa"></img> </a>
-            <ul id="nav-mobile" className="left show-on-medium-and-down">
+            <ul id="" className="left show-on-medium-and-down">
               <li><a href="#" className="" id="open-menu"> <span className=""><i className="material-icons">menu</i></span> </a></li>
-              <li><a href="#" className=""><img src={API_URL_IMG+main.avatar.min} className=""></img></a></li>
+            </ul>
+            <ul id="" className="right show-on-medium-and-down">
+              <li>
+                <a href="#" className=""><img src={API_URL_IMG+main.avatar.min} className=""></img></a>
+              </li>
             </ul>
           </div>
 
+          <div className="nav-wrapper nav-wrapper-second">
+            <span className="center"><a href="#test1">News 1</a></span>
+            <ul className="left  ">
+              <li>
+
+              <a className="active"><span className=""><i className="material-icons">list</i></span></a>
+              </li>
+            </ul>
+            <ul className="right ">
+              <li>
+                
+              <a className=""><i className="material-icons">play_arrow</i></a>
+              </li>
+            </ul>
+          </div>  
+
+          <div className="nav-content nav-wrapper-thirst ">
+            <ul className="tabs tabs-transparent">
+              <li className="tab"><a href="#test1">Test 1</a></li>
+              <li className="tab"><a className="active" href="#test2">Test 2</a></li>
+              <li className="tab disabled"><a href="#test3">Disabled Tab</a></li>
+              <li className="tab"><a href="#test4">Test 4</a></li>
+            </ul>
+          </div>
+
+          <div className="nav-content hide">
+            <ul className="left  ">
+              <li className=""><a className="active"><span className=""><i className="material-icons">list</i></span></a></li>
+            </ul>
+            <ul className="center ">
+              <li className=""><div className="marquee valign-wrapper "> -algo- </div></li>
+            </ul>
+            <ul className="right">
+              <li className=""><a className=""><span className=""><i className="material-icons">play_arrow</i></span></a></li>
+            </ul>
+          </div>
+            
+          
         </nav>
-      <header id="header">
 
-
+      <header id="header" className="hide">
         <div className="row">
           <div className="col s2">
             <a href="#" className="" id="open-menu"> <span className=""><i className="fa fa-bars"></i></span> </a>

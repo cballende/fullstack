@@ -16,9 +16,10 @@ import Service from "./components/specific/Section/Service/Service"; */
 function App() {
 
   return (
-    <>
+    <>  
         <Header/>
-        <Nav/>
+        {/* <Nav/> */}
+        
         {/* <Outlet/> */}
         <Section/>
         <Footer/>
