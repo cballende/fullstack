@@ -1,0 +1,167 @@
+{
+    "id": 1,
+    "type":{"title":"feetSilo","id":1},
+    "img": {
+        "icon": "feet_silo.png",
+        "bg": "feet_silo_gb.png"
+    },
+    "title": "Feet Silo",
+    "description": "Silo alimentador ganado en pie",
+    "data": {
+        "filled": {
+            "value": "80",
+            "order-1": "-5",
+            "order-2": "-1"
+        },
+        "chartXY": {
+            "d": {
+                "title": "Diario",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "w": {
+                "title": "Semanal",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "m": {
+                "title": "Mensual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "y": {
+                "title": "Anual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            }
+        },
+        "forecast": {
+            "d": {
+                "title": "Diario",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            },
+            "w": {
+                "title": "Semanal",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            },
+            "m": {
+                "title": "Mensual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            },
+            "y": {
+                "title": "Anual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ],
+                "x1": [
+                    ""
+                ],
+                "y1": [
+                    ""
+                ],
+                "d": [
+                    ""
+                ]
+            }
+        },
+        "histogram": {
+            "d": {
+                "title": "Diario",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "w": {
+                "title": "Semanal",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "m": {
+                "title": "Mensual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            },
+            "y": {
+                "title": "Anual",
+                "x": [
+                    ""
+                ],
+                "y": [
+                    ""
+                ]
+            }
+        }
+    }
+}

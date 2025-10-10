@@ -14,9 +14,11 @@ import CardList from "./CardList/CardList";
 const Service = () => {
   return (
     <>
+    <div className="main" id="main">
       <div className="row" id="service-list">
         <CardList/>
       </div>
+    </div>
     </>
   );
 }

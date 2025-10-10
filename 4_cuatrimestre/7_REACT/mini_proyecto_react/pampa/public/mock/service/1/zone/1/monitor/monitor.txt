@@ -1,0 +1,24 @@
+
+ {
+  "id":1,
+  "img":"feet_silo.png",
+  "title":"Zona 1",
+  "description":"Silos de 10 m3",
+  "gis":[-37.17591501143559, -58.43085739779249],
+  "units":[
+   {
+    "id":1,
+    "img":"feet_silo_zanello.png",
+    "title":"Silo nº1",
+    "description":"Pelet maiz 30 alfalfa 60 soja 10",
+    "gis":[-37.17591501143559, -58.43085739779249]
+   },
+   {
+    "id":2,
+    "img":"feet_silo_agrometal.png",
+    "title":"Silo nº2",
+    "description":"Pelet maiz 30 alfalfa 50 girasol 20",
+    "gis":[-37.17591501143559, -58.43085739779249]
+   }
+  ]
+ }

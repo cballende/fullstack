@@ -61,12 +61,12 @@ const API_URL_MOCK ="../public/mock/user/user.txt"
           </div>  
 
           <div className="nav-content nav-wrapper-thirst ">
-            <ul className="tabs tabs-transparent">
-              <li className="tab"><a href="#test1">Test 1</a></li>
-              <li className="tab"><a className="active" href="#test2">Test 2</a></li>
-              <li className="tab disabled"><a href="#test3">Disabled Tab</a></li>
-              <li className="tab"><a href="#test4">Test 4</a></li>
-            </ul>
+            <div className="breadcrumbs left">
+              
+                <a href="#!" className="breadcrumb">First</a>
+                <a href="#!" className="breadcrumb">Second</a>
+                <a href="#!" className="breadcrumb">Third</a>
+            </div>
           </div>
 
           <div className="nav-content hide">

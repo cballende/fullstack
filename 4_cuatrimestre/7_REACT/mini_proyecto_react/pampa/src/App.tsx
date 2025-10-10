@@ -19,9 +19,11 @@ function App() {
     <>  
         <Header/>
         {/* <Nav/> */}
-        
+
         {/* <Outlet/> */}
         <Section/>
+
+
         <Footer/>
         <Overlay/>
         <Aside/>

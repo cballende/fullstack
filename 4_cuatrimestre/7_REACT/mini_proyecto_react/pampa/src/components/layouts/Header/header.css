@@ -10,7 +10,11 @@
 nav  {
   line-height: 25px;
 }
-.nav-wrapper-second{
+nav .brand-logo img {
+  width:50%;
+}
+
+.nav-wrapper-second {
   min-height: 24px!important;;
   height: 25px !important;
 }
@@ -23,9 +27,23 @@ nav  {
 
 .nav-wrapper-thirst{
   min-height: 24px!important;;
-  height: 25px!important;;
+  height: 25px!important;
+  font-size: 20px!important;
 }
-nav .brand-logo img {
-  width:50%;
+
+
+.nav-wrapper-thirst .breadcrumb{
+  
+  font-size: 12px!important;
 }
+.nav-wrapper-thirst i.material-icons {
+	font-size: 20px;
+	height: 25px;
+	line-height: 25px;
+}
+.breadcrumbs a:first-child{
+    padding-left: 15px ;
+}
+
+
 

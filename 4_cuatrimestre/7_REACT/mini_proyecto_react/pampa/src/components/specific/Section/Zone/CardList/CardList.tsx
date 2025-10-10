@@ -21,8 +21,10 @@ import { zones_0 } from "../../../../../types/cardProps";
 const CardList = () => {
   
   const API_URL_IMG = 'products/zones/';
-  const API_PAMPA_URL ="https://2fea5880-3f1d-4baa-8b24-5d8876c8a803.mock.pstmn.io/service/";
-  const ENTITY_URL="/zone/"; 
+  // const API_PAMPA_URL ="https://2fea5880-3f1d-4baa-8b24-5d8876c8a803.mock.pstmn.io/service/";
+   const API_PAMPA_URL ="../../public/mock/service/";
+
+  const ENTITY_URL="/zone/zone.txt"; 
   const [main,setMain]:[ZonesI[],any] = useState([zones_0]);
   
   let { serviceId } = useParams();
@@ -48,15 +50,29 @@ const CardList = () => {
     <>
       {
         main.map( (item: ZonesI) => (
-          <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} >
-            <div id={"zone-"+item.id} className="card">
-              <p><b>{item.title}</b></p>
-              <div className="container bg-clear">
-                <p>{item.description}</p>
+            
+
+        <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} >
+            <div className="card horizontal">
+              <div className="card-image">
+                <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-zone"></img>
               </div>
-              <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-zone"></img>
+              <div className="card-stacked">
+                <div className="card-content">
+                  <span className="card-title">{item.title.toUpperCase()}</span>
+                  <p>{item.description}.</p>
+                </div>
+              </div>
             </div>
-          </Link>  
+        </Link>
+
+            
+
+
+          
+          
+
+          
         ))          
       }
     </>

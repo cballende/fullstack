@@ -23,7 +23,6 @@ const Section = () => {
   
   return (
     <>
-      <div className="main" id="main">
         <Outlet/>
       {/* 
         <Service/>
@@ -31,7 +30,6 @@ const Section = () => {
         <Monitor/>
         <State/> 
       */}
-      </div>
     </>
   );
 }
