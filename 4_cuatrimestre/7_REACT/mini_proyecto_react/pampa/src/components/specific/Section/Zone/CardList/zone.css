@@ -1,0 +1,14 @@
+.image-container {
+  /*
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  overflow:hidden; 
+  */
+}
+
+.card-image .img-zone {
+  height: 100%!important;
+  object-fit: cover!important;
+  object-position: 50% 50%!important;
+}

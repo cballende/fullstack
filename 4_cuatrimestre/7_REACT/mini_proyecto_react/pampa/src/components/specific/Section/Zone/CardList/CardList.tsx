@@ -18,6 +18,8 @@ import { zones_0 } from "../../../../../types/cardProps";
 
 /* styles */
 
+import "./zone.css"
+
 const CardList = () => {
   
   const API_URL_IMG = 'products/zones/';
@@ -50,34 +52,28 @@ const CardList = () => {
     <>
       {
         main.map( (item: ZonesI) => (
-            
 
-        <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} >
-            <div className="card horizontal">
-              <div className="card-image">
-                <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-zone"></img>
-              </div>
+          <div key={item.id+1000} className="card horizontal">
+                <div className="card-image">
+                  <img src={"/src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-zone"></img>
+                </div>
               <div className="card-stacked">
                 <div className="card-content">
-                  <span className="card-title">{item.title.toUpperCase()}</span>
+                  <span className="card-title"><b>{item.title.toUpperCase()}</b></span>
                   <p>{item.description}.</p>
+                </div>
+                <div className="card-action">
+                  <a href={"https://www.google.com/maps/@"+item.gis+",200m/"}><i className="material-icons">location_on</i></a>
+                  <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} >
+                    <i className="material-icons">touch_app</i>
+                  </Link>
                 </div>
               </div>
             </div>
-        </Link>
-
-            
-
-
-          
-          
-
-          
         ))          
       }
     </>
   );
 
 }
-
 export default CardList;

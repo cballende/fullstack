@@ -7,6 +7,6 @@
  "title":"Pivot",
  "description":"Pivote de riego"},
  {"id":3,
- "img":"weather.jpg",
+ "img":"weather.jpeg",
  "title":"wheater",
  "description":"Estación climatologica"}]

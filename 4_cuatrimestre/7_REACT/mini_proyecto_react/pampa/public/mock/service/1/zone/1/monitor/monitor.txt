@@ -8,14 +8,14 @@
   "units":[
    {
     "id":1,
-    "img":"feet_silo_zanello.png",
+    "img":"silo_1.jpeg",
     "title":"Silo nº1",
     "description":"Pelet maiz 30 alfalfa 60 soja 10",
     "gis":[-37.17591501143559, -58.43085739779249]
    },
    {
     "id":2,
-    "img":"feet_silo_agrometal.png",
+    "img":"silo_2.webp",
     "title":"Silo nº2",
     "description":"Pelet maiz 30 alfalfa 50 girasol 20",
     "gis":[-37.17591501143559, -58.43085739779249]

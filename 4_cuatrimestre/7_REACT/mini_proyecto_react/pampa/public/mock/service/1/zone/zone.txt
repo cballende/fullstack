@@ -1,13 +1,13 @@
 [
  {"id":1,
- "img":"feet_silo.png",
+ "img":"1_1_1.jpeg",
  "title":"Zona 1",
  "description":"Silos de 10 m3",
  "units":6,
  "gis":[-37.17591501143559, -58.43085739779249]
  },
  {"id":2,
- "img":"feet_silo.png",
+ "img":"1_1_2.jpeg",
  "title":"Zona 2",
  "description":"Silos de 20 m3",
  "units":2,

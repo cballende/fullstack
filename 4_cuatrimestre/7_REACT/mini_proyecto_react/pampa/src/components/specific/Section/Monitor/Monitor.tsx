@@ -13,10 +13,11 @@ import CardList from "./CardList/CardList";
 
 const Monitor = () => {
  return (
-    <>
+    <><div className="main" id="main">
       <div className="row p-3" id="monitor-list">
         <CardList/>
       </div>
+     </div>
     </>
   );
 }

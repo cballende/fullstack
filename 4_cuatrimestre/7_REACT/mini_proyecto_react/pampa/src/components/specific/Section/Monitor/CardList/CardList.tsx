@@ -18,11 +18,16 @@ import { zone_0 } from "../../../../../types/cardProps";
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
 /* styles */
+import "./monitor.css"
+
 
 const CardList = () => {
   const API_URL_IMG = 'products/monitors/';
-  const API_PAMPA_URL ="https://1640c2bd-b2ff-44b1-8846-e4206eccd5d6.mock.pstmn.io//service/";
-  const ENTITY_URL="/monitor/";
+  //const API_PAMPA_URL ="https://1640c2bd-b2ff-44b1-8846-e4206eccd5d6.mock.pstmn.io/service/";
+  const API_PAMPA_URL ="/public/mock/service/";
+
+  
+  const ENTITY_URL="/monitor/monitor.txt";
   const [main, setMain]:[ZoneI,any] = useState(zone_0);
   
   let { serviceId,zoneId } = useParams();
@@ -47,15 +52,25 @@ const CardList = () => {
     <>
       {
         main.units.map( (item: UnitI) => (
-        <Link key={item.id} to={"/service/"+serviceId+"/zone/"+zoneId+"/monitor/"+item.id+"/state"} >
-          <div id={"zone-"+item.id} className="card">
-            <p><b>{item.title}</b></p>
-            <div className="container bg-clear">
-              <p>{item.description}</p>
+          
+          <div key={item.id+100} className="card horizontal">
+              <div className="card-image">
+                {/* <img src={"/src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-monitor"></img> */}
+              </div>
+              <div className="card-stacked">
+                <div className="card-content">
+                  <span className="card-title"><b>{item.title.toUpperCase()}</b></span>
+                  <p>{item.description}.</p>
+                </div>
+                <div className="card-action">
+                  <a href={"https://www.google.com/maps/@"+item.gis+",200m/"}><i className="material-icons">loction_on</i></a>
+                  <Link key={item.id} to={"/service/"+serviceId+"/zone/"+zoneId+"/monitor/"+item.id+"/state"} >
+                    <i className="material-icons">touch_app</i>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-monitor"></img>
-          </div>
-         </Link>
+
         ))          
       }
     </>

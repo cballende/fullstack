@@ -14,8 +14,10 @@ import Layouts from "./Layouts/Layout";
 const State = () => {
   return (
     <>
-      <div className="row p-3" id="state-list">
-        <Layouts/>
+      <div className="main" id="main">
+        <div className="row p-3" id="state-list">
+          <Layouts/>
+        </div>
       </div>
     </>
   );

@@ -60,7 +60,6 @@ const CardList = () => {
                   <picture><img src={"src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title}  className="img-service"></img></picture>
                 </div>
               </div>
-
             </div>
           </Link>
         ))          
