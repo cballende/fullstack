@@ -60,3 +60,21 @@
   height: 100px;
   width: 100px;
  }
+
+ a.serie:hover, a.active.serie{
+	background-color: #0566fd1f !important;
+	color: #6ea8ee !important;
+ }
+
+ .tabs .tab a.serie {
+	color: rgba(8, 65, 252, 0.371);
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0 24px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	-webkit-transition: color .28s ease, background-color .28s ease;
+	transition: color .28s ease, background-color .28s ease;
+}

@@ -67,7 +67,7 @@ import "./states.css"
 
 /* Gral Functions */
 
-const chartExists =(t)=> {
+const chartExists =(t:any)=> {
   var e = !1,chart:any;
 
   for (var i in ChartJS.instances) if (chart = ChartJS.instances[i], t===(chart.canvas)) {
@@ -79,25 +79,28 @@ const chartExists =(t)=> {
 
  const handleClickTab= (event:any)=> {
         event.preventDefault();
-        let e:any = event.target.parentNode.parentNode.parentNode.nextSibling.children["mini-forecast-chart"];
+        //let e:any = event.target.parentNode.parentNode.parentNode.nextSibling.children["mini-forecast-chart"];
+        let e:any = event.target.parentNode.parentNode.parentNode.nextSibling.getElementsByTagName("canvas");
         let $this:any = event.target;
         /* console.log(ChartJS);
-        console.log(e);
         console.log( chartExists(e));
         console.log($this);
         */
-        if (e) {
-          var i = chartExists(e);
-          // console.log(i);
+       if (e.length) {
+         var i = chartExists(e[0]);
+        //  console.log(e.length,i);
           if (i) {
-            for (var n = $this.parentNode.classList[1], s = 0; s < i.data.datasets.length; s++) {
+            for (var n = Number($this.parentNode.classList[1]), s = 0; s < i.data.datasets.length; s++) {
+              // console.log(s , n);
               var o = !0;
               s === n &&
               (o = !1),
               i.data.datasets[s].hidden = o
             }
-            i.update()
+            i.update();
+            // console.log(s,n,i,i.data.datasets[n].hidden);
           }
+
         }
       }
 
@@ -224,13 +227,23 @@ export const ChartXY = (props:{data:ChartXYI,label:{title:string}}) => {
           data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
            borderColor: 'rgb(255, 99, 132)',
            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+           hidden:false
         },
         {
           label: '',
           data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
            borderColor: 'rgb(53, 162, 235)',
            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+           hidden:true
+
         },
+        {
+          label: '',
+          data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+           borderColor: 'rgb(53, 162, 235)',
+           backgroundColor: 'rgba(53, 162, 235, 0.5)',
+           hidden:true
+        }
       ],
   };
 
@@ -266,16 +279,26 @@ export const ChartXY = (props:{data:ChartXYI,label:{title:string}}) => {
             </div>
           </div>
         </div>
-        <div className="card-content card-content-size">
-          <div className="chartjs-size-monitor">
-            <div className="chartjs-size-monitor-expand" >
-              <div className="chartjs-size-monitor-expand-layer"></div>
-            </div>
-            <div className="chartjs-size-monitor-shrink">
-              <div className="chartjs-size-monitor-shrink-layer"></div>
-            </div>
+        <div className="row">
+           <div className="card-tabs">
+            <ul className="tabs tabs-fixed-width ">
+              <li className="tab 0" onClick={handleClickTab}><a href="#" className="active serie" >Day</a></li>
+              <li className="tab 1" onClick={handleClickTab}><a href="#" className="serie"       >Month</a></li>
+              <li className="tab 2" onClick={handleClickTab}><a href="#" className="serie"       >Year</a></li>
+              {/* <li className="indicator" style="left: 0px; right: 425px;"></li> */}
+            </ul>
           </div>
-            <Line id="mini-line-chart" options={options} data={state} />
+          <div className="card-content card-content-size">
+            <div className="chartjs-size-monitor">
+              <div className="chartjs-size-monitor-expand" >
+                <div className="chartjs-size-monitor-expand-layer"></div>
+              </div>
+              <div className="chartjs-size-monitor-shrink">
+                <div className="chartjs-size-monitor-shrink-layer"></div>
+              </div>
+            </div>
+              <Line className="chart" id="mini-line-chart" options={options} data={state} />
+          </div>
         </div>
       </div>        
       </>
@@ -330,6 +353,8 @@ const data_0 = {
       borderWidth: 2,
       fill: false,
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      hidden:false
+
     },
     {
       type: 'bar' as const,
@@ -338,12 +363,16 @@ const data_0 = {
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
       borderColor: 'white',
       borderWidth: 2,
+      hidden:true
+
     },
     {
       type: 'bar' as const,
       label: 'Dataset 3',
       backgroundColor: 'rgb(53, 162, 235)',
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      hidden:true
+
     },
   ],
 };
@@ -381,9 +410,9 @@ const data_0 = {
         <div className="row">
           <div className="card-tabs">
             <ul className="tabs tabs-fixed-width ">
-              <li className="tab 0" onClick={handleClickTab}><a href="#" className="active" >Day</a></li>
-              <li className="tab 1" onClick={handleClickTab}><a href="#" className=""       >Month</a></li>
-              <li className="tab 2" onClick={handleClickTab}><a href="#" className=""       >Year</a></li>
+              <li className="tab 0" onClick={handleClickTab}><a href="#" className="active serie" >Day</a></li>
+              <li className="tab 1" onClick={handleClickTab}><a href="#" className="serie"       >Month</a></li>
+              <li className="tab 2" onClick={handleClickTab}><a href="#" className="serie"       >Year</a></li>
               {/* <li className="indicator" style="left: 0px; right: 425px;"></li> */}
             </ul>
           </div>
