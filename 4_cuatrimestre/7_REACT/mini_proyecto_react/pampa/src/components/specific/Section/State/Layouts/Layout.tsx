@@ -24,8 +24,10 @@ import Weather from "./Weather";
 
 const Layouts = () => {
   const API_URL_IMG = 'products/states/';
-  const API_PAMPA_URL ="https://07d38259-d507-4036-b1f9-00818d40e676.mock.pstmn.io/service/";
-  const ENTITY_URL="/monitor/"; 
+  //const API_PAMPA_URL ="https://07d38259-d507-4036-b1f9-00818d40e676.mock.pstmn.io/service/";
+  const API_PAMPA_URL ="/public/mock/service/";
+
+  const ENTITY_URL="/state/state.txt"; 
 
   const [main,setMain]:[StateI,any] = useState(state_0);
   let   { serviceId,zoneId,monitorId } = useParams();
@@ -33,7 +35,7 @@ const Layouts = () => {
             
   useEffect(() => {
     console.log("Monitor: "+monitorId);
-    fetch(API_PAMPA_URL+ serviceId +"/zone/"+zoneId+ENTITY_URL+monitorId)
+    fetch(API_PAMPA_URL+ serviceId +"/zone/"+zoneId+"/monitor/"+monitorId+ENTITY_URL)
       .then(response => response.json())
       .then(data => {
         console.log(data);

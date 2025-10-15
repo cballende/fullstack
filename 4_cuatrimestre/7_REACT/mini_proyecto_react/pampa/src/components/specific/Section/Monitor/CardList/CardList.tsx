@@ -55,7 +55,7 @@ const CardList = () => {
           
           <div key={item.id+100} className="card horizontal">
               <div className="card-image">
-                {/* <img src={"/src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-monitor"></img> */}
+                <img src={"/src/assets/images/"+API_URL_IMG+item.img} alt={"img-"+item.title} className="img-monitor"></img>
               </div>
               <div className="card-stacked">
                 <div className="card-content">
@@ -63,7 +63,10 @@ const CardList = () => {
                   <p>{item.description}.</p>
                 </div>
                 <div className="card-action">
-                  <a href={"https://www.google.com/maps/@"+item.gis+",200m/"}><i className="material-icons">loction_on</i></a>
+                  {/* <a href={"https://www.google.com/maps/@"+item.gis+",200m/"}><i className="material-icons">loction_on</i></a> */}
+                  <Link key={item.id+10} to={"https://www.google.com/maps/@"+item.gis+",200m/"} >
+                    <i className="material-icons">location_on</i>
+                  </Link>
                   <Link key={item.id} to={"/service/"+serviceId+"/zone/"+zoneId+"/monitor/"+item.id+"/state"} >
                     <i className="material-icons">touch_app</i>
                   </Link>

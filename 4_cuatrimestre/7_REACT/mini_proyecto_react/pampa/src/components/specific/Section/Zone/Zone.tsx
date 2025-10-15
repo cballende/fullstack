@@ -14,7 +14,7 @@ import CardList from "./CardList/CardList";
 const Zone = () => {
   return (
     <><div className="main" id="main">
-      <div className="row p-3" id="zone-list">
+      <div className="row " id="zone-list">
         <CardList/>
       </div>
     </div>

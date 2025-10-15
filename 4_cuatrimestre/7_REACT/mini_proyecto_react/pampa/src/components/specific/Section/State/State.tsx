@@ -15,7 +15,7 @@ const State = () => {
   return (
     <>
       <div className="main" id="main">
-        <div className="row p-3" id="state-list">
+        <div className="row" id="state-list">
           <Layouts/>
         </div>
       </div>
@@ -23,3 +23,4 @@ const State = () => {
   );
 }
 export default State;
+

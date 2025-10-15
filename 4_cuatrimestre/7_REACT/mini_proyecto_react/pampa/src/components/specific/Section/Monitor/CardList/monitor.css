@@ -1,14 +1,20 @@
-.image-container {
-  /*
-  width: 200px;
-  height: 300px;
-  border: 1px solid black;
-  overflow:hidden; 
-  */
+.card.horizontal{
+  height: 171px !important;
 }
 
-.card-image .img-monitor {
+.card.horizontal .card-image{
+  width: 50% !important;
+}
+.card .card-image img{
+  width: 100% !important;
+}
+
+.card-image .img-monitor  {
   height: 100%!important;
   object-fit: cover!important;
   object-position: 50% 50%!important;
+}
+
+.card .card-content {
+  height: 64% !important;
 }

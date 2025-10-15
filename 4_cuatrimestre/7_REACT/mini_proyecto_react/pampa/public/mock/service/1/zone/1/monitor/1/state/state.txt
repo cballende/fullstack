@@ -10,8 +10,8 @@
     "data": {
         "filled": {
             "value": "80",
-            "order-1": "-5",
-            "order-2": "-1"
+            "order_1": "-5",
+            "order_2": "-1"
         },
         "chartXY": {
             "d": {

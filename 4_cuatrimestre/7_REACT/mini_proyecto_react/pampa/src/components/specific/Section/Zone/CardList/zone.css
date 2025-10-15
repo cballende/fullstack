@@ -6,6 +6,9 @@
   overflow:hidden; 
   */
 }
+.card.horizontal{
+  height: 171px !important;
+}
 
 .card-image .img-zone {
   height: 100%!important;
