@@ -1,8 +1,18 @@
 /* 
   Header.tsx
  */
+
+/* DEPENDENCIES  */
 import { useEffect, useState } from "react";
+/* TYPES*/
 import type { HeaderProps } from "../../../types/headerProps";
+
+/* COMPONENTS */
+import  BreadCrumbs from "../BreadCrumb/BreadCrumb";
+
+/* HOOKS */
+
+/* STYLES */
 import "./header.css";
 
 const Header = () => {
@@ -27,6 +37,7 @@ const API_URL_MOCK ="../public/mock/user/user.txt"
         //console.log('Error fetching data Header:'+ error);
         console.log('Error fetching data Header');
       });
+
   },[]);// on render
 
   return (
@@ -62,10 +73,7 @@ const API_URL_MOCK ="../public/mock/user/user.txt"
 
           <div className="nav-content nav-wrapper-thirst ">
             <div className="breadcrumbs left">
-              
-                <a href="#!" className="breadcrumb">First</a>
-                <a href="#!" className="breadcrumb">Second</a>
-                <a href="#!" className="breadcrumb">Third</a>
+              <BreadCrumbs/>
             </div>
           </div>
 

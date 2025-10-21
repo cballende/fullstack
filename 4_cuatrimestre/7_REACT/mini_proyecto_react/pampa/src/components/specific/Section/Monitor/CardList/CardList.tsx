@@ -17,6 +17,11 @@ import { zone_0 } from "../../../../../types/cardProps";
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
+
+/* HOOKS */
+import { useBreadCrumb,useBreadCrumbDispatch } from '../../../../../contexts/breadCrumb-context';
+
+
 /* styles */
 import "./monitor.css"
 
@@ -29,7 +34,7 @@ const CardList = () => {
   
   const ENTITY_URL="/monitor/monitor.txt";
   const [main, setMain]:[ZoneI,any] = useState(zone_0);
-  
+  const dispatch = useBreadCrumbDispatch();
   let { serviceId,zoneId } = useParams();
   //const [ projects, setProjects ] = useContext([]);
 
@@ -47,6 +52,18 @@ const CardList = () => {
       });
   }, []);// on render
 
+  const handleClickService=()=>{
+    dispatch(
+      {
+        type: 'added',
+        id: 1,
+        index: 4,
+        text: 'Estados',
+        path: '/state',
+        done: true
+      }
+    );
+  }
 
   return (
     <>
@@ -67,7 +84,7 @@ const CardList = () => {
                   <Link key={item.id+10} to={"https://www.google.com/maps/@"+item.gis+",200m/"} >
                     <i className="material-icons">location_on</i>
                   </Link>
-                  <Link key={item.id} to={"/service/"+serviceId+"/zone/"+zoneId+"/monitor/"+item.id+"/state"} >
+                  <Link key={item.id} to={"/service/"+serviceId+"/zone/"+zoneId+"/monitor/"+item.id+"/state"} onClick={handleClickService} >
                     <i className="material-icons">touch_app</i>
                   </Link>
                 </div>

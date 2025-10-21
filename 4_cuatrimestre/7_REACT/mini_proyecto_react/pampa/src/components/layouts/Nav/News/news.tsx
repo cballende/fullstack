@@ -2,7 +2,7 @@
   News.tsx
 */
 
-/* Dependencies  */
+/* Dependencies */
 import { useEffect, useState } from "react";
 //import ErrorBoundary from "./ErrorBoundary";
 

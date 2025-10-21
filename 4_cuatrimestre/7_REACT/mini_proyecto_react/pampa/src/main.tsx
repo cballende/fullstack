@@ -15,9 +15,9 @@ import Section   from "./components/specific/Section/Section";
 createRoot(document.getElementById('root')!).render(
   
   <BrowserRouter>
-<StrictMode>
-    <App />
-  </StrictMode>,
+    <StrictMode>
+      <App />
+    </StrictMode>,
 
     <Routes>
       <Route path="/" element={<App/>}>

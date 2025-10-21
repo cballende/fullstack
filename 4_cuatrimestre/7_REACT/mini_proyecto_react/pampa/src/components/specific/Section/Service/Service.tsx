@@ -11,6 +11,8 @@ import CardList from "./CardList/CardList";
 /* styles */
 //import type {CartProps} from "../types/cardProps";
 
+/* Hooks */
+
 const Service = () => {
   return (
     <>

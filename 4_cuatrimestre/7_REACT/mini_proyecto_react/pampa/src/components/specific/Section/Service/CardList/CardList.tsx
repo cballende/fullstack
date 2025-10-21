@@ -17,6 +17,9 @@ import { services_0 } from "../../../../../types/cardProps";
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
+/* HOOKS */
+import { useBreadCrumb,useBreadCrumbDispatch } from '../../../../../contexts/breadCrumb-context';
+
 /* styles */
 
 const CardList = () => {
@@ -28,6 +31,7 @@ const CardList = () => {
   const ENTITY_URL="service.txt";
 
   const [main, setMain]:[ServicesI[],any] = useState([services_0]);
+  const dispatch = useBreadCrumbDispatch();
   
   //const [ projects, setProjects ] = useContext([]);
 
@@ -46,7 +50,16 @@ const CardList = () => {
   }, []);// on render
 
   const handleClickService=()=>{
-
+    dispatch(
+      {
+        type: 'added',
+        id: 1,
+        index: 2,
+        text: 'Zonas',
+        path: '/zone',
+        done: true
+      }
+    );
   }
 
   return (

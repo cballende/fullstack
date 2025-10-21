@@ -16,6 +16,9 @@ import { zones_0 } from "../../../../../types/cardProps";
 /* Components */
 //import CardActualyList from "./components/CardActualyList/CardActualyList";
 
+/* HOOKS */
+import { useBreadCrumb,useBreadCrumbDispatch } from '../../../../../contexts/breadCrumb-context';
+
 /* styles */
 
 import "./zone.css"
@@ -24,14 +27,15 @@ const CardList = () => {
   
   const API_URL_IMG = 'products/zones/';
   // const API_PAMPA_URL ="https://2fea5880-3f1d-4baa-8b24-5d8876c8a803.mock.pstmn.io/service/";
-   const API_PAMPA_URL ="../../public/mock/service/";
+  const API_PAMPA_URL ="../../public/mock/service/";
 
   const ENTITY_URL="/zone/zone.txt"; 
   const [main,setMain]:[ZonesI[],any] = useState([zones_0]);
-  
+  const dispatch = useBreadCrumbDispatch();
   let { serviceId } = useParams();
   console.log(serviceId);
   //const [ projects, setProjects ] = useContext([]);
+
   useEffect(() => {
     fetch(API_PAMPA_URL+ serviceId +ENTITY_URL)
       .then(response => response.json())
@@ -47,6 +51,18 @@ const CardList = () => {
       
   }, []);// on render
 
+  const handleClickService=()=>{
+    dispatch(
+      {
+        type: 'added',
+        id: 1,
+        index: 3,
+        text: 'Monitores',
+        path: '/monitor',
+        done: true
+      }
+    );
+  }
 
   return (
     <>
@@ -64,7 +80,7 @@ const CardList = () => {
                 </div>
                 <div className="card-action">
                   <a href={"https://www.google.com/maps/@"+item.gis+",200m/"}><i className="material-icons">location_on</i></a>
-                  <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} >
+                  <Link key={item.id} to={"/service/"+serviceId+"/zone/"+item.id+"/monitor"} onClick={handleClickService} >
                     <i className="material-icons">touch_app</i>
                   </Link>
                 </div>

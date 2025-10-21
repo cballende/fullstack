@@ -2,6 +2,24 @@
   Statues.tsx
  */
 
+/**
+ * List hable states 
+ * Filled
+ * ChartXY
+ * Forecast
+ * Histogram
+ * 
+ * List unable states 
+ * Temp
+ * Flow
+ * Polar
+ * Serie
+ * Moisture
+ * Rain
+ * Wind
+ *  */ 
+
+
 /* Dependencies  */
 
 /*DOUGHNUT */
@@ -58,11 +76,6 @@ const chartColorGreen = 'rgb(112,190,116)';
 
 /* styles */
 import "./states.css"
-
-
-
-
-
 
 
 /* Gral Functions */
